@@ -1,0 +1,40 @@
+
+-- Fazer download das bibliotecas necessárias:
+- Acessar https://github.com/adafruit/DHT-sensor-library
+- Clicar no botão verde á direita, baixar como ZIP
+- Note que no "read.me" do documento há um aviso de que esta biblioteca depende da "Adafruit Unified Sensor Library" para funcionar 
+- Acesse https://github.com/adafruit/Adafruit_Sensor
+- Clicar no botão verde á direita, baixar como ZIP
+
+-- Instalar bibliotecas no programa do Arduino:
+- Colocar biblioteca no programa: sketch > add library > incluir arquivo zip (repetir esse processo para as duas bibliotecas)
+- Incluir a biblioteca: sketch > include library > selecionar biblioteca (repetir esse processo para as duas bibliotecas)
+
+-- Configurar o código para o sensor que iremos utilizar:
+- Abrir a biblioteca: file > examples > selecionar biblioteca DHTtester
+- Ler o código e avaliar o que é necessário para o projeto atual.
+
+*obs: É possível deletar a parte do código que não será utilizada, ou desativá-la tornando-a comentário:
+Para comentar uma linha, adicionar // em seu início
+Para comentar diversas linhas adicionar /* no início e *\ no final.
+
+- Manter as bibliotecas #include
+
+*obs: Podemos observar pela seguinte linha de código:  #include <Adafruit_Sensor.h> 
+que de fato essa biblioteca depende daquela que instalamos anteriormente
+
+- Definir a porta que irá ler os dados do sensor (#define DHPIN A2)
+- Definir o sensor, no caso DHT11 (o código default oferece também o DHT 22 e 21) (#define DHTTYPE DHT11)
+
+
+
+
+
+
+INFORMAÇÕES EXTRA:
+
+uint32_t
+u = unsigned
+int = numero inteiro
+32 = número de bits para armazenar o valor
+_t = o tamanho é universal em todas as plataformas
