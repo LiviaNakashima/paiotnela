@@ -67,7 +67,10 @@ void loop() {
   Serial.print(","); // vírgula
   Serial.println(t); // temperatura
  
-
+ -- Execução do programa:
+- Verificar
+- Compilar
+- Visualização em gráficos: Tools > Serial Plotter  
 
 INFORMAÇÕES EXTRA:
 
