@@ -1,3 +1,4 @@
+Grupo: Larissa Hessel, Leonardo Ciarcia, Livia Monteiro, Lucas Silva, Michelle Azevedo, Regino Trindade
 
 -- Fazer download das bibliotecas necessárias:
 - Acessar https://github.com/adafruit/DHT-sensor-library
@@ -18,17 +19,54 @@
 Para comentar uma linha, adicionar // em seu início
 Para comentar diversas linhas adicionar /* no início e *\ no final.
 
-- Manter as bibliotecas #include
+- Manter as bibliotecas:
+#include <Adafruit_Sensor.h>
+#include "DHT.h"
 
 *obs: Podemos observar pela seguinte linha de código:  #include <Adafruit_Sensor.h> 
 que de fato essa biblioteca depende daquela que instalamos anteriormente
 
-- Definir a porta que irá ler os dados do sensor (#define DHPIN A2)
-- Definir o sensor, no caso DHT11 (o código default oferece também o DHT 22 e 21) (#define DHTTYPE DHT11)
+- Definir a porta que irá ler os dados do sensor: 
+#define DHPIN A2
+
+- Definir o sensor, no caso DHT11 (o código default oferece também o DHT 22 e 21):
+#define DHTTYPE DHT11
+
+- Confirmar pino e tipo:
+DHT dht(DHTPIN, DHTTYPE);
+
+- Declarar a função que iniciar a comunicação do programa com o arduino:
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
 
 
+- Declarar a função que define o tempo entre os dados:
+void loop() {
+  delay(1000); // Tempo de atualização entre os dados que o sensor emite
 
+- Definir que a umidade é uma variável(h) de valor não inteiro(float): 
+  float h = dht.readHumidity();
+  
+- A leitura da temperatura é em Celsius por definição:
+  float t = dht.readTemperature();
+  // Read temperature as Fahrenheit (isFahrenheit = true)
+  float f = dht.readTemperature(true);
 
+- Declarar variável da temperatura em farenheit:
+  // Compute heat index in Fahrenheit (the default)
+  float hif = dht.computeHeatIndex(f, h);
+  
+- Declarar variável da temperatura:
+  // Compute heat index in Celsius (isFahreheit = false)
+  float hic = dht.computeHeatIndex(t, h, false);
+
+- Declarar o que será mostrado no monitor serial:
+  Serial.print(h); // dado de umidade
+  Serial.print(","); // vírgula
+  Serial.println(t); // temperatura
+ 
 
 
 INFORMAÇÕES EXTRA:
