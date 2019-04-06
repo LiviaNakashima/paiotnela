@@ -1,0 +1,234 @@
+
+#logo{
+    position: absolute;
+    left:0%;
+ 
+}
+#topo{
+    background-color: rgb(0, 255, 242);
+    height: 100px;
+    width:100%;
+    
+    position: relative;
+   
+  }
+ #cadastrar{
+    background-color: rgb(0, 255, 242);
+    position: absolute;
+  bottom: 30px;
+  right: 16px;
+  font-size: 30px;
+  width: 90%;
+  height: 40px;
+    
+  }
+
+  #menu1:link {
+    text-decoration: none;
+    color:black;
+   }
+   #menu1:visited {
+    text-decoration: none;
+    color:black;
+   }
+
+   #menu1:hover {
+    text-decoration: underline;
+    color:red;
+  }
+
+#menu{
+    position: relative;
+    width:100%;
+    height: 800px;
+    text-align: center;
+    font-size: 80px;
+    padding-top: 40px;
+}
+
+#linha{
+    
+    background-color: rgb(90, 14, 14);
+    position: absolute;
+    left: 30%;
+    top: 23%;
+    width: 40%;
+    height: 3px;
+    text-align: center;
+    font-size: 18px;
+}
+#menuTxt{
+    
+    position: absolute;
+    right: 100px;
+    top:350px;
+    height: 300px;
+    width: 40%;
+    font-size:40px;
+}
+
+
+
+#corpo1{
+    width:100%;
+    background-color:rgb(0, 255, 242);
+    height: 800px;
+    position: relative;
+    
+    
+}
+#conteudoCorpo1{
+    position: absolute;
+    background-color: rgb(0, 255, 242); 
+    left: 20%;
+    right: 20%;
+    top: 5%;
+    width: 60%;
+    height: auto;
+    text-align: center;
+    font-size: 50px;
+    
+}
+
+
+
+#corpo2{
+    width:100%;
+    position: relative;
+    height: 800px;
+    }
+
+#conteudo1Corpo2{
+   
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    width: 30%;
+    height: auto;
+    text-align: center;
+    font-size: 25px;
+
+}
+#bonequinho{
+    margin-bottom: 15px;
+}
+#conteudo2Corpo2{
+    
+    position: absolute;
+    left: 35.1%;
+    top: 12%;
+    width: 30%;
+    height: auto;
+    text-align: center;
+    font-size: 25px;
+}
+#conteudo3Corpo2{
+    
+    position: absolute;
+    left: 68%;
+    top: 12%;
+    width: 30%;
+    height: auto;
+    text-align: center;
+    font-size: 25px;
+}
+#panela_fogo{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+
+#desenho_cozinheiro{ 
+    position: absolute;
+    top: 250px;
+    left: 150px;
+    font-size: 18px;
+    
+}
+
+#panela1{ 
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 18px;
+
+    
+}
+
+#corpo3{
+    background-color: rgba(33, 248, 158, 0.185);
+    width:100%;
+    position: relative;
+    height: 700px;
+    }
+
+#conteudoCorpo3{
+    position: absolute;
+    background-color: (33, 248, 158, 0.185);
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 10%;
+    width: 60%;
+    height: 500px;
+    text-align: center;
+    font-size: 50px;
+    }
+#corpo4{
+    background-color: black;
+    width:100%;
+    position: relative;
+    height: 250px;
+    
+    }
+#conteudo1Corpo4{
+    background-color: black;
+    position: absolute;
+  top: 30px;
+  left: 2%;
+  right: 2%;
+  font-size: 25px;
+  width: 96%;
+  height: 40px;
+  color:white;
+
+}
+#menu2:link {
+    text-decoration: none;
+    color:white;
+   }
+   #menu2:visited {
+    text-decoration: none;
+    color:white;
+   }
+
+   #menu2:hover {
+    text-decoration: underline;
+    color:whitesmoke;
+  }
+#conteudo2Corpo4{
+    position: absolute;
+    background-color: black;
+    height: auto;
+    width: 25%;
+    top:40%;
+    left:2%;
+}
+
+#redes_sociais{
+    padding-top:0px; 
+    padding-left:40px;
+    padding-bottom:70px;
+}
+#conteudo3Corpo4{
+    background-color: black;
+    position: absolute;
+    top:50%;
+    left:30%;
+    width: 50%;
+    height: auto;
+    font-size: 20px;
+    color:whitesmoke;
+}
+    
+    
+
