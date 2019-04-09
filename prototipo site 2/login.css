@@ -62,7 +62,7 @@
     background-color: white;
     position: absolute;
     top:320px;
-    left:24%;
+    left:23%;
     right:24%;
     width: 50%;
     padding: 30px;
@@ -98,7 +98,7 @@
         background-color: black;
         width:100%;
         position: relative;
-        height: 250px;
+        height: 320px;
         
         }
     #conteudo1Corpo4{
@@ -150,5 +150,3 @@
         font-size: 20px;
         color:whitesmoke;
     }
-    
-
