@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PaIoTnela | A panela ligada à internet das coisas.</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- Plugin CSS -->
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/freelancer.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html#page-top">PaIoTnela</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html#beneficios">Benefícios</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html#comofunciona">Como funciona?</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html#sobre">Sobre nós</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html#contato">Contato</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#">Entrar/Cadastro</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img class="img-fluid mb-5 d-block mx-auto primeira-img" src="img/panela.png" alt="">
+
+        </div>
+        <div class="col">
+      <form>
+              <p class="form-text1">Nome Completo:</p>
+              <input  class="form-control" type="text" id="nome_cad" placeholder="Insira seu nome completo" class="box" required/><br>
+              <p class="form-text1">Data de Nascimento:</p>
+              <input  class="form-control" type="date" id="data_cad" class="box" required/><br>
+              <p class="form-text1">CPF:</p>
+              <input  class="form-control"  type="number" id="cpf_cad" placeholder="Insira apenas numeros" class="box" required/><br>
+              <p class="form-text1">RG:</p>
+              <input  class="form-control"  type="number" id="rg_cad" placeholder="Insira apenas numeros" class="box" required/><br>
+
+              <p class="form-text1">Sexo:</p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  <label class="form-check-label" for="inlineRadio1">Feminio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Masculino</label>
+                </div>
+              <p class="form-text1">CEP:</p>
+               <input  class="form-control"  type="number" id="cep_cad" placeholder="Insira apenas numeros" class="box" required/><br>
+              <p class="form-text1">Endereço:</p>
+               <input  class="form-control"  type="text" id="endereco_cad" placeholder="Insira seu endereço completo"
+                  class="box" required/><br>
+              <p class="form-text1">Zona:</p>
+               <select  class="form-control"  id="zona_cad" class="box" required/>
+                  <option value="">Escolha sua zona</option>
+                  <option value="Zona Norte">Zona Norte</option>
+                  <option value="Zona Sul">Zona Sul</option>
+                  <option value="Zona Leste">Zona Leste</option>
+                  <option value="Zona Oeste">Zona Oeste</option>
+                  <option value="Centro">Centro</option>
+              </select><br>
+              <p class="form-text1">Telefone:</p>
+               <input  class="form-control"  type="number" id="telefone_cad" placeholder="Insira apenas numeros" class="box" required/><br>
+              <p class="form-text1">E-mail:</p>
+               <input  class="form-control"  type="email" id="email_cad" placeholder="Insira seu e-mail" height="35px"
+                  class="box" required/><br>
+              <p class="form-text1">Confirmar E-mail:</p>
+              <input  class="form-control"  type="email" id="email_cad" placeholder="Confirme seu e-mail" height="35px"
+                  class="box" required/><br>
+              <p class="form-text1">Usuário:</p>
+              <input  class="form-control"  type="text" id="usuario_cad" placeholder="Insira seu usuario de acesso" class="box" required/><br>
+              <p class="form-text1">Senha:</p>
+               <input  class="form-control"  type="password" id="senha_login" placeholder="Insira sua senha" class="box" required/><br>
+              <p class="form-text1">Confirmar Senha:</p>
+               <input   class="form-control" type="password" id="senha_login" placeholder="Confirme sua senha" class="box" required/><br><br><br>
+<div class="form-check form-check-inline">
+              <input  class="form-control"  type="checkbox" value="aceito1" required/>Aceito receber informações e notificações por SMS, e no e-mail. <br>
+              <input   class="form-control" type="checkbox" value="aceito2" required/>Concordo com os Termos de Segurança<br>
+              <input  class="form-control"  type="checkbox" value="aceito3" required/>Aceito participar dos treinamentos com a brigada de incêncio<br>
+</div>
+
+          <button type="button" id="bt_Cadastrar" class="btn btn-primary">Cadastrar</button>
+      </form>
+      </div>
+</div>
+    </div>
+</header>
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Onde estamos</h4>
+          <p class="lead mb-0">
+            Rua Haddock Lobo, 595 - Cerqueira César, São Paulo-SP-Brasil
+            <br>CCNPJ:56874589/0001-96 </p>
+        </div>
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Redes Sociais</h4>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-google-plus-g"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                <i class="fab fa-fw fa-dribbble"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-uppercase mb-4">Dúvidas?</h4>
+          <p class="lead mb-0">Acesse nossa página de
+            <a href="/FAQ.html">Dúvidas frequentes.</a>.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; PaIoTnela 2019</small>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/freelancer.min.js"></script>
+
+</body>
+
+</html>
