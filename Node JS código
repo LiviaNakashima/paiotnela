@@ -1,0 +1,209 @@
+-INDEX.JS-
+
+var express = require('express'); //Recupera o modulo Serial express
+
+var app = express();
+
+var path = require('path'); //Recupera o modulo path, que vem junto do express
+
+var server = app.listen(4000, () => { //Inicia o servidor na porta 4000
+    console.log("Recebendo solicitações na porta 4000...");
+})
+
+var io = require('socket.io')(server); //Recupera o modulo so socket.io e atrela o socket.io ao nosso servidor express.
+
+
+app.use(express.static('public')); //Send index.html page on GET /
+
+
+
+app.get('/', (req, res) => { //Simplesmente devolve a index.html quando for digitado no navegador localhost:4000
+    res.sendFile('index.html', {
+        root: path.join(__dirname, '..')
+    })
+})
+
+const SerialPort = require('serialport'); //Recupera o modulo Serial Port
+
+const Readline = SerialPort.parsers.Readline; // Atribui o metodo readline do serial port a variável ReadLine
+const port = new SerialPort('COM3'); //Conecta a porta serial COM5. Veja a sua na IDE do Arduino -> Tools -> Port
+
+const parser = port.pipe(new Readline({delimiter: '\n'})); //Lê a linha apenas se uma nova linhas for inserida
+
+parser.on('data', (temp) => { //Na recepção dos dados = "On data retrieving"
+        // 50,23400
+
+    const dados = temp.replace('\r', '').split(',')
+    const temperatura = dados[0]
+    const umidade = dados[1]
+
+    console.log(dados);//Printa o dado recebido no console
+
+    var datahora = new Date();//Pega a data do sistema 
+
+    var data = datahora.getDate()+"/"+(Number(datahora.getMonth())+1)+"/"+datahora.getFullYear(); //Transforma em uma data legível 1/4/2019
+
+    var hora = (datahora.getHours())+":"+(datahora.getMinutes()); //Transforma em uma hora legível 15:00
+
+    
+    io.sockets.emit('temp', {date: data, time: hora, umid: umidade, temp: temperatura}); //Emite o objeto temp, com os atributos date, time e temp
+
+});
+
+
+io.on('connection', (socket) => {//É mostrado quando alguem se conecta
+    console.log("Alguem acessou a página do gráfico >-<"); 
+})
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+-INDEX.HTML-
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <canvas id="temp"></canvas>
+    <canvas id="umid"></canvas>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script src="configs/grafico.js"></script> 
+<script src="configs/socket.js"></script> 
+</html>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+-SOCKET.JS-
+
+socket.on('temp', function(data) { //Assim q o temp é recebido
+
+    console.log(data.temp);
+
+    // date.innerHTML = data.date; //Define a data
+
+    if(t1.data.labels.length <=  15) { //Se houver menos de 15 dados
+        t1.data.labels.push(data.time);  //Coloca o horário no eixo X
+        t1.data.datasets.forEach((dataset) => {
+            dataset.data.push(data.temp); //Adiciona a temperatura no eixo Y
+        });
+    }
+    else {
+        t1.data.labels.shift(); //Remove o primeiro registro de horário
+        t1.data.labels.push(data.time); //Insere a data atual
+        t1.data.datasets.forEach((dataset) => {
+            dataset.data.shift(); //Remove o primeiro registro de tempertura
+            dataset.data.push(data.temp); //Insere um novo registro de temperatura
+        });
+    }
+    t1.update(); //Atualiza o gráfico
+
+    if(t2.data.labels.length <=  15) { //Se houver menos de 15 dados
+        t2.data.labels.push(data.time);  //Coloca o horário no eixo X
+        t2.data.datasets.forEach((dataset) => {
+            dataset.data.push(data.temp); //Adiciona a temperatura no eixo Y
+        });
+    }
+    else {
+        t2.data.labels.shift(); //Remove o primeiro registro de horário
+        t2.data.labels.push(data.time); //Insere a data atual
+        t2.data.datasets.forEach((dataset) => {
+            dataset.data.shift(); //Remove o primeiro registro de tempertura
+            dataset.data.push(data.umid); //Insere um novo registro de temperatura
+        });
+    }
+    t2.update(); //Atualiza o gráfico
+
+});
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+-GRAFICO.JS-
+var socket = io.connect('http://localhost:4000');
+var temper = temp.getContext('2d');
+var umider = umid.getContext('2d');
+var t1 = new Chart(temper, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: "#af2828",
+            borderColor: "#af2828",
+            borderWidth: 3,
+            pointStyle: 'triangle',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            lineTension: 0.2,
+            fill: false,
+            label: "Temperatura"
+        }]
+    },
+    options: {
+        responsive: true,
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+            display: true,
+            text: 'Gráfico de Temperatura',
+            fontSize: 30,
+            fontColor: "#af2828",
+            fontStyle: "normal"
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    // Inclui a °C para o gráfico de Temperatura
+                    callback: function(value) {
+                        return value.toFixed(2) + '°C';
+                    }
+                }
+            }]
+        }
+}
+});
+
+
+var t2 = new Chart(umider, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: "#ff25da",
+            borderColor: "#ff25da",
+            borderWidth: 3,
+            pointStyle: 'triangle',
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            lineTension: 0.2,
+            fill: false,
+            label: "Umidade"
+        }]
+    },
+    options: {
+        responsive: true,
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+            display: true,
+            text: 'Gráfico de Umidade',
+            fontSize: 30,
+            fontColor: "#ff25da",
+            fontStyle: "normal"
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    // Inclui a °C para o gráfico de Temperatura
+                    callback: function(value) {
+                        return value.toFixed(2) + '%';
+                    }
+                }
+            }]
+        }
+}
+});
+
