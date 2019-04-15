@@ -1,3 +1,3 @@
 Temas bootstrap utilizados: 
-[Freelancer](http://startbootstrap.com/template-overviews/freelancer/) 
-[SB admin 2] (https://startbootstrap.com/themes/sb-admin-2/)
+[Freelancer](http://startbootstrap.com/template-overviews/freelancer/) e 
+[SB admin 2](https://startbootstrap.com/themes/sb-admin-2/)
