@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>PaIoTnela adm - Cards</title>
+  <title>Área do Cliente PaIoTnela </title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,48 +33,46 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <img src="img/icon-panela.png" style="width: 10vh;">
         </div>
-        <div class="sidebar-brand-text mx-3">PaIoTnela<br> <sup>adm</sup></div>
+        <div class="sidebar-brand-text mx-3">PaIoTnela<br> <sup>cliente</sup></div>
       </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-cog"></i>
           <span>Início</span></a>
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-              Interface
-            </div>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="cozinhando.html">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Em andamento</span></a>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Gastos</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="receitas.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Receitas</span></a>
       </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Métricas
+      </div>
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="gastos.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Gastos</span></a>
+      </li>
+
+
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -104,7 +102,7 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Procurar..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
                   <i class="fas fa-search fa-sm"></i>
@@ -146,7 +144,7 @@
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
-                  Alerts Center
+                  Notificações
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
@@ -155,8 +153,8 @@
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    <div class="small text-gray-500">20 de abril, 2019</div>
+                    <span class="font-weight-bold">Imprima suas receitas preferidas!</span>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -166,8 +164,8 @@
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
+                    <div class="small text-gray-500">03 de abril, 2019</div>
+                    Veja seus gastos com a PaIoTnela neste mês.
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -177,96 +175,39 @@
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
+                    <div class="small text-gray-500">28 de março, 2019</div>
+                    Alerta: A panela não pode ser ligada remotamente, pois verifquei que não há alimentos nela.
                   </div>
                 </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Ver todos os alertas</a>
               </div>
             </li>
 
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Paula Machado</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Perfil
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
+                  Configurações
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
+                  Histórico
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Sair
                 </a>
               </div>
             </li>
@@ -280,35 +221,99 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Bem-Vindo, Mestre Cuca!</h1>
+          <h1 class="h3 mb-2 text-gray-800">Bem Vinda, ...!</h1>
 
+          <!-- caixa -->
+          <div class="card shadow mb-4 border-bottom-success ">
+            <!-- titulo da caixa -->
+            <div class="card-header py-3 ">
+            <h6 class="m-0 font-weight-bold text-primary">Seu arroz esta quaaase pronto...</h6>
           </div>
+          <!-- corpo da caixa -->
+          <div class="card-body">
+            <h4 class="small font-weight-bold"> Ainda esta meio duro! <span class="float-right">80%</span></h4>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+        </div>
+      </div>
+
+
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4 border-left-danger ">
+                <!-- Título do card -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">O que mais vamos cozinhar hoje?</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                      <p><label class="my-1 mr-2">Escolha o prato:</label></p>
+                      <select class="custom-select my-1 mr-sm-2" id="alimento">
+                        <option selected>Escolha...</option>
+                        <option value="50">Feijão carioca</option>
+                        <option value="100">Arroz integral</option>
+                        <option value="50">Grão de bico</option>
+                      </select>
+<a href="receitas.html">Ir para a página de receitas</a>
+<br><br>
+                        <p>  <label for="formControlRange">Para quantas pessoas?</label></p>
+                          <input type="range" class="form-control-range" id="pessoas">
+                        </form>
+                        <br>
+                        <div class="my-2"></div>
+                        <a href="#" class="btn btn-secondary btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-arrow-right"></i>
+                          </span>
+                          <span class="text">Calcular quantidade e tempo</span>
+                        </a>
+                        <br><br>
+                        <!-- resultado do cálculo -->
+                              <div id="resultado">
+                                  <div class="card bg-info text-white shadow">
+                                    <div class="card-body">
+                                  RESULTADO
+                                    </div>                                    </div>
+                                  </div>
+                                  </div>                  </div>
+                </div>
+          </div>
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                    <div class="text-center">
+                      <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" src="img/people-17.png" style="width: 15rem;">
+                    </div>
+                    <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>
+                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
 
           <div class="row">
 
             <div class="col-lg-6">
 
-              <!-- Default Card Example -->
-              <div class="card mb-4">
-                <div class="card-header">
-                  O que vamos cozinhar hoje?
-                </div>
-                <div class="card-body">
-<form class="form">
-  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Escolha o prato:</label>
-  <select class="custom-select my-1 mr-sm-2" id="alimento">
-    <option selected>Escolha...</option>
-    <option value="50">Feijão carioca</option>
-    <option value="100">Arroz integral</option>
-    <option value="50">Grão de bico</option>
-  </select>
-      <label for="formControlRange">Para quantas pessoas?</label>
-      <input type="range" class="form-control-range" id="pessoas">
-<button type="submit" class="btn btn-primary mb-2" onclick="calcular()">calcular</button>
-<div id="resultado"></div>
-                </div>
-              </div>
 
               <!-- Basic Card Example -->
               <div class="card shadow mb-4">
