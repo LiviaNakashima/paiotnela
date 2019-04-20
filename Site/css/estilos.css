@@ -37,3 +37,13 @@
 .cor_nova:hover{
   color: white;
 }
+
+.confirm{
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+  font-size: 2vw;
+  color: white;
+}
+.lgv{
+  color: white;
+}
