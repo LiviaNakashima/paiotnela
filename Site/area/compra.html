@@ -220,64 +220,30 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Título da página -->
-          <h1 class="h3 mb-4 text-gray-800">Na panela agora:</h1>
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Temperatura e Umidade</h1>
+          <p class="mb-4"> </p>
 
-          <!-- caixa de progresso -->
-          <div class="card shadow mb-4 border-bottom-success ">
-            <!-- titulo da caixa -->
-            <div class="card-header py-3 ">
-            <h6 class="m-0 font-weight-bold text-primary">Seu arroz esta quaaase pronto...</h6>
-          </div>
-          <!-- corpo da caixa -->
-          <div class="card-body">
-            <h4 class="small font-weight-bold"> Ainda esta meio duro! <span class="float-right">80%</span></h4>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-            </div>
-          </div>
-          </div>
-          <!-- fim da caixa -->
+          <!-- Content Row -->
+          <div class="row">
 
-      <!--  Começo de uma linha (row) -->
-      <div class="row">
-        <!-- uma div com metade do tamanho da tela -->
-<div class="col-lg-6">
-      <!-- caixa temperatura -->
-      <div class="card shadow mb-4 border-left-danger  ">
-        <!-- titulo da caixa -->
-        <div class="card-header py-3 ">
-        <h6 class="m-0 font-weight-bold text-primary">Temperatura</h6>
-      </div>
-      <!-- corpo da caixa -->
-      <div class="card-body">
-        <div class="card shadow mb-4">
-          <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
-          </div>
-          <div class="card-body">
-            <div class="chart-area">
-              <canvas id="myAreaChart"></canvas>
-            </div>
-            <hr>
-            Temperatura da sua comida!
-          </div>
-        </div>
-    </div>
-  </div>
-  <!-- fim da caixa -->
-</div>
-<!-- uma div com metade do tamanho da tela -->
-<div class="col-lg-6">
-  <!-- caixa umidade -->
-  <div class="card shadow mb-4 border-left-warning">
-    <!-- titulo da caixa -->
-    <div class="card-header py-3 ">
-    <h6 class="m-0 font-weight-bold text-primary">Umidade</h6>
-  </div>
-  <!-- corpo da caixa -->
-  <div class="card-body">
- <!-- Bar Chart -->
+            <div class="col-xl-8 col-lg-7">
+
+              <!-- Area Chart -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                  <hr>
+                  Temperatura da sua comida!
+                </div>
+              </div>
+
+              <!-- Bar Chart -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
@@ -290,23 +256,20 @@
                   Umidade da sua comida!
                 </div>
               </div>
-    </div>
-</div>
-</div>
-<!-- fim da caixa -->
-</div>
-</div>
 
+            </div>
 
-        <!-- /.fechamentos container fluid -->
-    </div>
-    </div>
-    </div>
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; PaIoTnela 2019</span>
+            <span>Copyright &copy; Your Website 2019</span>
           </div>
         </div>
       </footer>
@@ -352,15 +315,15 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
-  
   <!-- Page level plugins -->
   <script src="vendor/chart.js/Chart.min.js"></script>
+
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
   <script src="js/demo/chart-bar-demo.js"></script>
-  
 
 </body>
 
 </html>
+    
