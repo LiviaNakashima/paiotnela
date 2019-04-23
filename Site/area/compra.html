@@ -187,7 +187,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Fernando Brandão</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Olá, visitante!</span>
                 <img class="img-profile rounded-circle" src="bot.jpg">
               </a>
               <!-- Dropdown - User Information -->
@@ -220,96 +220,66 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Título da página -->
-          <h1 class="h3 mb-4 text-gray-800">Na panela agora:</h1>
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Compre sua PAIOTNELA</h1>
+          <p class="mb-1">Com a mais nova invenção do mercado, a paIOTnela,</p>
+          <p class="mb-4">voce não terá complicações com comida queimada nem com perdas de alimento estragado</p>
+          <!-- Content Row -->
+          <div class="row">
 
-          <!-- caixa de progresso -->
-          <div class="card shadow mb-4 border-bottom-success ">
-            <!-- titulo da caixa -->
-            <div class="card-header py-3 ">
-            <h6 class="m-0 font-weight-bold text-primary">Seu arroz esta quaaase pronto...</h6>
-          </div>
-          <!-- corpo da caixa -->
-          <div class="card-body">
-            <h4 class="small font-weight-bold"> Ainda esta meio duro! <span class="float-right">80%</span></h4>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-            </div>
-          </div>
-          </div>
-          <!-- fim da caixa -->
+            <div class="col-xl-5 col-lg-6">
 
-      <!--  Começo de uma linha (row) -->
-      <div class="row">
-        <!-- uma div com metade do tamanho da tela -->
-<div class="col-lg-6">
-      <!-- caixa temperatura -->
-      <div class="card shadow mb-4 border-left-danger  ">
-        <!-- titulo da caixa -->
-        <div class="card-header py-3 ">
-        <h6 class="m-0 font-weight-bold text-primary">Temperatura</h6>
-      </div>
-      <!-- corpo da caixa -->
-      <div class="card-body">
-        <div class="card shadow mb-4">
-          <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
-          </div>
-          <div class="card-body">
-            <div class="chart-area">
-              <canvas id="myAreaChart"></canvas>
-            </div>
-            <hr>
-            Temperatura da sua comida!
-          </div>
-        </div>
-    </div>
-  </div>
-  <!-- fim da caixa -->
-</div>
-<!-- uma div com metade do tamanho da tela -->
-<div class="col-lg-6">
-  <!-- caixa umidade -->
-  <div class="card shadow mb-4 border-left-warning">
-    <!-- titulo da caixa -->
-    <div class="card-header py-3 ">
-    <h6 class="m-0 font-weight-bold text-primary">Umidade</h6>
-  </div>
-  <!-- corpo da caixa -->
-  <div class="card-body">
- <!-- Bar Chart -->
+              <!-- Area Chart -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Panela - 001</h6>
+                  <img class="img-fluid mb-5 d-block mx-auto primeira-img" src="img/panela.png" alt="">
+                  
                 </div>
-                <div class="card-body">
-                  <div class="chart-bar">
-                    <canvas id="myBarChart"></canvas>
                   </div>
-                  <hr>
-                  Umidade da sua comida!
                 </div>
+              <!--Área da compra-->
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4 border-left-danger ">
+            <!-- Título do card -->
+              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Deseja fazer um pedido?</h6>
               </div>
-    </div>
-</div>
-</div>
-<!-- fim da caixa -->
-</div>
-</div>
+            <!-- Card Body -->
+              <div class="card-body">
+                  <p><label class="my-1 mr-2">Escolha a cor da panela:</label></p>
+                  <p class="my-1 mr-2">R$250,20</p>
+                  <select class="custom-select my-1 mr-sm-2" id="alimento">
+                    <option selected>Escolha...</option>
+                    <option value="50">Preta</option>
+                    <option value="100">Vermelha</option>
+                    <option value="50">Cinza</option>
+                  </select>
+<br><br>
+                        <p> <label for="formControlRange">Quantas unidade?</label></p>
+                          <input type="range" class="form-control-range" id="pessoas">
+                        </form>
+                        <br>
+                        <div class="my-2"></div>
+                        <a href="#" class="btn btn-secondary btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas"></i>
+                          </span>
+                          <input type="number" placeholder="CEP">
+                          <span class="text">Calcular frete</span>
+                          <br><br>
+                          <a href="#" class="btn btn-primary btn-lg">
+                            Comprar
+                        </a>
+                        <br><br>
+        <!-- /.container-fluid -->
 
+      </div>
+      <!-- End of Main Content -->
 
-        <!-- /.fechamentos container fluid -->
-    </div>
-    </div>
-    </div>
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; PaIoTnela 2019</span>
-          </div>
-        </div>
-      </footer>
+      
       <!-- End of Footer -->
 
     </div>
@@ -333,10 +303,10 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Selecione novamente "sair" para finalizar a sessão</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="paiotnela/Site/login.html">Sair</a>
         </div>
       </div>
     </div>
@@ -352,15 +322,15 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
-  
   <!-- Page level plugins -->
   <script src="vendor/chart.js/Chart.min.js"></script>
+
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
   <script src="js/demo/chart-bar-demo.js"></script>
-  
 
 </body>
 
 </html>
+    
