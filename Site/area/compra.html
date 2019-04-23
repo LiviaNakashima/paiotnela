@@ -187,7 +187,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Fernando Brandão</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Olá, visitante!</span>
                 <img class="img-profile rounded-circle" src="bot.jpg">
               </a>
               <!-- Dropdown - User Information -->
@@ -221,58 +221,65 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Temperatura e Umidade</h1>
-          <p class="mb-4"> </p>
-
+          <h1 class="h3 mb-2 text-gray-800">Compre sua PAIOTNELA</h1>
+          <p class="mb-1">Com a mais nova invenção do mercado, a paIOTnela,</p>
+          <p class="mb-4">voce não terá complicações com comida queimada nem com perdas de alimento estragado</p>
           <!-- Content Row -->
           <div class="row">
 
-            <div class="col-xl-8 col-lg-7">
+            <div class="col-xl-5 col-lg-6">
 
               <!-- Area Chart -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Panela - 001</h6>
+                  <img class="img-fluid mb-5 d-block mx-auto primeira-img" src="img/panela.png" alt="">
+                  
                 </div>
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
                   </div>
-                  <hr>
-                  Temperatura da sua comida!
                 </div>
+              <!--Área da compra-->
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4 border-left-danger ">
+            <!-- Título do card -->
+              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Deseja fazer um pedido?</h6>
               </div>
-
-              <!-- Bar Chart -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
-                </div>
-                <div class="card-body">
-                  <div class="chart-bar">
-                    <canvas id="myBarChart"></canvas>
-                  </div>
-                  <hr>
-                  Umidade da sua comida!
-                </div>
-              </div>
-
-            </div>
-
-        </div>
+            <!-- Card Body -->
+              <div class="card-body">
+                  <p><label class="my-1 mr-2">Escolha a cor da panela:</label></p>
+                  <p class="my-1 mr-2">R$250,20</p>
+                  <select class="custom-select my-1 mr-sm-2" id="alimento">
+                    <option selected>Escolha...</option>
+                    <option value="50">Preta</option>
+                    <option value="100">Vermelha</option>
+                    <option value="50">Cinza</option>
+                  </select>
+<br><br>
+                        <p> <label for="formControlRange">Quantas unidade?</label></p>
+                          <input type="range" class="form-control-range" id="pessoas">
+                        </form>
+                        <br>
+                        <div class="my-2"></div>
+                        <a href="#" class="btn btn-secondary btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas"></i>
+                          </span>
+                          <input type="number" placeholder="CEP">
+                          <span class="text">Calcular frete</span>
+                          <br><br>
+                          <a href="#" class="btn btn-primary btn-lg">
+                            Comprar
+                        </a>
+                        <br><br>
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
-          </div>
-        </div>
-      </footer>
+      
       <!-- End of Footer -->
 
     </div>
@@ -296,10 +303,10 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Selecione novamente "sair" para finalizar a sessão</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="paiotnela/Site/login.html">Sair</a>
         </div>
       </div>
     </div>
