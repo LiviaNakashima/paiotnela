@@ -59,19 +59,7 @@
           <span>Receitas</span></a>
       </li>
       <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Métricas
-      </div>
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="gastos.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Gastos</span></a>
-      </li>
-
+      
 
 
       <!-- Divider -->
@@ -316,7 +304,8 @@
     </div>
     <div class="card-body">
           <p>  <label for="formControlRange">Para quantas pessoas?</label></p>
-            <input type="range" class="form-control-range" id="pessoas">
+          <label id='valor_pessoas'>0</label>
+            <input type="range" class="form-control-range" id="pessoas" onchange="atualizar_interface()">
           <br>
           <div class="my-2"></div>
           <a href="#" class="btn btn-secondary btn-icon-split">
@@ -402,6 +391,12 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+
+  <script>
+      function atualizar_interface() {
+        valor_pessoas.innerHTML = pessoas.value;
+      }
+    </script>
 
 </body>
 
