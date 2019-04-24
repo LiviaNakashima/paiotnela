@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+<link rel="stylesheet" href="estilos2.css">
 
   <title>PaIoTnela | A panela ligada à internet das coisas.</title>
 
@@ -32,7 +33,7 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand js-scroll-trigger" href="index.html#page-top">PaIoTnela</a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -51,6 +52,9 @@
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html#contato">Contato</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="area/compra.html">Compre</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#">Entrar/Cadastro</a>
@@ -76,8 +80,6 @@
               <input  class="form-control" type="date" id="data_cad" class="box" required/><br>
               <p class="form-text1">CPF:</p>
               <input  class="form-control"  type="number" id="cpf_cad" placeholder="Insira apenas numeros" class="box" required/><br>
-              <p class="form-text1">RG:</p>
-              <input  class="form-control"  type="number" id="rg_cad" placeholder="Insira apenas numeros" class="box" required/><br>
 
               <p class="form-text1">Sexo:</p>
                 <div class="form-check form-check-inline">
@@ -116,12 +118,22 @@
                <input  class="form-control"  type="password" id="senha_login" placeholder="Insira sua senha" class="box" required/><br>
               <p class="form-text1">Confirmar Senha:</p>
                <input   class="form-control" type="password" id="senha_login" placeholder="Confirme sua senha" class="box" required/><br><br><br>
-<div class="form-check form-check-inline">
-              <input  class="form-control"  type="checkbox" value="aceito1"/>Aceito receber informações e notificações por SMS, e no e-mail. <br>
-              <input   class="form-control" type="checkbox" value="aceito2" required/>Concordo com os Termos de Segurança<br>
-              <input  class="form-control"  type="checkbox" value="aceito3"/>Aceito participar dos treinamentos com a brigada de incêncio<br>
-</div>
-
+               <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" >
+                    <label class="form-check-label" for="invalidCheck">
+                      Aceito receber notificações por SMS e Email
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <label class="form-check-label" for="invalidCheck">
+                        Concordo com os termos de segurança
+                      </label>
+                    </div>
+                  </div>
           <button type="submit" id="bt_Cadastrar" class="btn btn-primary">Cadastrar</button>
       </form>
       </div>

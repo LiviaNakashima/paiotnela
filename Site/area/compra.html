@@ -13,7 +13,8 @@
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -26,63 +27,6 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <img src="img/icon-panela.png" style="width: 10vh;">
-        </div>
-        <div class="sidebar-brand-text mx-3">PaIoTnela<br> <sup>cliente</sup></div>
-      </a>
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Início</span></a>
-      </li>
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="cozinhando.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Em andamento</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="receitas.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Receitas</span></a>
-      </li>
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Métricas
-      </div>
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="gastos.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Gastos</span></a>
-      </li>
-
-
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -92,38 +36,31 @@
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Procurar..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-
+          <a class="navbar-brand js-scroll-trigger" style="color: white; font-family: sans-serif " href="../index.html">
+            <h1>PAIOTNELA</h1>
+          </a>
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                      aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -134,86 +71,15 @@
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Notificações
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">20 de abril, 2019</div>
-                    <span class="font-weight-bold">Imprima suas receitas preferidas!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">03 de abril, 2019</div>
-                    Veja seus gastos com a PaIoTnela neste mês.
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">28 de março, 2019</div>
-                    Alerta: A panela não pode ser ligada remotamente, pois verifquei que não há alimentos nela.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Ver todos os alertas</a>
-              </div>
-            </li>
 
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Olá, visitante!</span>
+              <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="false"
+                aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline small" style="color: white">Olá, visitante!</span>
                 <img class="img-profile rounded-circle" src="bot.jpg">
               </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Perfil
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Configurações
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Histórico
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Sair
-                </a>
-              </div>
-            </li>
-
-          </ul>
-
         </nav>
         <!-- End of Topbar -->
 
@@ -225,112 +91,137 @@
           <p class="mb-1">Com a mais nova invenção do mercado, a paIOTnela,</p>
           <p class="mb-4">voce não terá complicações com comida queimada nem com perdas de alimento estragado</p>
           <!-- Content Row -->
-          <div class="row">
+          <div class="container">
+            <div class="row justify-content-md-center">
 
-            <div class="col-xl-5 col-lg-6">
+              <div class="col col-lg-6">
 
-              <!-- Area Chart -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Panela - 001</h6>
-                  <img class="img-fluid mb-5 d-block mx-auto primeira-img" src="img/panela.png" alt="">
-                  
-                </div>
+                <!-- Area Chart -->
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Panela - 001</h6>
+                    <img class="img-fluid mb-5 d-block mx-auto primeira-img" src="img/panela.png" alt="">
+
                   </div>
                 </div>
-              <!--Área da compra-->
-            <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
-              <div class="card shadow mb-4 border-left-danger ">
-            <!-- Título do card -->
-              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Deseja fazer um pedido?</h6>
               </div>
-            <!-- Card Body -->
-              <div class="card-body">
-                  <p><label class="my-1 mr-2">Escolha a cor da panela:</label></p>
-                  <p class="my-1 mr-2">R$250,20</p>
-                  <select class="custom-select my-1 mr-sm-2" id="alimento">
-                    <option selected>Escolha...</option>
-                    <option value="50">Preta</option>
-                    <option value="100">Vermelha</option>
-                    <option value="50">Cinza</option>
-                  </select>
-<br><br>
-                        <p> <label for="formControlRange">Quantas unidade?</label></p>
-                          <input type="range" class="form-control-range" id="pessoas">
-                        </form>
-                        <br>
-                        <div class="my-2"></div>
-                        <a href="#" class="btn btn-secondary btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas"></i>
-                          </span>
-                          <input type="number" placeholder="CEP">
-                          <span class="text">Calcular frete</span>
-                          <br><br>
-                          <a href="#" class="btn btn-primary btn-lg">
-                            Comprar
-                        </a>
-                        <br><br>
-        <!-- /.container-fluid -->
 
-      </div>
-      <!-- End of Main Content -->
+              <!--Área da compra-->
+              <!-- Pie Chart -->
+              <div class="col-xl-4 col-lg-5">
+                <div class="card shadow mb-4 border-left-danger ">
+                  <!-- Título do card -->
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Deseja fazer um pedido?</h6>
+                  </div>
+                  <!-- Card Body -->
+                  <div class="card-body">
+                    <p><label class="my-1 mr-2">Escolha a cor da panela:</label></p>
+                    <select class="custom-select my-1 mr-sm-2" id="alimento">
+                      <option selected>Escolha...</option>
+                      <option value="50">Preta</option>
+                      <option value="100">Vermelha</option>
+                      <option value="50">Cinza</option>
 
-      <!-- Footer -->
-      
-      <!-- End of Footer -->
+                    </select>
+                    <p class="my-1 mr-2">Valor da PaIoTnela:</p>
+                    <p>R$250,20</p>
 
-    </div>
-    <!-- End of Content Wrapper -->
+                    <br><br>
+                    <p> 
+                      <label for="formControlRange">Quantas unidade?</label>
+                      <label id='valor_pessoas'>0</label>
+                    </p>
+                    <input type="range" min="0" max="5" class="form-control-range" id="pessoas" onchange='atualizar_interface()'>
+                    </form>
+                    <br>
+                    <div class="my-2"></div>
+                    <a href="#" class="btn btn-secondary btn-icon-split">
+                      <span class="icon text-white-50">
+                        <i class="fas"></i>
+                      </span>
+                      <input type="number" placeholder="CEP">
+                      <span class="text">Calcular frete</span>
+                      <br><br>
+                      <a href="#" class="btn btn-primary btn-lg" onclick="mostrar()">
+                        Comprar
+                      </a>
+                      <br><br>
 
-  </div>
-  <!-- End of Page Wrapper -->
+                  </div>
+                </div>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Selecione novamente "sair" para finalizar a sessão</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" href="paiotnela/Site/login.html">Sair</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                <!-- End of Main Content -->
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+                <!-- Footer -->
 
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+                <!-- End of Footer -->
 
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="js/demo/chart-bar-demo.js"></script>
+              </div>
+              <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+              <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">Selecione novamente "sair" para finalizar a sessão</div>
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="paiotnela/Site/login.html">Sair</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
+
+            <!-- Page level plugins -->
+            <script src="vendor/chart.js/Chart.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="js/demo/chart-area-demo.js"></script>
+            <script src="js/demo/chart-pie-demo.js"></script>
+            <script src="js/demo/chart-bar-demo.js"></script>
+
+            <script>
+              function atualizar_interface() {
+                valor_pessoas.innerHTML = pessoas.value;
+              }
+            </script>
 
 </body>
 
 </html>
-    
+
+<script>
+  function mostrar(){
+    alert('Compra finalizada com sucesso! Obrigado por adquirir nossa panela!');
+  }
+
+</script>
