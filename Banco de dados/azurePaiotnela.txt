@@ -1,0 +1,82 @@
+TABELAS NO AZURE
+
+create table Usuario(
+id_usuario int primary key identity,
+nome_usuario varchar(40),
+dt_nascimento date,
+cpf char(11),
+cep char(8),
+endereco varchar(60),
+zona varchar(15),
+telefone char(9),
+email varchar(30),
+senha varchar(30),
+sexo char(1),
+check (sexo= 'M' or sexo = 'F')
+);
+
+create table Receita(
+id_receita int primary key identity(100,1),
+nome_receita varchar(20),
+quantidade int,
+temp_minima int,
+temp_maxima int,
+modo_preparo text,
+fk_usuario int,
+foreign key (fk_usuario) references Usuario (id_usuario)
+);
+
+create table Panela(
+id_panela int primary key identity,
+apelido varchar(30),
+cor varchar(10),
+tamanho varchar(10),
+modelo char(1),
+fk_usuario int,
+foreign key (fk_usuario) references Usuario (id_usuario)
+);
+
+create table Evento(
+id_evento int primary key identity,
+data_hora datetime,
+temp_sensor int,
+umid_sensor int, 
+fk_panela int, 
+foreign key (fk_panela) references Panela (id_panela)
+);
+
+insert into Usuario
+values ('Leonardo Matias','1999/03/31',1234567897,0364875,'Rua Silva Castro, 289','Zona Sul', 945687541,'leonardo@bandtec.com.br',12345,'M'),
+        ('Regino Trindade','2000/07/20',6547567897,6584875,'Rua Paulo Caminhares, 1129','Zona Norte',945787412,'regino@bandtec.com.br',14785,'M'),
+        ('Lucas Silva','2001/09/22',12645667897,0363695,'Av. Dom Pedro I, 2589','Zona Sul',963587458,'lucas@bandtec.com.br',54698,'M'),
+        ('Larissa Hessel','2000/02/07',1202147897,0302175,'Rua Haddok Lobo, 89','Zona Leste',987458745,'larissa@bandtec.com.br',69851,'F'),
+        ('Michelle Azevedo','1991/02/13',1298747897,0347175,'Rua Lazáro Fernado, 1489','Zona Oeste',964728745,'michelle@bandtec.com.br',69847,'F'),
+        (n'Livia Nakashima','2000/05/20',1234145197,0363075,'Av Paulista, 2879','Zona Sul',983698745,'livia@bandtec.com.br',78851,'F');
+
+insert into Receita
+values ('Arroz', 300, 90, 100, 'Coloque meio litro de água na panela, misture um pouco de sal e azeite, e jogue o arroz dentro. Depois disso, mexa um pouco, e deixa a água secar. Prove um pouco antes de terminar, e caso esteja duro, deixe mais um tempo na água.',2),
+('Feijão', 500, 250, 315, 'Coloque o feijão na panela, junto com a água (para cada xícara de feijão, use 3 de água). Tampe a panela, e deixe ela durante 30 min cozinhando. Após esse tempo, desligue o fogo, e deixe por mais 10 min.',4),
+('Frango', 250, 115, 160, 'Se o frango for cozido, corte-o em cubos, e coloque dentro da panela. Cubra-o com água, e deixe durante 39 minutos fazendo. Caso seja frito, corte em filés, e coloque direto na panela. Assim que dourar um lado, vire para dourar o outro.',5),
+('Sopa', 800, 200, 430, 'Coloque os legumes, junto com o macarrão de sopa dentro da panela. Acrescente água, e deixe cozinhar. Após 40 minutos, experimente para ver se o tempero pegou, ou se precisa de mais legumes.',2);
+
+insert into Panela
+values ('Panela de Leonardo', 'Vermelha', '10L', 'A', 1),
+	('Panela do Reginão', 'Amarelo', '10L','A',2),
+	('Minha panela','Preto','5L','B',3),
+	('Panela Top','Rosa', '15L','C',4),
+	('Panela da Michelle','Azul','20L','B',5),
+	('Panelao','Verde','10L','D',6);
+	
+insert into Evento
+values ('2019-04-22 12:24:07', 150, 65, 6),
+	('2019-04-22 12:24:07', 150, 65, 6),
+        ('2019-04-27 12:14:07', 150, 80, 4),
+        ('2019-04-27 12:15:07', 159, 81, 4),
+        ('2019-04-20 10:20:07', 230, 65, 2),
+        ('2019-04-22 12:24:07', 150, 65, 1),
+        ('2019-04-22 12:24:07', 150, 65, 3),
+        ('2019-04-27 12:17:07', 170, 70, 4),
+        ('2019-04-22 12:24:07', 150, 65, 3),
+        ('2019-04-24 15:10:04', 100, 54, 1),
+        ('2019-04-24 15:24:07', 150, 65, 5),
+        ('2019-04-22 12:26:07', 130, 65, 6);
