@@ -1,0 +1,50 @@
+.primeira-img {
+  max-width: 20vw;
+}
+
+.texto1 {
+  padding-top: 10vh;
+  line-height: 5vh;
+  font-weight: 300;
+}
+
+/* Seção Benefícios */
+
+.img3 {
+  max-height: 30vh;
+  margin-top: 10vh;
+}
+
+.txt3 {
+  text-align: justify;
+}
+
+.tit3 {
+  text-align: center;
+  padding-top: 5vh;
+}
+
+/* Formulário */
+
+.form-text1 {
+  text-align: left;
+  padding-bottom: 0;
+}
+
+.cor_nova{
+  color: white;
+}
+.cor_nova:hover{
+  color: white;
+}
+
+.confirm{
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+  font-size: 2vw;
+  color: white;
+}
+.lgv{
+  color: white;
+}
+
