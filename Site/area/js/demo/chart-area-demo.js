@@ -32,12 +32,12 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["5h00", "8h00", "11h00", "14h00", "17h00", "20h00", "23h00", "2h00"],
+    labels: ["1h00","2h00","3h00","4h00","5h00","6h00","7h00","8h00","9h00","10h00","11h00","12H00", "13h00", "14h00", "15h00", "16h00", "17h00", "18h00", "19h00","20H00"],
     datasets: [{
       label: "Temperatura",
       lineTension: 0.3,
       backgroundColor: "rgba(255, 100, 000, 0.05)",
-      borderColor: "red",
+      borderColor: "#ff471a",
       pointRadius: 3,
       pointBackgroundColor: "red",
       pointBorderColor: "red",
@@ -46,7 +46,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [0, 30, 60, 90, 100, 160, 50, 35],
+      data: [0,89.3,102.4,95.4,150.6,95.2,85.7,93.5,87.2,120.6,87.9,134.7,99.5,99.5,156.9,128.6,143.0,86.8,97.4,114.9,129.4],
     }],
   },
   options: {

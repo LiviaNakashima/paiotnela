@@ -37,26 +37,33 @@
       </a>
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-cog"></i>
+      <!-- Nav Item - Dashboard -->
+      <!-- <li class="nav-item"> -->
+        <!-- <a class="nav-link" href="index.html">
+          <i class="fas fa-home"></i>
           <span>Início</span></a>
-      </li>
+      </li> -->
       <!-- Divider -->
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="cozinhando.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="far fa-chart-bar "></i>
           <span>Em andamento</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="receitas.html">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-utensils"></i>
           <span>Receitas</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="compra2.html">
+          <i class="far fa-chart-bar "></i>
+          <span>Compre sua Paiotnela</span></a>
       </li>
       <!-- Divider -->
  
@@ -235,22 +242,56 @@
       <div class="card shadow mb-4 border-left-danger  ">
         <!-- titulo da caixa -->
         <div class="card-header py-3 ">
-        <h6 class="m-0 font-weight-bold text-primary">Temperatura</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
       </div>
       <!-- corpo da caixa -->
       <div class="card-body">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Gráfico de temperatura</h6>
           </div>
           <div class="card-body">
             <div class="chart-area">
               <canvas id="myAreaChart"></canvas>
             </div>
-            <hr>
+            <br>
             Temperatura da sua comida!
           </div>
         </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Tabela de Temperatura</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr class="p-3 mb-2 bg-danger text-white">
+                      <th>MIN</th>
+                      <th>1°Q</th>
+                      <th>MÉDIA</th>
+                      <th>MEDIANA</th>
+                      <th>3°Q</th>
+                      <th>MÁX</th>
+                      
+                    </tr>
+                  </thead>
+                 
+                  <tbody>
+                    <tr>
+                      <td>85,70</td>
+                      <td>92,45</td>
+                      <td>109,90</td>
+                      <td>99,48</td>
+                      <td>128,80</td>
+                      <td>156,90</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
     </div>
   </div>
   <!-- fim da caixa -->
@@ -261,23 +302,57 @@
   <div class="card shadow mb-4 border-left-warning">
     <!-- titulo da caixa -->
     <div class="card-header py-3 ">
-    <h6 class="m-0 font-weight-bold text-primary">Umidade</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Panela 001</h6>
   </div>
   <!-- corpo da caixa -->
   <div class="card-body">
  <!-- Bar Chart -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Panela001</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Gráfico de Umidade</h6>
                 </div>
                 <div class="card-body">
-                  <div class="chart-bar">
-                    <canvas id="myBarChart"></canvas>
-                  </div>
-                  <hr>
+                    <div class="chart-area">
+                        <canvas id="myAreaCharts"></canvas>
+                      </div>
+                  <br>
                   Umidade da sua comida!
                 </div>
               </div>
+              <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Tabela de Umidade</h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                          <tr class="p-3 mb-2 bg-warning text-white">
+                            <th>MIN</th>
+                            <th>1°Q</th>
+                            <th>MÉDIA</th>
+                            <th>MEDIANA</th>
+                            <th>3°Q</th>
+                            <th>MÁX</th>
+                            
+                          </tr>
+                        </thead>
+                       
+                        <tbody>
+                          <tr>
+                            <td>60,00</td>
+                            <td>64,00</td>
+                            <td>67,80</td>
+                            <td>67,75</td>
+                            <td>69,70</td>
+                            <td>77,90</td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
     </div>
 </div>
 </div>
@@ -321,10 +396,10 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Clique em "Sair" se você estiver preparado para terminar sua sessão.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" onclick="acesso()">Sair</a>
         </div>
       </div>
     </div>
@@ -347,8 +422,17 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
   <script src="js/demo/chart-bar-demo.js"></script>
+  <script src="js/demo/chart-areas-demo.js"></script>
   
 
 </body>
 
 </html>
+
+<script>
+  function acesso(){
+  
+    location.href = "../login.html";
+  
+  }
+  </script>
