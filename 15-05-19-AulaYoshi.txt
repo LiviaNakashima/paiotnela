@@ -1,0 +1,5 @@
+1 - Abrir o bash na pasta do site.
+2 - Acessar https://github.com/BandTec/pi-ads-2019-1.git
+3 - Acrescentar na raiz doprojeto os docs 
+	.gitignore e .deployment
+       o gitignore serve para dizer quais pastas podem ser ignoradas no git push
