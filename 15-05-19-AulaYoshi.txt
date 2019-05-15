@@ -1,0 +1,17 @@
+1 - Abrir o bash na pasta do site.
+2 - Acessar https://github.com/BandTec/pi-ads-2019-1.git
+3 - Acrescentar na raiz doprojeto os docs 
+	.gitignore e .deployment
+       o gitignore serve para dizer quais pastas podem ser ignoradas no git push
+
+4- no bash da pasta do site: npm install express-generator-g
+5 - express --no-view meusite (pasta criada)
+
+toda vez que formos usar o site pelo diretório
+ entrar via bash e colocar:
+
+npm i 
+npm install -g nodemon
+nodemon -- exec npm start
+
+localhost:3000 - se abrir o site da paiotnela quer dizer que tá funfando

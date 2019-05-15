@@ -189,3 +189,11 @@ body {
     color: white;
     text-shadow: 0 1px 0;
 }
+
+.logoimg {
+    max-height: 5vh;
+}
+
+.formcontato ::placeholder {
+    color: white;
+}
