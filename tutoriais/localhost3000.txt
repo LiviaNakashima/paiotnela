@@ -1,0 +1,17 @@
+Toda vez que formos usar o site: 
+ 
+entrar via bash no diretório do site 
+
+	paiotnela/Site-Atual 
+
+e inserir os seguintes comandos no bash:
+
+npm i 
+npm install -g nodemon
+nodemon --exec npm start
+
+para visualisar o site, na barra de endereço do seu navegador, digite:
+
+	localhost:3000 
+
+se abrir o site da paiotnela quer dizer que tá funfando :)

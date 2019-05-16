@@ -12,6 +12,6 @@ toda vez que formos usar o site pelo diretório
 
 npm i 
 npm install -g nodemon
-nodemon -- exec npm start
+nodemon --exec npm start
 
 localhost:3000 - se abrir o site da paiotnela quer dizer que tá funfando
