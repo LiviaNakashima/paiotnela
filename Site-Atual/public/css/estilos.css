@@ -187,3 +187,7 @@ body {
 .imglogo{
     max-height: 5vh;
 }
+
+.formcontato ::placeholder {
+    color: white;
+}
