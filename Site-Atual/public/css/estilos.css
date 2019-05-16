@@ -54,12 +54,6 @@
     color: white;
 }
 
-.confirm {
-    padding-top: 10vh;
-    padding-bottom: 20vh;
-    font-size: 2vw;
-    color: white;
-}
 
 .lgv {
     color: white;
@@ -190,6 +184,6 @@ body {
     text-shadow: 0 1px 0;
 }
 
-.teste{
-    width: 150px;
+.imglogo{
+    max-height: 5vh;
 }
