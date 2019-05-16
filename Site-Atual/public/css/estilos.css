@@ -8,8 +8,9 @@
     src: url(../fonts/Quicksand_Book_Oblique.otf)
 }
 
-.primeira-img {
-    max-width: 50vw;
+.imgloginarea {
+    max-width: 30vw;
+    border-radius: 50%;
 }
 
 .texto1 {
@@ -46,12 +47,12 @@
     padding-bottom: 0;
 }
 
-.cor_nova {
+.branco {
     color: white;
 }
 
-.cor_nova:hover {
-    color: white;
+.branco:hover {
+    color: black;
 }
 
 
@@ -191,3 +192,4 @@ body {
 .formcontato ::placeholder {
     color: white;
 }
+
