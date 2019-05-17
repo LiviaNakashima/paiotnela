@@ -3,7 +3,7 @@
 // npm start
 
 // qual o nome da pasta onde está o node do site?
-var pasta_projeto_site = 'pasta-projeto-node-site';
+var pasta_projeto_site = 'Site-Atual';
 
 // leitura dos dados do Arduino
 var porta_serial = require('serialport');
