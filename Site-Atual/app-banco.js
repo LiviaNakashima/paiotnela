@@ -4,7 +4,7 @@ var configuracoes = {
     producao: {
         server: "grupo5projeto.database.windows.net",
         user: "bandtec",
-        password: "@Gf43988602825",
+        password: "#Gf43988602825",
         database: "BancoProjeto",
         options: {
             encrypt: true
