@@ -58,7 +58,7 @@ function iniciar_escuta() {
             try {
                 // O Arduino deve enviar a temperatura e umidade de uma vez,
                 // separadas por ":" (temperatura : umidade)
-                var leitura = dados.split(':');
+                var leitura = dados.split(',');
                 registrar_leitura(Number(leitura[0]), Number(leitura[1]));
             } catch (e) {
                 throw new Error(`Erro ao tratar os dados recebidos do Arduino: ${e}`);
@@ -89,7 +89,7 @@ function registrar_leitura(temperatura, umidade) {
 
     banco.conectar().then(() => {
 
-        return banco.sql.query(`INSERT into leitura (temperatura, umidade, momento)
+        return banco.sql.query(`INSERT into Evento (temp_sensor, umid_sensor, data_hora)
                                 values (${temperatura}, ${umidade}, CURRENT_TIMESTAMP);`);
 
     }).catch(err => {
