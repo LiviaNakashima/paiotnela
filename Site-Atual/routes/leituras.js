@@ -7,7 +7,7 @@ var banco = require('../app-banco');
 router.get('/ultimas', function (req, res, next) {
   console.log(banco.conexao);
   banco.conectar().then(() => {
-    var limite_linhas = 3;
+    var limite_linhas = 10;
     return banco.sql.query(`select top ${limite_linhas} 
                             id_evento as id_nome_loko, 
                             data_hora,
