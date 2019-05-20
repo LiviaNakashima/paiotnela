@@ -7,7 +7,7 @@ var banco = require('../app-banco');
 router.get('/ultimas', function (req, res, next) {
   console.log(banco.conexao);
   banco.conectar().then(() => {
-    var limite_linhas = 10;
+    var limite_linhas = 5;
     return banco.sql.query(`select top ${limite_linhas} 
                             id_evento as id_nome_loko, 
                             data_hora,
@@ -45,10 +45,10 @@ router.get('/estatisticas', function (req, res, next) {
   banco.conectar().then(() => {
     return banco.sql.query(`
         select 
-          max(temperatura) as temp_maxima, 
-          min(temperatura) as temp_minima, 
-          avg(temperatura) as temp_media 
-        from leitura
+          max(temp_sensor) as temp_maxima, 
+          min(temp_sensor) as temp_minima, 
+          avg(temp_sensor) as temp_media 
+        from Evento
         `);
   }).then(consulta => {
     estatisticas.temp_maxima = consulta.recordset[0].temp_maxima;
