@@ -14,3 +14,27 @@
     background-image: linear-gradient(180deg, #ee2f2f 1%, #dd1d1d00 100%);
 }
 
+.progressbarcolor{
+    background-color: #000a00;
+}
+
+.colorCardH{
+    background-color: rgb(56, 54, 54); 
+}
+
+
+.bottom_color{
+    border-bottom: 0.3rem solid #000 !important;
+}
+
+/* .color_card{
+    background-image: linear-gradient(180deg, #000 1%, rgb(104, 101, 101) 100%);
+}
+
+.color_card2{
+    background-image: linear-gradient(180deg, rgb(104, 101, 101) 1%, #000 100%);
+} */
+
+.text_color{
+    color: #000!important;
+}
