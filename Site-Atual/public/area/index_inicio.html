@@ -174,8 +174,10 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-light small">Fernando Brandão</span>
-                <img class="img-profile rounded-circle" src="bot.jpg">
+                  <span class="mr-2 d-none d-lg-inline text-light small"> <b id="b_usuario"></b></span>
+                                   <!-- nome que aparece em no login -->
+
+                  <img class="img-profile rounded-circle" src="bot.jpg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -314,7 +316,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal" onclick="logoff()">Sair</button>
         </div>
       </div>
     </div>
@@ -344,5 +346,24 @@ valor_pessoas.innerHTML = pessoas.value;
 var x = Number(pessoas.value) * 250.20;
 real.innerHTML = `${x.toFixed(2)}`;
 }
+
+var usuario;
+
+verificarAutenticacao();
+
+function verificarAutenticacao() {
+    usuario = sessionStorage.usuario_bandtec;
+    if (usuario == undefined) {
+        window.location.href = '../login.html';
+    } else {
+        b_usuario.innerHTML = usuario;
+    }
+}
+
+function logoff() {
+    sessionStorage.removeItem('usuario_bandtec');
+    verificarAutenticacao();
+}
+
 
 </script>
