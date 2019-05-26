@@ -11,7 +11,7 @@ router.get('/ultimas', function (req, res, next) {
     return banco.sql.query(`select top ${limite_linhas} 
                             id_evento as id_nome_loko, 
                             data_hora,
-                            temp_sensor as temp, 
+                            temp_sensor, 
                             umid_sensor, 
                             FORMAT(data_hora,'HH:mm:ss') as momento 
                             from Evento order by id_evento desc`);

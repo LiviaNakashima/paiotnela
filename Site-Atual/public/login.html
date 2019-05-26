@@ -73,19 +73,25 @@
                     <img class="img-fluid mb-5 d-block mx-auto imgloginarea" src="img/imglogin.jpg" alt="">
                 </div>
                 <div class="col">
-                    <form action="area/index.html">
+                    <form id="form_login" method="post" onsubmit="return entrar()">
                         <div class="form-group">
 
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" required aria-describedby="emailHelp" placeholder="Digite seu email">
+                            <input type="email" class="form-control" name="login" required  placeholder="Digite seu email">
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input type="password" class="form-control" id="senha" required placeholder="Digite sua senha">
+                            <input type="password" class="form-control" name="senha" required placeholder="Digite sua senha">
                         </div>
-                        <button type="button" class="btn btn-danger" onclick="acesso()">Acessar</a></button>
+                        <button id="btn_entrar" class="btn btn-danger" >Acessar</a></button>
                     </form>
                     <br>
+                    <img src="aguarde.gif" id="img_aguarde" style="display: none;">
+    
+    <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+        Usuário e/ou senha inválidos!
+    </div>
+    <br>
                     <p>Ainda não é cliente? <Br> <a href="cadastro.html" class="btn-warning">Cadastre-se aqui</a></p>
                 </div>
             </div>
@@ -173,15 +179,51 @@
 
 </html>
 <script>
-    function acesso() {
-        if (email.value == "bandtec@hotmail.com" && senha.value == "1234") {
 
-            location.href = "area/cozinhando.html";
-        } else if (email.value == "" && senha.value == "") {
+    verificarAutenticacao();
 
-            alert('Informe seu email e sua senha cadastrada');
-        } else {
-            alert('Usuário ou senha invalidos.')
+    function verificarAutenticacao() {
+        if (sessionStorage.usuario_bandtec != undefined) {
+            window.location.href = '/area/cozinhando.html';
         }
     }
+
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login)); // transforma tudo o que esta no formulario no jason
+        fetch("/usuarios/entrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                response.json().then(function (resposta) {
+
+                    sessionStorage.usuario_bandtec = resposta.nome_usuario;
+                    verificarAutenticacao();
+
+                });
+            } else {
+
+                console.log('Erro de login!');
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
 </script>
