@@ -93,8 +93,11 @@
                         <input type="text" name="telefone" class="form-control phone-ddd-mask" placeholder="Digite seu telefone" required>
                         <input type="text" name="cpf" class="form-control cpf-mask" placeholder="Digite seu CPF" required>
                         <input type="date" name="data_nasc" placeholder="Digite sua data de nascimento" required>
-                        <input type="radio" name="sexo" value="M">Masculino
-                        <input type="radio" name="sexo" value="F">Feminino <br>
+          <div class="flex">
+            <p class="textopreto flexItem">  <input type="radio" class="formRadio" name="sexo" value="M"> Masculino</p> 
+            <p class="textopreto flexItem"> <input type="radio" class="formRadio" name="sexo" value="F"> Feminimo</p> 
+          </div>
+
                         <input type="button" name="prev" class="prev acao" value="Anterior">
                         <input type="button" name="next" class="next acao" value="Próximo">
                     </fieldset>

@@ -19,6 +19,19 @@
     font-weight: 400;
 }
 
+.textopreto {
+    color:black;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexItem {
+    flex: 1;
+
+}
+
 
 /* Seção Benefícios */
 
@@ -183,6 +196,15 @@ body {
     background: #b41111;
     color: white;
     text-shadow: 0 1px 0;
+}
+
+#formulario .formRadio {
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    font: 14px "Quicksand Oblique";
+    margin: 0;
 }
 
 .imglogo{
