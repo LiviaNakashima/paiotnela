@@ -19,8 +19,6 @@ create table Receita(
 id_receita int primary key identity(100,1),
 nome_receita varchar(20),
 quantidade int,
-temp_minima int,
-temp_maxima int,
 modo_preparo text,
 fk_usuario int,
 foreign key (fk_usuario) references Usuario (id_usuario)
@@ -50,18 +48,18 @@ values ('Leonardo Matias','1999/03/31',1234567897,0364875,'Rua Silva Castro, 289
         ('Regino Trindade','2000/07/20',6547567897,6584875,'Rua Paulo Caminhares, 1129','Zona Norte',945787412,'regino@bandtec.com.br',14785,'M'),
         ('Lucas Silva','2001/09/22',12645667897,0363695,'Av. Dom Pedro I, 2589','Zona Sul',963587458,'lucas@bandtec.com.br',54698,'M'),
         ('Larissa Hessel','2000/02/07',1202147897,0302175,'Rua Haddok Lobo, 89','Zona Leste',987458745,'larissa@bandtec.com.br',69851,'F'),
-        ('Michelle Azevedo','1991/02/13',1298747897,0347175,'Rua Lazáro Fernado, 1489','Zona Oeste',964728745,'michelle@bandtec.com.br',69847,'F'),
+        ('Michelle Azevedo','1991/02/13',1298747897,0347175,'Rua LazÃ¡ro Fernado, 1489','Zona Oeste',964728745,'michelle@bandtec.com.br',69847,'F'),
         (n'Livia Nakashima','2000/05/20',1234145197,0363075,'Av Paulista, 2879','Zona Sul',983698745,'livia@bandtec.com.br',78851,'F');
 
 insert into Receita
-values ('Arroz', 300, 90, 100, 'Coloque meio litro de água na panela, misture um pouco de sal e azeite, e jogue o arroz dentro. Depois disso, mexa um pouco, e deixa a água secar. Prove um pouco antes de terminar, e caso esteja duro, deixe mais um tempo na água.',2),
-('Feijão', 500, 250, 315, 'Coloque o feijão na panela, junto com a água (para cada xícara de feijão, use 3 de água). Tampe a panela, e deixe ela durante 30 min cozinhando. Após esse tempo, desligue o fogo, e deixe por mais 10 min.',4),
-('Frango', 250, 115, 160, 'Se o frango for cozido, corte-o em cubos, e coloque dentro da panela. Cubra-o com água, e deixe durante 39 minutos fazendo. Caso seja frito, corte em filés, e coloque direto na panela. Assim que dourar um lado, vire para dourar o outro.',5),
-('Sopa', 800, 200, 430, 'Coloque os legumes, junto com o macarrão de sopa dentro da panela. Acrescente água, e deixe cozinhar. Após 40 minutos, experimente para ver se o tempero pegou, ou se precisa de mais legumes.',2);
+values ('Arroz', 300, 'Coloque meio litro de Ã¡gua na panela, misture um pouco de sal e azeite, e jogue o arroz dentro. Depois disso, mexa um pouco, e deixa a Ã¡gua secar. Prove um pouco antes de terminar, e caso esteja duro, deixe mais um tempo na Ã¡gua.',2),
+('FeijÃ£o', 500, 'Coloque o feijÃ£o na panela, junto com a Ã¡gua (para cada xÃ­cara de feijÃ£o, use 3 de Ã¡gua). Tampe a panela, e deixe ela durante 30 min cozinhando. ApÃ³s esse tempo, desligue o fogo, e deixe por mais 10 min.',4),
+('Frango', 250, 'Se o frango for cozido, corte-o em cubos, e coloque dentro da panela. Cubra-o com Ã¡gua, e deixe durante 39 minutos fazendo. Caso seja frito, corte em filÃ©s, e coloque direto na panela. Assim que dourar um lado, vire para dourar o outro.',5),
+('Sopa', 800, 'Coloque os legumes, junto com o macarrÃ£o de sopa dentro da panela. Acrescente Ã¡gua, e deixe cozinhar. ApÃ³s 40 minutos, experimente para ver se o tempero pegou, ou se precisa de mais legumes.',2);
 
 insert into Panela
 values ('Panela de Leonardo', 'Vermelha', '10L', 'A', 1),
-	('Panela do Reginão', 'Amarelo', '10L','A',2),
+	('Panela do ReginÃ£o', 'Amarelo', '10L','A',2),
 	('Minha panela','Preto','5L','B',3),
 	('Panela Top','Rosa', '15L','C',4),
 	('Panela da Michelle','Azul','20L','B',5),
