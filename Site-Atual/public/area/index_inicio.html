@@ -243,7 +243,7 @@
 
                         <p>  <label for="formControlRange">Para quantas pessoas? </label></p>
                         <label id="valor_pessoas">0</label>
-                          <input type="range" min="0" max="10"class="form-control-range" id="pessoas" value="0" onchange="atualizar_interface()"> <br>
+                          <input type="range" min="0" max="10"class="form-control-range" id="pessoas" value="0" onchange="tempo_preparo()"> <br>
                         </form>
                         <!-- resultado do cálculo -->
                               <div id="resultado">
@@ -274,7 +274,7 @@
                             
                               <div class="form-row flex">
                                   <div class="form-group flexItem">
-                                  <label for="inputEmail4">Alimento</label>
+                                  <label for="inputEmail4">Nome da Receita / Alimento</label>
                                   <input type="text" class="form-control" id="nome_receita" placeholder="Ex: Arroz">
                                 </div>
                                 <div class="form-group flexItem">
@@ -288,14 +288,8 @@
                                 <textarea class="form-control" id="modo_preparo" rows="3" placeholder="Ex: Coloque meia xícara de arroz na panela, e uma de arroz..."></textarea>
                               </div>
                               
-                             
-                                  <div class="form-group">
-                                  <label for="inputEmail4">Nome do mestre cuca</label>
-                                  <input type="text" class="form-control" id="nome_usuario" placeholder="Ex: Regino Trindade">
-                                </div>
-                      
                                                     
-                              <button type="submit" class="btn btn-primary">Cadastrar</button>
+                              <button type="submit" class="btn btn-primary" onclick="cadastrar_receita(nome_receita.value, Number(quantidade.value), modo_preparo.value)" >Cadastrar</button>
                             </form>
                       </div>
                   
@@ -361,15 +355,10 @@
 </html>
 
 <script>
-  function atualizar_interface() {
 
-                
-valor_pessoas.innerHTML = pessoas.value;
-var x = Number(pessoas.value) * 4;
-real.innerHTML = `${x.toFixed(0)} minutos`;
-}
+  // VALIDACAO DO USUARIO NA BARRA DE NAVEGACAO  
 
-var usuario;
+  var usuario;
 
 verificarAutenticacao();
 
@@ -387,6 +376,40 @@ function logoff() {
     sessionStorage.removeItem('usuario_bandtec');
     verificarAutenticacao();
 }
+
+// SIMULACAO DE TEMPO DE PREPARO DE UMA RECEITA
+
+  function tempo_preparo() {
+
+                
+valor_pessoas.innerHTML = pessoas.value;
+var x = Number(pessoas.value) * 4;
+real.innerHTML = `${x.toFixed(0)} minutos`;
+}
+
+
+
+function cadastrar_receita(titulo, qtdd, modo) {
+
+  var receitas[];
+  
+  if (titulo != '' && qtdd > 0 || modo != '' || usuario != '') {
+      receita.push({
+        // id_receita: auto complete?
+        nome_receita: titulo,
+        quantidade: qtdd,
+        modo_preparo: modo,
+        // fk_usuario: usuario
+      })
+    } else {
+      alert('Preencha todos os campos da receita!')
+    }
+  }
+
+    
+
+                  
+
 
 
 </script>
