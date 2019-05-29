@@ -82,20 +82,19 @@
                         <input type="text" name="email" placeholder="Digite seu email" required> <br>
                         <input type="text" name="cemail" placeholder="Confirme seu email" required> <br>
                         <input type="password" name="senha" placeholder="Digite sua senha" required> <br>
-                        <input type="password" name="senha" placeholder="Confirme sua senha" required> <br>
+                        <input type="password" name="csenha" placeholder="Confirme sua senha" required> <br>
                         <input type="button" name="next" class="next acao" value="Próximo">
                     </fieldset>
 
                     <fieldset>
                         <h2>Dados pessoais</h2>
-                        <input type="text" name="primeiro" placeholder="Digite seu nome" required> <br>
-                        <input type="text" name="sobrenome" placeholder="Digite seu sobrenome" required> <br>
+                        <input type="text" name="primeiro" placeholder="Digite seu nome completo" required> <br>
                         <input type="text" name="telefone" class="form-control phone-ddd-mask" placeholder="Digite seu telefone" required>
                         <input type="text" name="cpf" class="form-control cpf-mask" placeholder="Digite seu CPF" required>
                         <input type="date" name="data_nasc" placeholder="Digite sua data de nascimento" required>
           <div class="flex">
             <p class="textopreto flexItem">  <input type="radio" class="formRadio" name="sexo" value="M"> Masculino</p> 
-            <p class="textopreto flexItem"> <input type="radio" class="formRadio" name="sexo" value="F"> Feminimo</p> 
+            <p class="textopreto flexItem"> <input type="radio" class="formRadio" name="sexo" value="F"> Feminino</p> 
           </div>
 
                         <input type="button" name="prev" class="prev acao" value="Anterior">
@@ -105,12 +104,8 @@
                     <fieldset>
                         <h2>Endereço de entrega</h2>
                         <input type="text" name="cep" class="form-control cep-mask" placeholder="Digite seu CEP" required>
-                        <input type="text" name="estado" placeholder="Digite seu estado" required>
-                        <input type="text" name="cidade" placeholder="Digite sua cidade" required>
-                        <input type="text" name="bairro" placeholder="Digite seu bairro" required>
-                        <input type="text" name="rua" placeholder="Digite sua rua" required>
-                        <input type="number" name="numero" placeholder="Digite o número do endereço" min='0' required>
-                        <input type="text" name="complemento" placeholder="Digite seu complemento" required> <br>
+                        <input type="text" name="endereco" placeholder="Digite seu endereço completo" required>
+                        <input type="text" name="zona" placeholder="Digite sua Zona" required>
                         <input type="button" name="prev" class="prev acao" value="Anterior">
                         <input type="submit" name="next" class="acao" value="Cadastrar">
                     </fieldset>

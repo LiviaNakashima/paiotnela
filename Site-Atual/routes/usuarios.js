@@ -7,7 +7,7 @@ var banco = require('../app-banco');
 router.post('/entrar', function (req, res, next) {
 
   banco.conectar().then(() => {
-    console.log(`Chegou p/ email: ${JSON.stringify(req.body)}`);
+    console.log(`Chegou p/ login: ${JSON.stringify(req.body)}`);
     var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
     var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login
     if (login == undefined || senha == undefined) {
@@ -35,6 +35,64 @@ router.post('/entrar', function (req, res, next) {
   });
 
 });
+
+
+router.post('/cadastrar', function (req, res, next) {
+
+  var nome;
+  var login;
+  var senha;
+  var cadastro_valido = false;
+
+  banco.conectar().then(() => {
+    console.log(`Chegou p/ cadastro: ${JSON.stringify(req.body)}`);
+	nome = req.body.nome; // depois de .body, use o nome (name) do campo em seu formulário de login
+    login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
+    senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login
+    if (login == undefined || senha == undefined || nome == undefined) {
+	  // coloque a frase de erro que quiser aqui. Ela vai aparecer no formulário de cadastro
+      throw new Error(`Dados de cadastro não chegaram completos: ${login} / ${senha} / ${nome}`);
+    }
+    return banco.sql.query(`select count(*) as contagem from Usuario where email = '${login}'`);
+  }).then(consulta => {
+
+	if (consulta.recordset[0].contagem >= 1) {
+		res.status(400).send(`Já existe usuário com o login "${login}"`);
+		return;
+    } else {
+		console.log('válido!');
+		cadastro_valido = true;
+	}
+
+  }).catch(err => {
+
+    var erro = `Erro no cadastro: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+	  if (cadastro_valido) {		  
+			  
+		banco.sql.query(`insert into Usuario (nome_usuario, email, senha) values ('${nome}','${login}','${senha}')`).then(function() {
+			console.log(`Cadastro criado com sucesso!`);
+			res.sendStatus(201); 
+			// status 201 significa que algo foi criado no back-end, 
+				// no caso, um registro de usuário ;)		
+		}).catch(err => {
+
+			var erro = `Erro no cadastro: ${err}`;
+			console.error(erro);
+			res.status(500).send(erro);
+
+		}).finally(() => {
+			banco.sql.close();
+		});
+	  }
+  });
+  
+
+});
+
 
 // não mexa nesta linha!
 module.exports = router;

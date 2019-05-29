@@ -180,7 +180,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="mr-2 d-none d-lg-inline text-light small"> <b id="b_usuario"></b></span>
+                <span class="mr-2 d-none d-lg-inline text-light small"> <b id="b_usuario"></b></span>
                                    <!-- nome que aparece em no login -->
 
                   <img class="img-profile rounded-circle" src="bot.jpg">
@@ -328,7 +328,7 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Selecione "Logout" se quiser sair da sessão.</div>
+        <div class="modal-body">Clique em "Sair" se você estiver preparado para terminar sua sessão.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <button class="btn btn-secondary" type="button" data-dismiss="modal" onclick="logoff()">Sair</button>
@@ -377,6 +377,7 @@ function logoff() {
     verificarAutenticacao();
 }
 
+
 // SIMULACAO DE TEMPO DE PREPARO DE UMA RECEITA
 
   function tempo_preparo() {
@@ -391,7 +392,7 @@ real.innerHTML = `${x.toFixed(0)} minutos`;
 
 function cadastrar_receita(titulo, qtdd, modo) {
 
-  var receitas[];
+  var receitas =[];
   
   if (titulo != '' && qtdd > 0 || modo != '' || usuario != '') {
       receita.push({
