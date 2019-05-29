@@ -218,9 +218,6 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-white">Bem Vinda, <b id="b_usuario2"></b>!</h1>
 
-        
-   
-
           <!-- LINHA -->
           <div class="row">
 
@@ -233,7 +230,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                      <p><label class="my-1 mr-2">Escolha o prato:</label></p>
+                      <label class="my-1 mr-2">Escolha o prato:</label>
                       <select class="custom-select my-1 mr-sm-2" id="alimento">
                         <option selected>Escolha...</option>
                         <option value="50">Feijão carioca</option>
@@ -242,24 +239,20 @@
                       </select>
 <a href="receitas.html">Ir para a página de receitas</a>
 <br><br>
-                        <p>  <label for="formControlRange">Para quantas pessoas?</label></p>
+
+
+                        <p>  <label for="formControlRange">Para quantas pessoas? </label></p>
                         <label id="valor_pessoas">0</label>
-                          <input type="range" min="0" max="25"class="form-control-range" id="pessoas" value="0" onchange="atualizar_interface()"> <br>
+                          <input type="range" min="0" max="10"class="form-control-range" id="pessoas" value="0" onchange="atualizar_interface()"> <br>
                         </form>
-                        <br>
-                        <div class="my-2"></div>
-                        <a href="#" class="btn btn-secondary btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-arrow-right"></i>
-                          </span>
-                          <span class="text">Calcular quantidade e tempo</span>
-                        </a>
-                        <br><br>
                         <!-- resultado do cálculo -->
                               <div id="resultado">
                                   <div class="card bg-info text-white shadow">
                                     <div class="card-body">
-                                  {função}
+                                      Tempo de preparo: 
+                                 <div id="real"></div>
+
+                          
                                     </div>                                    </div>
                                   </div>
                                   </div>                  </div>
@@ -372,8 +365,8 @@
 
                 
 valor_pessoas.innerHTML = pessoas.value;
-var x = Number(pessoas.value) * 250.20;
-real.innerHTML = `${x.toFixed(2)}`;
+var x = Number(pessoas.value) * 4;
+real.innerHTML = `${x.toFixed(0)} minutos`;
 }
 
 var usuario;
