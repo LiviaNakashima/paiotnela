@@ -14,6 +14,5 @@ Tutorial GitHub – Enviar Atualizações
 
 1.	Faça as alterações antes de enviar a atualização para o servidor remoto
 2.	Escreva “git add .”
-3.	Escreva “git diff” novamente
-4.	Escreva “git commit –m “mexi local”
-5.	Escreva “git push”, inform seu email e espere ser solicitada a senha, pode ser no cmd ou em um aplicativo externo.
+3.	Escreva “git commit –m “mexi local”
+4.	Escreva “git push”, inform seu email e espere ser solicitada a senha, pode ser no cmd ou em um aplicativo externo.
