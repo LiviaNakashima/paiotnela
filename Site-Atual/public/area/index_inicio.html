@@ -216,34 +216,20 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-white">Bem Vinda, ...!</h1>
+          <h1 class="h3 mb-2 text-white">Bem Vinda, <b id="b_usuario2"></b>!</h1>
 
-          <!-- caixa -->
-          <div class="card shadow mb-4 border-bottom-success bottom_color">
-            <!-- titulo da caixa -->
-            <div class="card-header py-3 color_card">
-            <h6 class="m-0 font-weight-bold text-primary text_color">Seu arroz esta quaaase pronto...</h6>
-          </div>
-          <!-- corpo da caixa -->
-          <div class="card-body color_card2">
-            <h4 class="small font-weight-bold"> Ainda esta meio duro! <span class="float-right">Faltam 10 minutos</span></h4>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated progressbarcolor" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-            </div>
-        </div>
-      </div>
+        
+   
 
-
-
-          <!-- Content Row -->
+          <!-- LINHA -->
           <div class="row">
 
-            <!-- Pie Chart -->
+
             <div class="col-xl-4 col-lg-5">
               <div class="card shadow mb-4 border-left-danger ">
                 <!-- Título do card -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">O que mais vamos cozinhar hoje?</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">O que vamos cozinhar hoje?</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -273,18 +259,54 @@
                               <div id="resultado">
                                   <div class="card bg-info text-white shadow">
                                     <div class="card-body">
-                                  RESULTADO
+                                  {função}
                                     </div>                                    </div>
                                   </div>
                                   </div>                  </div>
                 </div>
-          </div>
+
 
             <!-- Area Chart -->
+                        <!-- Pie Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                          <div class="card shadow mb-4 border-left-danger ">
+                            <!-- Título do card -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                              <h6 class="m-0 font-weight-bold text-primary">Cadastre sua receita!</h6>
+                            </div>
+                            <!-- Card Body -->
 
-
-        <!-- /.container-fluid -->
-
+                      <div class="card-body">
+                          <form>
+                            
+                              <div class="form-row flex">
+                                  <div class="form-group flexItem">
+                                  <label for="inputEmail4">Alimento</label>
+                                  <input type="text" class="form-control" id="nome_receita" placeholder="Ex: Arroz">
+                                </div>
+                                <div class="form-group flexItem">
+                                <label for="inputPassword4">Quantidade (g)</label>
+                                <input type="number" class="form-control" id="quantidade" placeholder="Ex: 250">
+                              </div>
+                            </div>
+                           
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Modo de Preparo</label>
+                                <textarea class="form-control" id="modo_preparo" rows="3" placeholder="Ex: Coloque meia xícara de arroz na panela, e uma de arroz..."></textarea>
+                              </div>
+                              
+                             
+                                  <div class="form-group">
+                                  <label for="inputEmail4">Nome do mestre cuca</label>
+                                  <input type="text" class="form-control" id="nome_usuario" placeholder="Ex: Regino Trindade">
+                                </div>
+                      
+                                                    
+                              <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            </form>
+                      </div>
+                  
+                  </div>
       </div>
       <!-- End of Main Content -->
 
@@ -292,7 +314,7 @@
       <footer class="sticky-footer colorfooter">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Paiotnela 2019</span>
           </div>
         </div>
       </footer>
@@ -314,12 +336,12 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Vai partir?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Selecione "Logout" se quiser sair da sessão.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <button class="btn btn-secondary" type="button" data-dismiss="modal" onclick="logoff()">Sair</button>
@@ -328,6 +350,7 @@
     </div>
   </div>
 
+  
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -363,6 +386,7 @@ function verificarAutenticacao() {
         window.location.href = '../login.html';
     } else {
         b_usuario.innerHTML = usuario;
+        b_usuario2.innerHTML = usuario;
     }
 }
 

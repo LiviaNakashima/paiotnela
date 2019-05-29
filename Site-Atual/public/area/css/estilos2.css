@@ -42,3 +42,14 @@
 .text_color_rec{
     color: white!important;
 }
+
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexItem {
+    flex: 1;
+
+}
