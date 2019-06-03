@@ -270,36 +270,45 @@
                             <!-- Card Body -->
 
                       <div class="card-body">
-                          <form>
+                          <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                             
                               <div class="form-row flex">
                                   <div class="form-group flexItem">
                                   <label for="inputEmail4">Nome da Receita / Alimento</label>
-                                  <input type="text" class="form-control" name="nome_receita"  style="width: 260px;" placeholder="Ex: Arroz">
+                                  <input type="text" class="form-control" id="c1" name="nome_receita"  style="width: 260px;" placeholder="Ex: Arroz">
                                 </div>
                                 <div class="form-group flexItem">
                                 <label for="inputPassword4">Quantidade (g)</label>
-                                <input type="number" class="form-control" name="quantidade" style="width: 260px;"placeholder="Ex: 250">
+                                <input type="number" class="form-control" id="c2" name="quantidade" style="width: 260px;"placeholder="Ex: 250">
                               </div>
                             </div>
                             <div class="form-row flex">
                                 <div class="form-group flexItem">
                             <label for="inputPassword4">Temperatura Minima (°C)</label>
-                                <input type="number" class="form-control" name="temp_minima" style="width: 160px;" placeholder="Ex: 75">
+                                <input type="number" class="form-control" id="c3" name="temp_minima" style="width: 160px;" placeholder="Ex: 75">
                               </div>
                               <div class="form-group flexItem">
                                 <label for="inputPassword4">Temperatura Máxima (°C)</label>
-                                <input type="number" class="form-control" name="temp_maxima" style="width: 160px;" placeholder="Ex: 125">
+                                <input type="number" class="form-control" id="c4" name="temp_maxima" style="width: 160px;" placeholder="Ex: 125">
                               </div>
                               
                               </div>
                               <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Modo de Preparo</label>
-                                <textarea class="form-control" id="modo_preparo" rows="3" placeholder="Ex: Coloque meia xícara de arroz na panela, e uma de arroz..."></textarea>
+                                <textarea class="form-control" id="c5" name="modo_preparo" rows="3" placeholder="Ex: Coloque meia xícara de arroz na panela, e uma de arroz..."></textarea>
                               </div>
                               
-                                                    
-                              <button type="submit" class="btn btn-primary" onclick="cadastrar_receita(nome_receita.value, Number(quantidade.value), modo_preparo.value)" >Cadastrar</button>
+                              <button id="btn_entrar" class="bt_css">Cadastrar</button> <br>
+                              <img src="aguarde.gif" id="img_aguarde" style="display: none;">
+                                <br>
+                              <div id="div_erro" style="background-color: sandybrown; text-align: center; color: maroon; display: none;">
+                               Erro no cadastro
+                              </div> 
+                              <div id="div_acerto" style="background-color: rgb(94, 255, 0); text-align: center; color: rgb(18, 126, 27); display: none;">
+                                Erro no cadastro
+                               </div> 
+                                                
+                              <!-- <button type="submit" class="btn btn-primary" onclick="cadastrar_receita(nome_receita.value, Number(quantidade.value), modo_preparo.value)" >Cadastrar</button> -->
                             </form>
                       </div>
                   
@@ -387,6 +396,53 @@ function logoff() {
     verificarAutenticacao();
 }
 
+//cadastro 
+function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastro_receita", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                // window.location.href='index_inicio.html';
+                div_erro.innerHTML = '';
+                div_acerto.innerHTML = "Cadastro efetuado com sucesso! Confira na tabela receitas.";
+                finalizar_aguardar();
+                c1.value = '';
+                c2.value = '';
+                c3.value = '';
+                c4.value = '';
+                c5.value = '';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+        div_acerto.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+        div_acerto.style.display='block';
+    }
 
 // SIMULACAO DE TEMPO DE PREPARO DE UMA RECEITA
 

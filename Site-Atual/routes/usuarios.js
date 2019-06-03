@@ -108,6 +108,67 @@ router.post('/cadastrar', function (req, res, next) {
 
 });
 
+router.post('/cadastro_receita', function (req, res, next) {
+
+  // var nome;
+   var nome;
+   var quantidade;
+   var minimo;
+   var maximo;
+   var preparo;
+     var cadastro_valido = false;
+ 
+   banco.conectar().then(() => {
+     console.log(`Chegou p/ cadastro: ${JSON.stringify(req.body)}`);
+     nome = req.body.nome_receita; // depois de .body, use o nome (name) do campo em seu formulário de login
+     quantidade = req.body.quantidade;
+     minimo = req.body.temp_minima;
+     maximo = req.body.temp_maxima;
+     preparo = req.body.modo_preparo;
+     if (nome == undefined ) {
+     // coloque a frase de erro que quiser aqui. Ela vai aparecer no formulário de cadastro
+       throw new Error(`Dados de cadastro não chegaram completos: ${nome} `);
+     }
+     return banco.sql.query(`select count(*) as contagem from Receita where nome_receita = '${nome}'`);
+   }).then(consulta => {
+ 
+   if (consulta.recordset[0].contagem >= 1) {
+     res.status(400).send(`Já existe essa receita com o nome "${nome}"`);
+     return;
+     } else {
+     console.log('válido!');
+     cadastro_valido = true;
+   }
+ 
+   }).catch(err => {
+ 
+     var erro = `Erro no cadastro: ${err}`;
+     console.error(erro);
+     res.status(500).send(erro);
+ 
+   }).finally(() => {
+     if (cadastro_valido) {		  
+         
+     banco.sql.query(`insert into Receita (nome_receita, quantidade, temp_minima, temp_maxima, modo_preparo) values ('${nome}','${quantidade}','${minimo}','${maximo}','${preparo}')`).then(function() {
+       console.log(`Cadastro criado com sucesso!`);
+       res.sendStatus(201); 
+       // status 201 significa que algo foi criado no back-end, 
+         // no caso, um registro de usuário ;)		
+     }).catch(err => {
+ 
+       var erro = `Erro no cadastro: ${err}`;
+       console.error(erro);
+       res.status(500).send(erro);
+ 
+     }).finally(() => {
+       banco.sql.close();
+     });
+     }
+   });
+   
+ 
+ });
+ 
 
 // não mexa nesta linha!
 module.exports = router;
