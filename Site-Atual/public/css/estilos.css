@@ -81,14 +81,14 @@ body {
     font-family: "Quicksand Oblique";
 }
 
-#formulario {
+.formulario {
     width: 500px;
     margin: 40px auto;
     text-align: center;
     position: relative;
 }
 
-#formulario h2 {
+.formulario h2 {
     font: 22px "Quicksand Oblique";
     color: black;
     width: 100%;
@@ -97,7 +97,7 @@ body {
     margin-bottom: 4%;
 }
 
-#formulario fieldset {
+.formulario fieldset {
     background: white;
     border: 0 none;
     border-radius: 1px;
@@ -111,12 +111,12 @@ body {
     position: relative;
 }
 
-#formulario fieldset:not(:first-of-type) {
+.formulario fieldset:not(:first-of-type) {
     display: none;
 }
 
-#formulario input,
-#formulario textarea {
+.formulario input,
+.formulario textarea {
     padding: 10px;
     border: 1px solid #b41111;
     border-radius: 5px;
@@ -129,7 +129,7 @@ body {
     margin-bottom: 10px;
 }
 
-#formulario .acao {
+.formulario .acao {
     width: 100px;
     background: #b41111;
     color: white;
@@ -140,19 +140,38 @@ body {
     margin-right: 5%;
 }
 
-#formulario .acao:hover {
+.formulario .bt_css {
+    width: 100px;
+    background: #b41111;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 12px;
+    float: left;
+    margin-right: 5%;
+    border-radius: 8px;
+}
+.formulario .bt_css:hover {
     background: #ee2f2f;
     border: 1px solid #ee2f2f;
     cursor: pointer;
 }
 
-#formulario #progress {
+.formulario .acao:hover {
+    background: #ee2f2f;
+    border: 1px solid #ee2f2f;
+    cursor: pointer;
+}
+
+.formulario #progress {
     margin-bottom: 30px;
     overflow: hidden;
     counter-reset: step;
 }
 
-#formulario #progress li {
+.formulario #progress li {
     list-style-type: none;
     color: white;
     font-weight: bold;
@@ -163,7 +182,7 @@ body {
     position: relative;
 }
 
-#formulario #progress li:before {
+.formulario #progress li:before {
     content: counter(step);
     counter-increment: step;
     width: 20px;
@@ -177,7 +196,7 @@ body {
     margin: 0 auto 10px auto;
 }
 
-#formulario #progress li:after {
+.formulario #progress li:after {
     content: '';
     width: 100%;
     background: white;
@@ -188,18 +207,18 @@ body {
     z-index: 1;
 }
 
-#formulario #progress li:first-child:after {
+.formulario #progress li:first-child:after {
     content: none;
 }
 
-#formulario #progress li.active:before,
-#formulario #progress li.active:after {
+.formulario #progress li.active:before,
+.formulario #progress li.active:after {
     background: #b41111;
     color: white;
     text-shadow: 0 1px 0;
 }
 
-#formulario .formRadio {
+.formulario .formRadio {
     padding: 0;
     outline: none;
     box-sizing: border-box;

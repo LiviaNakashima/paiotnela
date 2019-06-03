@@ -71,48 +71,61 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="row">
             <div class="col">
-                <form id="formulario">
-                    <ul id="progress">
+                <form id="form_cadastro" class="formulario" method="post" onsubmit="return cadastrar()">
+                      <ul id="progress">
                         <li class="active">Dados para acesso</li>
                         <li>Dados pessoais</li>
                         <li>Endereço de entrega</li>
-                    </ul>
-                    <fieldset>
+                    </ul>  
+                     <fieldset> 
                         <h2>Dados para acesso</h2>
-                        <input type="text" name="email" placeholder="Digite seu email" required> <br>
-                        <input type="text" name="cemail" placeholder="Confirme seu email" required> <br>
-                        <input type="password" name="senha" placeholder="Digite sua senha" required> <br>
-                        <input type="password" name="csenha" placeholder="Confirme sua senha" required> <br>
+                        <input type="text" name="email" placeholder="Digite seu email" > <br>
+                         <input type="text" name="cemail" placeholder="Confirme seu email" > <br> 
+                        <input type="password" name="senha" placeholder="Digite sua senha" > <br>
+                         <input type="password" name="csenha" placeholder="Confirme sua senha" > <br>  
                         <input type="button" name="next" class="next acao" value="Próximo">
-                    </fieldset>
-
-                    <fieldset>
+                            
+                     </fieldset>
+ 
+                     <fieldset>
                         <h2>Dados pessoais</h2>
-                        <input type="text" name="primeiro" placeholder="Digite seu nome completo" required> <br>
-                        <input type="text" name="telefone" class="form-control phone-ddd-mask" placeholder="Digite seu telefone" required>
-                        <input type="text" name="cpf" class="form-control cpf-mask" placeholder="Digite seu CPF" required>
-                        <input type="date" name="data_nasc" placeholder="Digite sua data de nascimento" required>
-          <div class="flex">
-            <p class="textopreto flexItem">  <input type="radio" class="formRadio" name="sexo" value="M"> Masculino</p> 
-            <p class="textopreto flexItem"> <input type="radio" class="formRadio" name="sexo" value="F"> Feminino</p> 
-          </div>
+                        <input type="text" name="nome" placeholder="Digite seu nome completo" > <br>
+                        <input type="text" name="telefone" class="form-control phone-ddd-mask" placeholder="Digite seu telefone" >
+                        <input type="text" name="cpf" class="form-control cpf-mask" placeholder="Digite seu CPF" >
+                        <input type="date" name="data_nasc" placeholder="Digite sua data de nascimento" >
+                        <div class="flex">
+                        <p class="textopreto flexItem">  <input type="radio" class="formRadio" name="sexo" value="M"> Masculino</p> 
+                        <p class="textopreto flexItem"> <input type="radio" class="formRadio" name="sexo" value="F"> Feminino</p> 
+                        </div>
 
                         <input type="button" name="prev" class="prev acao" value="Anterior">
-                        <input type="button" name="next" class="next acao" value="Próximo">
+                        <input type="button" name="next" class="next acao" value="Próximo"><br>
                     </fieldset>
-
                     <fieldset>
                         <h2>Endereço de entrega</h2>
-                        <input type="text" name="cep" class="form-control cep-mask" placeholder="Digite seu CEP" required>
-                        <input type="text" name="endereco" placeholder="Digite seu endereço completo" required>
-                        <input type="text" name="zona" placeholder="Digite sua Zona" required>
+                        <input type="text" name="cep" class="form-control cep-mask" placeholder="Digite seu CEP" >
+                        <input type="text" name="endereco" placeholder="Digite seu endereço completo" >
+                        <select class="custom-select mr-sm-2" name="zona" >
+                            <option selected>Informe sua zona...</option>
+                            <option value="Zona Sul">Zona Sul</option>
+                            <option value="Zona Norte">Zona Norte</option>
+                            <option value="Zona Leste">Zona Leste</option>
+                            <option value="Zona Oeste">Zona Oeste</option>
+                          </select>
+                          <br><br><br>
                         <input type="button" name="prev" class="prev acao" value="Anterior">
-                        <input type="submit" name="next" class="acao" value="Cadastrar">
-                    </fieldset>
+                        <button id="btn_entrar" class="bt_css">Cadastrar</button> <br>
+                        <img src="aguarde.gif" id="img_aguarde" style="display: none;">
+                          <br>
+                        <div id="div_erro" style="background-color: sandybrown; text-align: center; color: maroon; display: none;">
+                         Erro no cadastro
+                        </div>
+                       
+                    </fieldset>  
 
-                    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
-                    <script type="text/javascript" src="js/functions.js"></script>
-                    <form action="cadconcluido.html"></form>
+                       <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+                    <script type="text/javascript" src="js/functions.js"></script>   
+                    <!-- <form action="cadconcluido.html"></form> -->
                 </form>
             </div>
         </div>
@@ -197,3 +210,43 @@
 </body>
 
 </html>
+<script>
+
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+</script>

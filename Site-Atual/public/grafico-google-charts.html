@@ -33,7 +33,7 @@
     function verificarAutenticacao() {
         usuario = sessionStorage.usuario_bandtec;
         if (usuario == undefined) {
-            window.location.href = 'loginyoshi.html';
+            window.location.href = 'login.html';
         } else {
             b_usuario.innerHTML = usuario;
         }
@@ -126,9 +126,9 @@
                         // dos atributos que vem no JSON 
                         // que gerou na consulta ao banco de dados
                         dados.addRow([
-                            registro.data_hora, 
-                            registro.temp_sensor, 
-                            registro.umid_sensor
+                        registro.data_hora, 
+                           registro.temp_sensor, 
+                           registro.umid_sensor
                         ]);
                     }
 

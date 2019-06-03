@@ -1,4 +1,4 @@
-TABELAS NO AZURE
+﻿TABELAS NO AZURE
 
 create table Usuario(
 id_usuario int primary key identity,
@@ -19,6 +19,8 @@ create table Receita(
 id_receita int primary key identity(100,1),
 nome_receita varchar(20),
 quantidade int,
+temp_minima int,
+temp_maxima int,
 modo_preparo text,
 fk_usuario int,
 foreign key (fk_usuario) references Usuario (id_usuario)

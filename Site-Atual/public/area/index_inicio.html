@@ -275,14 +275,24 @@
                               <div class="form-row flex">
                                   <div class="form-group flexItem">
                                   <label for="inputEmail4">Nome da Receita / Alimento</label>
-                                  <input type="text" class="form-control" id="nome_receita" placeholder="Ex: Arroz">
+                                  <input type="text" class="form-control" name="nome_receita"  style="width: 260px;" placeholder="Ex: Arroz">
                                 </div>
                                 <div class="form-group flexItem">
                                 <label for="inputPassword4">Quantidade (g)</label>
-                                <input type="number" class="form-control" id="quantidade" placeholder="Ex: 250">
+                                <input type="number" class="form-control" name="quantidade" style="width: 260px;"placeholder="Ex: 250">
                               </div>
                             </div>
-                           
+                            <div class="form-row flex">
+                                <div class="form-group flexItem">
+                            <label for="inputPassword4">Temperatura Minima (°C)</label>
+                                <input type="number" class="form-control" name="temp_minima" style="width: 160px;" placeholder="Ex: 75">
+                              </div>
+                              <div class="form-group flexItem">
+                                <label for="inputPassword4">Temperatura Máxima (°C)</label>
+                                <input type="number" class="form-control" name="temp_maxima" style="width: 160px;" placeholder="Ex: 125">
+                              </div>
+                              
+                              </div>
                               <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Modo de Preparo</label>
                                 <textarea class="form-control" id="modo_preparo" rows="3" placeholder="Ex: Coloque meia xícara de arroz na panela, e uma de arroz..."></textarea>

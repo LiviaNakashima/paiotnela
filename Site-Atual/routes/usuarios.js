@@ -39,19 +39,34 @@ router.post('/entrar', function (req, res, next) {
 
 router.post('/cadastrar', function (req, res, next) {
 
-  var nome;
+ // var nome;
   var login;
   var senha;
+  var nome;
+  var telefone;
+  var cpf;
+  var sexo;
+  var data;
+  var cep;
+  var zona;
+  var endereco;
   var cadastro_valido = false;
 
   banco.conectar().then(() => {
     console.log(`Chegou p/ cadastro: ${JSON.stringify(req.body)}`);
-	nome = req.body.nome; // depois de .body, use o nome (name) do campo em seu formulário de login
-    login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
+    nome = req.body.nome; // depois de .body, use o nome (name) do campo em seu formulário de login
+    telefone = req.body.telefone;
+    cpf = req.body.cpf;
+    cep = req.body.cep;
+    endereco = req.body.endereco;
+    zona = req.body.zona;
+    data = req.body.data_nasc;
+    sexo = req.body.sexo;
+    login = req.body.email; // depois de .body, use o nome (name) do campo em seu formulário de login
     senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login
-    if (login == undefined || senha == undefined || nome == undefined) {
+    if (login == undefined || senha == undefined ) {
 	  // coloque a frase de erro que quiser aqui. Ela vai aparecer no formulário de cadastro
-      throw new Error(`Dados de cadastro não chegaram completos: ${login} / ${senha} / ${nome}`);
+      throw new Error(`Dados de cadastro não chegaram completos: ${login} / ${senha} `);
     }
     return banco.sql.query(`select count(*) as contagem from Usuario where email = '${login}'`);
   }).then(consulta => {
@@ -73,7 +88,7 @@ router.post('/cadastrar', function (req, res, next) {
   }).finally(() => {
 	  if (cadastro_valido) {		  
 			  
-		banco.sql.query(`insert into Usuario (nome_usuario, email, senha) values ('${nome}','${login}','${senha}')`).then(function() {
+		banco.sql.query(`insert into Usuario (nome_usuario, dt_nascimento, cpf, cep, endereco, zona, telefone, email, senha, sexo) values ('${nome}','${data}','${cpf}','${cep}','${endereco}','${zona}','${telefone}','${login}','${senha}','${sexo}')`).then(function() {
 			console.log(`Cadastro criado com sucesso!`);
 			res.sendStatus(201); 
 			// status 201 significa que algo foi criado no back-end, 

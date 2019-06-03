@@ -28,7 +28,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Area Chart Example
-var ctx = document.getElementById("myAreaChart");
+var ctx = document.getElementById("myAreaCharts");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
@@ -116,3 +116,76 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+
+function obterDadosGrafico() {
+
+  // neste JSON tem que ser 'labels', 'datasets' etc, 
+  // porque é o padrão do Chart.js
+  var dados = {
+      labels: [],
+      datasets: [
+          {
+              yAxisID: 'y-temperatura',
+              label: 'Temperatura',
+              borderColor: window.chartColors.red,
+              backgroundColor: window.chartColors.red,
+              fill: false,
+              data: []
+          },
+          {
+              yAxisID: 'y-umidade',
+              label: 'Umidade',
+              borderColor: window.chartColors.blue,
+              backgroundColor: window.chartColors.blue,
+              fill: false,
+              data: []
+          }
+      ]
+  };
+
+  fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+          response.json().then(function (resposta) {
+
+              console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+              resposta.reverse();
+
+              for (i = 0; i < resposta.length; i++) {
+                  var registro = resposta[i];
+              
+                  // aqui, após 'registro.' use os nomes 
+                  // dos atributos que vem no JSON 
+                  // que gerou na consulta ao banco de dados
+
+                  dados.labels.push(registro.data_hora);
+
+                  dados.datasets[0].data.push(registro.temp_sensor);
+                  dados.datasets[1].data.push(registro.umid_sensor);
+              }
+              console.log(JSON.stringify(dados));
+
+              div_aguarde.style.display = 'none';
+
+              plotarGrafico(dados);
+          });
+      } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+      }
+  })
+      .catch(function (error) {
+          console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+}
+
+// só altere aqui se souber o que está fazendo!
+function plotarGrafico(dados) {
+  console.log('iniciando plotagem do gráfico...');
+
+  var ctx = myAreaChart.getContext('2d');
+  window.grafico_linha = Chart.Line(ctx, {
+      data: dados,
+      options: configurarGrafico()
+  });
+}
