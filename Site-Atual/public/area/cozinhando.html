@@ -18,10 +18,9 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos2.css">
-   <!-- script do google charts -->
-   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+   <!-- scripts do Chart.js -->
    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
-    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+   <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
 
 </head>
 
@@ -238,7 +237,7 @@
       <!--  Começo de uma linha (row) -->
       <div class="row">
         <!-- uma div com metade do tamanho da tela -->
-<div class="col-lg-6">
+<div class="col-lg-12">
       <!-- caixa temperatura -->
       <div class="card shadow mb-4 border-left-danger  ">
         <!-- titulo da caixa -->
@@ -252,13 +251,14 @@
             <h6 class="m-0 font-weight-bold text-primary">Gráfico de temperatura</h6>
           </div>
           <div class="card-body">
-            <div class="chart-area">
-                <canvas id="myAreaChart"></canvas>
-                <!-- <div id="div_grafico">Dados sendo obtidos...</div> -->
+            <div class="chart-area"  style="width:80%; height: auto;">
+             <div id="grafico_temp" >
+                <canvas id="canvas_grafico"></canvas>
+             </div>
+                
+             
+               
 <!--   GRAFICO DE TEMPERATURA -->
-<div id="div_temperatura">Temperatura sendo obtida...</div>
-
-
 
             </div>
           </div>
@@ -301,8 +301,9 @@
   </div>
   <!-- fim da caixa -->
 </div>
+
 <!-- uma div com metade do tamanho da tela -->
-<div class="col-lg-6">
+<div class="col-lg-12">
   <!-- caixa umidade -->
   <div class="card shadow mb-4 border-left-warning">
     <!-- titulo da caixa -->
@@ -318,7 +319,7 @@
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
-                        <canvas id="myAreaCharts"></canvas>
+                        <!-- <canvas id="myAreaCharts"></canvas> -->
 
 <!--   GRAFICO DE UMIDADE -->
 
@@ -428,12 +429,12 @@
 
   
   <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+  <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
   <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="js/demo/chart-bar-demo.js"></script>
-  <script src="js/demo/chart-areas-demo.js"></script>
+  <!-- <script src="js/demo/chart-area-demo.js"></script> -->
+  <!-- <script src="js/demo/chart-pie-demo.js"></script> -->
+  <!-- <script src="js/demo/chart-bar-demo.js"></script> -->
+  <!-- <script src="js/demo/chart-areas-demo.js"></script> -->
   
 
 </body>
@@ -460,11 +461,41 @@
       verificarAutenticacao();
   }
 
-    // só mexer se quiser alterar o tempo de atualização
+  //CONF GRAFICO
+  Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+function number_format(number, decimals, dec_point, thousands_sep) {
+  // *     example: number_format(1234.56, 2, ',', ' ');
+  // *     return: '1 234,56'
+  number = (number + '').replace(',', '').replace(' ', '');
+  var n = !isFinite(+number) ? 0 : +number,
+    prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+    sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+    dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+    s = '',
+    toFixedFix = function(n, prec) {
+      var k = Math.pow(10, prec);
+      return '' + Math.round(n * k) / k;
+    };
+  // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+  s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+  if (s[0].length > 3) {
+    s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+  }
+  if ((s[1] || '').length < prec) {
+    s[1] = s[1] || '';
+    s[1] += new Array(prec - s[1].length + 1).join('0');
+  }
+  return s.join(dec);
+}
+// /CONF GRAFICO
+
+   // só mexer se quiser alterar o tempo de atualização
     // ou se souber o que está fazendo!
     function atualizarGrafico() {
         obterDadosGrafico();
-        setTimeout(atualizarGrafico, 10000);
+        setTimeout(atualizarGrafico, 2000);
     }
 
     // altere aqui as configurações do gráfico
@@ -472,13 +503,22 @@
     function configurarGrafico() {
         var configuracoes = {
             responsive: true,
-            animation: exibiu_grafico ? false : {duration: 1500},
+                       animation: exibiu_grafico ? false : {duration: 1500},
             hoverMode: 'index',
             stacked: false,
+            
             title: {
                 display: true,
                 text: 'Histórico recente de temperatura e umidade'
             },
+            layout: {
+      padding: {
+        left: 10,
+        right: 25,
+        top: 25,
+        bottom: 0
+      }
+    },
             scales: {
                 yAxes: [{
                     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
@@ -519,14 +559,17 @@
                     borderColor: window.chartColors.red,
                     backgroundColor: window.chartColors.red,
                     fill: false,
-                    data: []
-                },
-                {
-                    yAxisID: 'y-umidade',
-                    label: 'Umidade',
-                    borderColor: window.chartColors.blue,
-                    backgroundColor: window.chartColors.blue,
-                    fill: false,
+                    lineTension: 0.3,
+      backgroundColor: "rgba(255, 100, 000, 0.05)",
+      borderColor: "#ff471a",
+      pointRadius: 3,
+      pointBackgroundColor: "red",
+      pointBorderColor: "red",
+      pointHoverRadius: 3,
+      pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+      pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+      pointHitRadius: 10,
+      pointBorderWidth: 2,
                     data: []
                 }
             ]
@@ -550,11 +593,11 @@
                         dados.labels.push(registro.data_hora);
 
                         dados.datasets[0].data.push(registro.temp_sensor);
-                        dados.datasets[1].data.push(registro.umid_sensor);
+                        // dados.datasets[1].data.push(registro.umid_sensor);
                     }
                     console.log(JSON.stringify(dados));
 
-                    div_aguarde.style.display = 'none';
+                    // grafico_temp.style.display = 'none';
 
                     plotarGrafico(dados);
                 });
