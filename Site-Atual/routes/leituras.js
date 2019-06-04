@@ -33,6 +33,34 @@ router.get('/ultimas', function (req, res, next) {
 });
 
 
+router.get('/receitas', function (req, res, next) {
+  console.log(banco.conexao);
+  banco.conectar().then(() => {
+    var limite_linhas = 5;
+    return banco.sql.query(`select top ${limite_linhas} 
+                            nome_receita,
+                            quantidade, 
+                            modo_preparo, 
+                            fk_usuario
+                            from Receita order by nome_receita`);
+  }).then(consulta => {
+
+    console.log(`Resultado da consulta: ${consulta.recordset}`);
+    res.send(consulta.recordset);
+
+  }).catch(err => {
+
+    var erro = `Erro na leitura dos últimos registros: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+    banco.sql.close();
+  });
+
+});
+
+
 router.get('/estatisticas', function (req, res, next) {
   console.log(banco.conexao);
 
