@@ -246,23 +246,18 @@
       </div>
       <!-- corpo da caixa -->
       <div class="card-body" >
-        <div class="card shadow mb-4">
+          <div id="grafico_temp" >
+              <canvas id="canvas_grafico"></canvas>
+           </div>
+        <!-- <div class="card shadow mb-4">
+          asdas
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Gráfico de temperatura</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Gráfico de temperatura e umidade</h6>
           </div>
           <div class="card-body">
-            <div class="chart-area"  style="width:80%; height: auto;">
-             <div id="grafico_temp" >
-                <canvas id="canvas_grafico"></canvas>
-             </div>
-                
-             
-               
-<!--   GRAFICO DE TEMPERATURA -->
-
-            </div>
+            
           </div>
-        </div>
+        </div> -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Tabela de Temperatura</h6>
@@ -297,22 +292,57 @@
               </div>
             </div>
           </div>
+
+          <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Tabela de Umidade</h6>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr class="p-3 mb-2 bg-warning text-white">
+                        <th>MIN</th>
+                        <th>1°Q</th>
+                        <th>MÉDIA</th>
+                        <th>MEDIANA</th>
+                        <th>3°Q</th>
+                        <th>MÁX</th>
+                        
+                      </tr>
+                    </thead>
+                   
+                    <tbody>
+                      <tr>
+                        <td>60,00</td>
+                        <td>64,00</td>
+                        <td>67,80</td>
+                        <td>67,75</td>
+                        <td>69,70</td>
+                        <td>77,90</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
     </div>
   </div>
   <!-- fim da caixa -->
 </div>
 
 <!-- uma div com metade do tamanho da tela -->
-<div class="col-lg-12">
+<!-- <div class="col-lg-12"> -->
   <!-- caixa umidade -->
-  <div class="card shadow mb-4 border-left-warning">
+  <!-- <div class="card shadow mb-4 border-left-warning"> -->
     <!-- titulo da caixa -->
-    <div class="card-header py-3 ">
+    <!-- <div class="card-header py-3 ">
     <h6 class="m-0 font-weight-bold text-primary">Nada de comida seca!</h6>
-  </div>
+  </div> -->
   <!-- corpo da caixa -->
-  <div class="card-body">
- <!-- Bar Chart -->
+  <!-- <div class="card-body">
+
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Gráfico de Umidade</h6>
@@ -322,9 +352,9 @@
                         <div id="grafico_umid" >
                             <canvas id="canvas_grafico2"></canvas>
                          </div>
-                        <!-- <canvas id="myAreaCharts"></canvas> -->
 
-<!--   GRAFICO DE UMIDADE -->
+
+
       </div>
               <div class="card shadow mb-4">
                   <div class="card-header py-3">
@@ -362,14 +392,14 @@
                 </div>
     </div>
 </div>
-</div>
+</div> -->
 <!-- fim da caixa -->
-</div>
-</div>
+<!-- </div> -->
+<!-- </div> -->
 
 
         <!-- /.fechamentos container fluid -->
-    </div>
+    <!-- </div> -->
     </div>
     </div>
   </div>
@@ -460,120 +490,14 @@
   }
     // só mexer se quiser alterar o tempo de atualização
     // ou se souber o que está fazendo!
-     function atualizarGrafico() {
-         obterDadosGrafico();
-         obterDadosGrafico2();
-     setTimeout(atualizarGrafico, 2000);
+    function atualizarGrafico() {
+        obterDadosGrafico();
+        setTimeout(atualizarGrafico, 10000);
     }
 
-//     // altere aqui as configurações do gráfico
-//     // (tamanhos, cores, textos, etc)
-     function configurarGrafico() {
-         var configuracoes = {
-             responsive: true,
-           animation: exibiu_grafico ? false : {duration: 1500},
-            hoverMode: 'index',
-           stacked: false,
-             title: {
-                 display: true,
-                 text: 'Histórico recente de temperatura '
-             },
-            
-             scales: {
-                 yAxes: [{
-                     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                     display: true,
-                     position: 'left',
-                     id: 'y-temperatura',
-                 
-                 //     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                 //     display: true,
-                 //     position: 'right',
-                 //     id: 'y-umidade',
-
-                     // grid line settings
-                     gridLines: {
-                         drawOnChartArea: false, // only want the grid lines for one axis to show up
-                     },
-                 }],
-             }
-         };
-
-         exibiu_grafico = true;
-
-         return configuracoes;
-     }
-    
-     function obterDadosGrafico() {
-
-// // neste JSON tem que ser 'labels', 'datasets' etc, 
-// // porque é o padrão do Chart.js
- var dados = {
-     labels: [],
-     datasets: [
-         {
-             yAxisID: 'y-temperatura',
-             label: 'Temperatura',
-             borderColor: window.chartColors.red,
-             backgroundColor: window.chartColors.red,
-             fill: false,
-             data: []
-          }
-         // {
-         //     yAxisID: 'y-umidade',
-         //     label: 'Umidade',
-         //     borderColor: window.chartColors.blue,
-         //     backgroundColor: window.chartColors.blue,
-         //     fill: false,
-         //     data: []
-         // }
-     ]
- };
-
- fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
-     if (response.ok) {
-        response.json().then(function (resposta) {
-             console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-            resposta.reverse();
-             for (i = 0; i < resposta.length; i++) {
-                 var registro = resposta[i];
-            
-                 // aqui, após 'registro.' use os nomes 
-                 // dos atributos que vem no JSON 
-                 // que gerou na consulta ao banco de dados
-
-                 dados.labels.push(registro.data_hora);
-
-                 dados.datasets[0].data.push(registro.temp_sensor);
-                 // dados.datasets[1].data.push(registro.umid_sensor);
-             }
-             console.log(JSON.stringify(dados));
-
-             // div_aguarde.style.display = 'none';
-
-             plotarGrafico(dados);
-         });
-     } else {
-         console.error('Nenhum dado encontrado ou erro na API');
-     }
- })
-     .catch(function (error) {
-         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-     });
-
- }
-
- function plotarGrafico(dados) {
-// console.log('iniciando plotagem do gráfico...');
-
- var ctx = canvas_grafico.getContext('2d');
- window.grafico_linha = Chart.Line(ctx, {
-       data: dados,
-   options: configurarGrafico()
- });
- }
-
-    function configurarGrafico2() {
+    // altere aqui as configurações do gráfico
+    // (tamanhos, cores, textos, etc)
+    function configurarGrafico() {
         var configuracoes = {
             responsive: true,
             animation: exibiu_grafico ? false : {duration: 1500},
@@ -581,20 +505,19 @@
             stacked: false,
             title: {
                 display: true,
-                text: 'Histórico recente de umidade '
+                text: 'Histórico recente de temperatura e umidade'
             },
             
             scales: {
-                 yAxes: [
-                //     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                //     display: true,
-                //     position: 'left',
-                //     id: 'y-temperatura',
-                //  },
-                 {
+                yAxes: [{
                     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
                     position: 'left',
+                    id: 'y-temperatura',
+                }, {
+                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                    display: true,
+                    position: 'right',
                     id: 'y-umidade',
 
                     // grid line settings
@@ -609,83 +532,80 @@
 
         return configuracoes;
     }
+
     // altere aqui como os dados serão exibidos
     // e como são recuperados do BackEnd
-    
+    function obterDadosGrafico() {
 
-    function obterDadosGrafico2() {
+        // neste JSON tem que ser 'labels', 'datasets' etc, 
+        // porque é o padrão do Chart.js
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: 'y-temperatura',
+                    label: 'Temperatura',
+                    borderColor: window.chartColors.red,
+                    backgroundColor: window.chartColors.red,
+                    fill: false,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-umidade',
+                    label: 'Umidade',
+                    borderColor: window.chartColors.blue,
+                    backgroundColor: window.chartColors.blue,
+                    fill: false,
+                    data: []
+                }
+            ]
+        };
 
-// neste JSON tem que ser 'labels', 'datasets' etc, 
-// porque é o padrão do Chart.js
-var dados = {
-    labels: [],
-    datasets: [
-        // {
-        //     yAxisID: 'y-temperatura',
-        //     label: 'Temperatura',
-        //     borderColor: window.chartColors.red,
-        //     backgroundColor: window.chartColors.red,
-        //     fill: false,
-        //     data: []
-        //  }
-         {
-             yAxisID: 'y-umidade',
-             label: 'Umidade',
-             borderColor: window.chartColors.yellow,
-             backgroundColor: window.chartColors.yellow,
-           fill: false,
-             data: []
-         }
-    ]
-};
+        fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
 
-fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
-    if (response.ok) {
-        response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
 
-            resposta.reverse();
+                    for (i = 0; i < resposta.length; i++) {
+                        var registro = resposta[i];
+                    
+                        // aqui, após 'registro.' use os nomes 
+                        // dos atributos que vem no JSON 
+                        // que gerou na consulta ao banco de dados
 
-            for (i = 0; i < resposta.length; i++) {
-                var registro = resposta[i];
-            
-                // aqui, após 'registro.' use os nomes 
-                // dos atributos que vem no JSON 
-                // que gerou na consulta ao banco de dados
+                        dados.labels.push(registro.data_hora);
+                        dados.datasets[0].data.push(registro.temp_sensor);
+                        dados.datasets[1].data.push(registro.umid_sensor);
+                    }
+                    console.log(JSON.stringify(dados));
 
-                dados.labels.push(registro.data_hora);
+                    // div_aguarde.style.display = 'none';
 
-                // dados.datasets[0].data.push(registro.temp_sensor);
-                 dados.datasets[0].data.push(registro.umid_sensor);
+                    plotarGrafico(dados);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
             }
-            console.log(JSON.stringify(dados));
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
 
-            // div_aguarde.style.display = 'none';
-
-            plotarGrafico2(dados);
-        });
-    } else {
-        console.error('Nenhum dado encontrado ou erro na API');
     }
-})
-    .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
-
-}
 
     // só altere aqui se souber o que está fazendo!
-   
-
-    function plotarGrafico2(dados) {
+    function plotarGrafico(dados) {
         console.log('iniciando plotagem do gráfico...');
 
-        var ctx = canvas_grafico2.getContext('2d');
+        var ctx = canvas_grafico.getContext('2d');
         window.grafico_linha = Chart.Line(ctx, {
             data: dados,
-            options: configurarGrafico2()
+            options: configurarGrafico()
         });
     }
+
 </script>
 

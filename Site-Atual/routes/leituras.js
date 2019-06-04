@@ -11,8 +11,8 @@ router.get('/ultimas', function (req, res, next) {
     return banco.sql.query(`select top ${limite_linhas} 
                             id_evento as id_nome_loko, 
                             data_hora,
-                            temp_sensor, 
-                            umid_sensor, 
+                            temp_sensor,
+                            umid_sensor,
                             FORMAT(data_hora,'HH:mm:ss') as momento 
                             from Evento order by id_evento desc`);
   }).then(consulta => {
@@ -33,19 +33,22 @@ router.get('/ultimas', function (req, res, next) {
 });
 
 
+
+
 router.get('/receitas', function (req, res, next) {
   console.log(banco.conexao);
   banco.conectar().then(() => {
-    var limite_linhas = 5;
-    return banco.sql.query(`select top ${limite_linhas} 
-                            nome_receita,
-                            quantidade, 
-                            modo_preparo, 
-                            fk_usuario
+    // var limite_linhas = 5;
+    return banco.sql.query(`select
+                            nome_receita as nome,
+                            quantidade as qnt,
+                            temp_minima as min,
+                            temp_maxima as max,
+                            modo_preparo as modo                          
                             from Receita order by nome_receita`);
   }).then(consulta => {
 
-    console.log(`Resultado da consulta: ${consulta.recordset}`);
+    console.log(`Resultado da consulta:  ${consulta.recordset}`);
     res.send(consulta.recordset);
 
   }).catch(err => {
@@ -95,6 +98,39 @@ router.get('/estatisticas', function (req, res, next) {
   });
 
 });
+
+
+router.get('/tempo-real', function (req, res, next) {
+  console.log(banco.conexao);
+
+  var estatisticas = {
+    temperatura: 0,
+    umidade: 0
+  };
+
+  banco.conectar().then(() => {
+    return banco.sql.query(`
+        select top 1 temp_sensor, umid_sensor from Evento order by id_evento desc
+        `);
+  }).then(consulta => {
+
+    estatisticas.temperatura = consulta.recordset[0].temp_sensor;
+    estatisticas.umidade = consulta.recordset[0].umid_sensor;
+    console.log(`Tempo real: ${JSON.stringify(estatisticas)}`);
+
+    res.send(estatisticas);
+
+  }).catch(err => {
+
+    var erro = `Erro na leitura dos Evento de tempo real: ${err}`;
+    console.error(erro);
+    res.status(500).send(erro);
+
+  }).finally(() => {
+    banco.sql.close();
+  });
+});
+
 
 
 // não mexa nesta linha!

@@ -78,7 +78,7 @@ function registrar_leitura(temperatura, umidade) {
         console.log('Execução em curso. Aguardando 7s...');
         setTimeout(() => {
             registrar_leitura(temperatura, umidade);
-        }, 7000);
+        }, 2000);
         return;
     }
 
@@ -112,7 +112,7 @@ iniciar_escuta();
 //dados aleatórios: 3 linhas abaixo:
 //  setInterval(function() {
 //      registrar_leitura(Math.random()*100, Math.random()*200)
-//  }, 500);
+// }, 500);
 
 //abrir a pasta deste arquivo via git bash e executar 
 //npm i
