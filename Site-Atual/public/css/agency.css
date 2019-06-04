@@ -109,7 +109,7 @@ img::-moz-selection {
 }
 
 #mainNav {
-  background-color: #212529;
+background-color: #212529;
 }
 
 #mainNav .navbar-toggler {
@@ -452,7 +452,7 @@ header.masthead .intro-text .intro-heading {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #fed136;
+  background-color:#ee2f2f;
 }
 
 .timeline > li .timeline-image h4 {
