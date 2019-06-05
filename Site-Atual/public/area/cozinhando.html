@@ -849,22 +849,22 @@
         } 
         // -------------------------------------------------
         if (umidade >= limites.max_umidade) {
-            mensagem += ' Sua comida está bem umida! <br>';
+            mensagem7 += ' Sua comida está bem umida! <br>';
         } 
         if (umidade >= limites.bem_umidade && umidade < limites.max_umidade) {
-            mensagem += ' Sua comida está ficando bem umida! <br>';
+            mensagem6 += ' Sua comida está ficando bem umida! <br>';
         } 
         if (umidade > limites.ponto_umidade && umidade < limites.bem_umidade) {
-            mensagem += ' A umidade está aumentando! <br>';
+            mensagem5 += ' A umidade está aumentando! <br>';
         } 
         if (umidade == limites.ponto_umidade) {
-            mensagem += ' Umidade perfeita! <br>';
+            mensagem4 += ' Umidade perfeita! <br>';
         } 
         if (umidade < limites.ponto_umidade && umidade >= limites.mal_umidade) {
-            mensagem += ' Comida com pouca umidade! <br>';
+            mensagem3 += ' Comida com pouca umidade! <br>';
         } 
         if (umidade < limites.mal_umidade && umidade > limites.min_umidade) {
-            mensagem += ' Sua comida ainda está seca! <br>';
+            mensagem2 += ' Sua comida ainda está seca! <br>';
         } 
         if (umidade <= limites.min_umidade) {
             mensagem += ' Sua comida está seca! <br>';
