@@ -778,24 +778,32 @@
           var mensagem = '';
         if (temp_sensor >= limites.max_temperatura) {
             mensagem += ' Sua comida queimou! <br>';
+            mensagem.style.color = '#FE2E2E';
         } 
         if (temp_sensor >= limites.bem_temperatura && temp_sensor < limites.max_temperatura) {
             mensagem += ' Sua comida está queimando! <br>';
+            mensagem.style.color = '#FE9A2E';
         } 
         if (temp_sensor > limites.ponto_temperatura && temp_sensor < limites.bem_temperatura) {
             mensagem += ' Sua comida está bem passada! <br>';
+            mensagem.style.color = '#FFFF00';
         } 
         if (temp_sensor == limites.ponto_temperatura) {
             mensagem += ' Sua comida está ao ponto! <br>';
+            mensagem.style.color = '##00FF00';
         } 
         if (temp_sensor < limites.ponto_temperatura && temp_sensor >= limites.mal_temperatura) {
             mensagem += ' Sua comida está mal passada! <br>';
+            mensagem.style.color = '#2EFE9A';
         } 
         if (temp_sensor < limites.mal_temperatura && temp_sensor > limites.min_temperatura) {
             mensagem += ' Sua comida ainda está um pouco crua! <br>';
+            mensagem.style.color = '#58ACFA';
         } 
         if (temp_sensor <= limites.min_temperatura) {
             mensagem += ' Sua comida está crua! <br>';
+            mensagem.style.color = '#0040FF';
+
         } 
         // -------------------------------------------------
         if (umid_sensor >= limites.max_umidade) {
