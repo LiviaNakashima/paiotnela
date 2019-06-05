@@ -24,7 +24,38 @@
    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
    <style>
       /* Classes CSS para exemplos de alertas */
-      .alerta {
+      .queimado {
+        background-color: rgb(247, 11, 11);
+          color:black;
+          width: 30%;
+      }
+      .queimando {
+        background-color: rgb(255, 145, 0);
+          color:black;
+          width: 30%;
+      }
+      .bem_passado {
+        background-color: rgb(229, 255, 0);
+          color:black;
+          width: 30%;
+      }
+      .ao_ponto {
+        background-color: rgb(58, 218, 18);
+          color:black;
+          width: 30%;
+      }
+      .mal_passado {
+        background-color: rgba(0, 255, 170, 0.945);
+          color:black;
+          width: 30%;
+      }
+      .quase_cru {
+        background-color: rgb(0, 255, 255);
+          color:black;
+          width: 30%;
+      }
+      .cru {
+        background-color: rgb(0, 26, 255);
           color:black;
           width: 30%;
       }
@@ -266,7 +297,13 @@
             
           </div>
         </div> -->
-        <div id="div_alerta" class="alerta"></div>
+        <div id="div_alerta1" class="queimado"></div>
+        <div id="div_alerta2" class="queimado"></div>
+        <div id="div_alerta3" class="bem_passado"></div>
+        <div id="div_alerta4" class="ao_ponto"></div>
+        <div id="div_alerta5" class="mal_passado"></div>
+        <div id="div_alerta6" class="quase_cru"></div>
+        <div id="div_alerta7" class="cru"></div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Tabela de Temperatura</h6>
@@ -775,33 +812,39 @@
         }
         else{
           var mensagem = '';
+          var mensagem2 = '';
+          var mensagem3 = '';
+          var mensagem4 = '';
+          var mensagem5 = '';
+          var mensagem6 = '';
+          var mensagem7 = '';
         if (temperatura >= limites.max_temperatura) {
             mensagem += ' Sua comida queimou! <br>';
-            mensagem.style.backgroundColor = "red";
+            // mensagem.style.backgroundColor = "red";
             
         } 
         if (temperatura >= limites.bem_temperatura && temperatura < limites.max_temperatura) {
-            mensagem += ' Sua comida está queimando! <br>';
-             mensagem.style.backgroundColor = "orange";
+            mensagem2 += ' Sua comida está queimando! <br>';
+            //  mensagem.style.backgroundColor = "orange";
         } 
         if (temperatura > limites.ponto_temperatura && temperatura < limites.bem_temperatura) {
-            mensagem += ' Sua comida está bem passada! <br>';
+            mensagem3 += ' Sua comida está bem passada! <br>';
             // mensagem.style.backgroundColor = "#FFFF00";
         } 
         if (temperatura == limites.ponto_temperatura) {
-            mensagem += ' Sua comida está ao ponto! <br>';
+            mensagem4 += ' Sua comida está ao ponto! <br>';
             // mensagem.style.backgroundColor = "#40FF00";
         } 
         if (temperatura < limites.ponto_temperatura && temperatura >= limites.mal_temperatura) {
-            mensagem += ' Sua comida está mal passada! <br>';
+            mensagem5 += ' Sua comida está mal passada! <br>';
             // mensagem.style.backgroundColor = "#A9F5A9";
         } 
         if (temperatura < limites.mal_temperatura && temperatura > limites.min_temperatura) {
-            mensagem += ' Sua comida ainda está um pouco crua! <br>';
+            mensagem6 += ' Sua comida ainda está um pouco crua! <br>';
             // mensagem.style.backgroundColor = "#2ECCFA";
         } 
         if (temperatura <= limites.min_temperatura) {
-            mensagem += ' Sua comida está crua! <br>';
+            mensagem7 += ' Sua comida está crua! <br>';
             // mensagem.style.backgroundColor = "#2E64FE";
         } 
         // -------------------------------------------------
@@ -827,7 +870,13 @@
             mensagem += ' Sua comida está seca! <br>';
         } 
                 
-        div_alerta.innerHTML = mensagem;
+        div_alerta1.innerHTML = mensagem;
+        div_alerta2.innerHTML = mensagem2;
+        div_alerta3.innerHTML = mensagem3;
+        div_alerta4.innerHTML = mensagem4;
+        div_alerta5.innerHTML = mensagem5;
+        div_alerta6.innerHTML = mensagem6;
+        div_alerta7.innerHTML = mensagem7;
       }
     }
 
