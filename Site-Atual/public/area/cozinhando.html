@@ -729,7 +729,7 @@
                 response.json().then(function (resposta) {
                     
                   
-                    alertar(resposta.temp_sensor, resposta.umid_sensor);
+                    alertar(resposta.temperatura, resposta.umidade);
                     
                 });
             } else {
@@ -743,7 +743,7 @@
 
     }
                                  
-    function alertar(temp_sensor, umid_sensor) {
+    function alertar(temperatura, umidade) {
       var t_maxima = Number(tb_maximo.value);
       var t_bem = Number(tb_bem.value);
       var t_ponto = Number(tb_ponto.value);
@@ -776,47 +776,47 @@
         }
         else{
           var mensagem = '';
-        if (temp_sensor >= limites.max_temperatura) {
+        if (temperatura >= limites.max_temperatura) {
             mensagem += ' Sua comida queimou! <br>';
         } 
-        if (temp_sensor >= limites.bem_temperatura && temp_sensor < limites.max_temperatura) {
+        if (temperatura >= limites.bem_temperatura && temperatura < limites.max_temperatura) {
             mensagem += ' Sua comida está queimando! <br>';
         } 
-        if (temp_sensor > limites.ponto_temperatura && temp_sensor < limites.bem_temperatura) {
+        if (temperatura > limites.ponto_temperatura && temperatura < limites.bem_temperatura) {
             mensagem += ' Sua comida está bem passada! <br>';
         } 
-        if (temp_sensor == limites.ponto_temperatura) {
+        if (temperatura == limites.ponto_temperatura) {
             mensagem += ' Sua comida está ao ponto! <br>';
         } 
-        if (temp_sensor < limites.ponto_temperatura && temp_sensor >= limites.mal_temperatura) {
+        if (temperatura < limites.ponto_temperatura && temperatura >= limites.mal_temperatura) {
             mensagem += ' Sua comida está mal passada! <br>';
         } 
-        if (temp_sensor < limites.mal_temperatura && temp_sensor > limites.min_temperatura) {
+        if (temperatura < limites.mal_temperatura && temperatura > limites.min_temperatura) {
             mensagem += ' Sua comida ainda está um pouco crua! <br>';
         } 
-        if (temp_sensor <= limites.min_temperatura) {
+        if (temperatura <= limites.min_temperatura) {
             mensagem += ' Sua comida está crua! <br>';
         } 
         // -------------------------------------------------
-        if (umid_sensor >= limites.max_umidade) {
+        if (umidade >= limites.max_umidade) {
             mensagem += ' Sua comida está bem umida! <br>';
         } 
-        if (umid_sensor >= limites.bem_umidade && umid_sensor < limites.max_umidade) {
+        if (umidade >= limites.bem_umidade && umidade < limites.max_umidade) {
             mensagem += ' Sua comida está ficando bem umida! <br>';
         } 
-        if (umid_sensor > limites.ponto_umidade && umid_sensor < limites.bem_umidade) {
+        if (umidade > limites.ponto_umidade && umidade < limites.bem_umidade) {
             mensagem += ' A umidade está aumentando! <br>';
         } 
-        if (umid_sensor == limites.ponto_umidade) {
+        if (umidade == limites.ponto_umidade) {
             mensagem += ' Umidade perfeita! <br>';
         } 
-        if (umid_sensor < limites.ponto_umidade && umid_sensor >= limites.mal_umidade) {
+        if (umidade < limites.ponto_umidade && umidade >= limites.mal_umidade) {
             mensagem += ' Comida com pouca umidade! <br>';
         } 
-        if (umid_sensor < limites.mal_umidade && umid_sensor > limites.min_umidade) {
+        if (umidade < limites.mal_umidade && umidade > limites.min_umidade) {
             mensagem += ' Sua comida ainda está seca! <br>';
         } 
-        if (umid_sensor <= limites.min_umidade) {
+        if (umidade <= limites.min_umidade) {
             mensagem += ' Sua comida está seca! <br>';
         } 
                 
