@@ -44,7 +44,7 @@ router.get('/receitas', function (req, res, next) {
                             quantidade as qnt,
                             temp_minima as min,
                             temp_maxima as max,
-                            modo_preparo as modo                          
+                            modo_preparo as modo                        
                             from Receita order by nome_receita`);
   }).then(consulta => {
 

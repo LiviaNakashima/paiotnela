@@ -24,8 +24,8 @@ void loop() {
  
    float h = dht.readHumidity();
 
-  float t = dht.readTemperature();
-
+  float t = dht.readTemperature()*2;
+  // DETALHE PORQUE TA MULTIPLICANDO POR DOIS
   float f = dht.readTemperature(true);
 
   float hif = dht.computeHeatIndex(f, h);

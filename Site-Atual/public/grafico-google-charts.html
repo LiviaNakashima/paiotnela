@@ -33,7 +33,7 @@
     function verificarAutenticacao() {
         usuario = sessionStorage.usuario_bandtec;
         if (usuario == undefined) {
-            window.location.href = 'login.html';
+            window.location.href = 'loginyoshi.html';
         } else {
             b_usuario.innerHTML = usuario;
         }
@@ -98,28 +98,7 @@
                 top: 20,
                 width: (largura - 10),
                 height: (altura - 90)
-            },
-            tooltips: {
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      titleMarginBottom: 10,
-      titleFontColor: '#6e707e',
-      titleFontSize: 14,
-      borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
-      displayColors: false,
-      intersect: false,
-      mode: 'index',
-      caretPadding: 10,
-      callbacks: {
-        label: function(tooltipItem, chart) {
-          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ':' + number_format(tooltipItem.yLabel) + ' ºC';
-        }
-      }
-    }
+            }
         };
 
         return configuracoes;
@@ -147,9 +126,9 @@
                         // dos atributos que vem no JSON 
                         // que gerou na consulta ao banco de dados
                         dados.addRow([
-                        registro.data_hora, 
-                           registro.temp_sensor, 
-                           registro.umid_sensor
+                            registro.data_hora, 
+                            registro.temp_sensor, 
+                            registro.umid_sensor
                         ]);
                     }
 
