@@ -122,6 +122,9 @@
                         <div id="div_erro" style="background-color: sandybrown; text-align: center; color: maroon; display: none;">
                          Erro no cadastro
                         </div>
+                        <div id="div_concluido" style="background-color: rgb(108, 244, 96); text-align: center; color: rgb(21, 116, 12); display: none;">
+                            Cadastro efetuado com sucesso! <a href="login.html">Clique aqui</a> e vá para a pagina de login para acessar sua conta!
+                           </div>
                        
                     </fieldset>  
 
@@ -236,8 +239,9 @@
         }).then(function (response) {
             
             if (response.ok) {
-
-                window.location.href='login.html';
+                
+                div_concluido.style.display='block';
+                // window.location.href='login.html';
 
             } else {
                 if((senha.value != csenha.value) && (email.value != cemail.value)){
