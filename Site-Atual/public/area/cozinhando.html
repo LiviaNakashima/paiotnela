@@ -770,11 +770,12 @@
         };
                
 
-        var mensagem = '';
+        
         if(t_maxima == 0 &&  t_bem == 0 && t_ponto==0 && t_mal==0 && t_minima == 0 && t_molhado == 0 &&  t_quasemolhado == 0 && t_ponto2==0 && t_quaseseco==0 && t_seco == 0){
           var mensagem = '';
         }
         else{
+          var mensagem = '';
         if (temperatura >= limites.max_temperatura) {
             mensagem += ' Sua comida queimou! <br>';
         } 
@@ -798,7 +799,7 @@
         } 
         // -------------------------------------------------
         if (temperatura >= limites.max_umidade) {
-            mensagem += ' Sua comida está bem umidae! <br>';
+            mensagem += ' Sua comida está bem umida! <br>';
         } 
         if (temperatura >= limites.bem_umidade && temperatura < limites.max_umidade) {
             mensagem += ' Sua comida está ficando bem umida! <br>';
