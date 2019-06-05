@@ -80,11 +80,12 @@
                     </ul>  
                      <fieldset> 
                         <h2>Dados para acesso</h2>
-                        <input type="text" name="email" placeholder="Digite seu email" > <br>
-                         <input type="text" name="cemail" placeholder="Confirme seu email" > <br> 
-                        <input type="password" name="senha" placeholder="Digite sua senha" > <br>
-                         <input type="password" name="csenha" placeholder="Confirme sua senha" > <br>  
-                        <input type="button" name="next" class="next acao" value="Próximo">
+                        <input type="text" id="email" name="email" placeholder="Digite seu email" required > <br>
+                         <input type="text" id="cemail" name="cemail" placeholder="Confirme seu email" required > <br> 
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required > <br>
+                         <input type="password" id="csenha" name="csenha" placeholder="Confirme sua senha" required> <br>  
+                        <div id="erro_acesso" style="background-color: sandybrown; color: maroon; display: none;"></div>
+                         <input type="button" name="next" class="next acao" value="Próximo">
                             
                      </fieldset>
  
@@ -226,7 +227,9 @@
                 window.location.href='login.html';
 
             } else {
-
+                if((senha.value != csenha.value) && (email.value != cemail.value)){
+                    erro_acesso.innerHTML = "Confirme seu email e senha corretamente";
+                }
                 console.log('Erro de cadastro!');
                 response.text().then(function (resposta) {
                     div_erro.innerHTML = resposta;
@@ -249,5 +252,7 @@
         img_aguarde.style.display='none';
         div_erro.style.display='block';
     }
+
+
 
 </script>
