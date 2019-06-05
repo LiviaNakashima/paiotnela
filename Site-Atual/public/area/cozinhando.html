@@ -782,7 +782,7 @@
         if (temperatura >= limites.bem_temperatura && temperatura < limites.max_temperatura) {
             mensagem += ' Sua comida está queimando! <br>';
         } 
-        if (temperatura >= limites.ponto_temperatura && temperatura < limites.bem_temperatura) {
+        if (temperatura > limites.ponto_temperatura && temperatura < limites.bem_temperatura) {
             mensagem += ' Sua comida está bem passada! <br>';
         } 
         if (temperatura == limites.ponto_temperatura) {
@@ -804,7 +804,7 @@
         if (temperatura >= limites.bem_umidade && temperatura < limites.max_umidade) {
             mensagem += ' Sua comida está ficando bem umida! <br>';
         } 
-        if (temperatura >= limites.ponto_umidade && temperatura < limites.umidade) {
+        if (temperatura > limites.ponto_umidade && temperatura < limites.bem_umidade) {
             mensagem += ' A umidade está aumentando! <br>';
         } 
         if (temperatura == limites.ponto_umidade) {
