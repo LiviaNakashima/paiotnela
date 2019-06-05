@@ -729,7 +729,7 @@
                 response.json().then(function (resposta) {
                     
                   
-                    alertar(registro.temp_sensor, registro.umid_sensor);
+                    alertar(resposta.temp_sensor, resposta.umid_sensor);
                     
                 });
             } else {
