@@ -22,7 +22,14 @@
    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script> -->
    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
+   <style>
+      /* Classes CSS para exemplos de alertas */
+      .alerta {
+          background-color:tomato;
+          color:black;
+          width: 30%;
+      }
+  </style>
 </head>
 
 <body id="page-top" onload="atualizarGrafico()" >
@@ -260,6 +267,7 @@
             
           </div>
         </div> -->
+        <div id="div_alerta" class="alerta"></div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Tabela de Temperatura</h6>
@@ -269,24 +277,22 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr class="p-3 mb-2 bg-danger text-white">
-                      <th>MIN</th>
-                      <th>1°Q</th>
-                      <th>MÉDIA</th>
-                      <th>MEDIANA</th>
-                      <th>3°Q</th>
-                      <th>MÁX</th>
+                      <th>Crua</th>
+                      <th>Mal Passado</th>
+                      <th>No Ponto</th>
+                      <th>Bem Passado</th>
+                      <th>Queimado</th>
                       
                     </tr>
                   </thead>
                  
                   <tbody>
                     <tr>
-                      <td>85,70</td>
-                      <td>92,45</td>
-                      <td>109,90</td>
-                      <td>99,48</td>
-                      <td>128,80</td>
-                      <td>156,90</td>
+                      <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_minimo">°C</td>
+                      <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_mal">°C</td>
+                      <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_ponto">°C</td>
+                      <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_bem">°C</td>
+                      <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_maximo">°C</td>
                     </tr>
                     
                   </tbody>
@@ -304,24 +310,24 @@
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                       <tr class="p-3 mb-2 bg-primary text-white">
-                        <th>MIN</th>
-                        <th>1°Q</th>
-                        <th>MÉDIA</th>
-                        <th>MEDIANA</th>
-                        <th>3°Q</th>
-                        <th>MÁX</th>
-                        
+                        <th>Seco Demais</th>
+                        <th>Pouco Umido</th>
+                        <th>No Ponto</th>
+                        <th>Um Pouco Umido</th>
+                        <th>Umido demais</th>
+                                              
                       </tr>
                     </thead>
                    
                     <tbody>
                       <tr>
-                        <td>60,00</td>
-                        <td>64,00</td>
-                        <td>67,80</td>
-                        <td>67,75</td>
-                        <td>69,70</td>
-                        <td>77,90</td>
+                          <tr>
+                              <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_seco">°C</td>
+                              <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_quaseseco">°C</td>
+                              <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_ponto2">°C</td>
+                              <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_quasemolhado">°C</td>
+                              <td style="width: 20%;"><input type="number" style="width: 50%;"id="tb_molhado">°C</td>
+                            </tr>
                       </tr>
                       
                     </tbody>
@@ -696,8 +702,23 @@
                             registro.umid_sensor
                         ]);
                     }
+                     plotarGrafico(dados);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        }); 
 
-                    plotarGrafico(dados);
+        fetch('/leituras/tempo-real', {cache:'no-store'}).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    
+                  
+                    alertar(resposta.temperatura, resposta.umidade);
+                    
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -707,7 +728,84 @@
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
 
+
     }
+                                 
+    function alertar(temperatura, umidade) {
+      var t_maxima = Number(tb_maximo.value);
+      var t_bem = Number(tb_bem.value);
+      var t_ponto = Number(tb_ponto.value);
+      var t_mal = Number(tb_mal.value);
+      var t_minima= Number(tb_minimo.value);
+      var t_seco = Number(tb_seco.value);
+      var t_quaseseco = Number(tb_quaseseco.value);
+      var t_ponto2 = Number(tb_ponto2.value);
+      var t_quasemolhado = Number(tb_quasemolhado.value);
+      var t_molhado= Number(tb_molhado.value);
+        // ideal que venham de algum EndPoint
+        var limites = { 
+            max_temperatura: t_maxima,
+            bem_temperatura : t_bem,
+            ponto_temperatura : t_ponto,
+            mal_temperatura: t_mal,
+            min_temperatura: t_minima,
+            max_umidade: t_molhado,
+            bem_umidade : t_quasemolhado,
+            ponto_umidade : t_ponto2,
+            mal_umidade: t_quaseseco,
+            min_umidade: t_seco
+                       
+        };
+               
+
+        var mensagem = '';
+        if (temperatura >= limites.max_temperatura) {
+            mensagem += ' Sua comida queimou! <br>';
+        } 
+        if (temperatura >= limites.bem_temperatura && temperatura < limites.max_temperatura) {
+            mensagem += ' Sua comida está queimando! <br>';
+        } 
+        if (temperatura >= limites.ponto_temperatura && temperatura < limites.bem_temperatura) {
+            mensagem += ' Sua comida está bem passada! <br>';
+        } 
+        if (temperatura == limites.ponto_temperatura) {
+            mensagem += ' Sua comida está ao ponto! <br>';
+        } 
+        if (temperatura < limites.ponto_temperatura && temperatura >= limites.mal_temperatura) {
+            mensagem += ' Sua comida está mal passada! <br>';
+        } 
+        if (temperatura < limites.mal_temperatura && temperatura > limites.min_temperatura) {
+            mensagem += ' Sua comida ainda está um pouco crua! <br>';
+        } 
+        if (temperatura <= limites.min_temperatura) {
+            mensagem += ' Sua comida está crua! <br>';
+        } 
+        // -------------------------------------------------
+        if (temperatura >= limites.max_umidade) {
+            mensagem += ' Sua comida está bem umidae! <br>';
+        } 
+        if (temperatura >= limites.bem_umidade && temperatura < limites.max_umidade) {
+            mensagem += ' Sua comida está ficando bem umida! <br>';
+        } 
+        if (temperatura >= limites.ponto_umidade && temperatura < limites.umidade) {
+            mensagem += ' A umidade está aumentando! <br>';
+        } 
+        if (temperatura == limites.ponto_umidade) {
+            mensagem += ' Umidade perfeita! <br>';
+        } 
+        if (temperatura < limites.ponto_umidade && temperatura >= limites.mal_umidade) {
+            mensagem += ' Comida com pouca umidade! <br>';
+        } 
+        if (temperatura < limites.mal_umidade && temperatura > limites.min_umidade) {
+            mensagem += ' Sua comida ainda está seca! <br>';
+        } 
+        if (temperatura <= limites.min_umidade) {
+            mensagem += ' Sua comida está seca! <br>';
+        } 
+                
+        div_alerta.innerHTML = mensagem;
+    }
+
 
     // só altere aqui se souber o que está fazendo!
     function plotarGrafico(dados) {
