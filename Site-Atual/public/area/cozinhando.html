@@ -25,7 +25,6 @@
    <style>
       /* Classes CSS para exemplos de alertas */
       .alerta {
-          background-color:tomato;
           color:black;
           width: 30%;
       }
@@ -778,31 +777,32 @@
           var mensagem = '';
         if (temperatura >= limites.max_temperatura) {
             mensagem += ' Sua comida queimou! <br>';
-            mensagem.style.color = "#FE2E2E";
+            mensagem.style.backgroundColor = "#FE2E2E";
+            
         } 
         if (temperatura >= limites.bem_temperatura && temperatura < limites.max_temperatura) {
             mensagem += ' Sua comida está queimando! <br>';
-            mensagem.style.color = "#FF8000";
+            mensagem.style.backgroundColor = "#FF8000";
         } 
         if (temperatura > limites.ponto_temperatura && temperatura < limites.bem_temperatura) {
             mensagem += ' Sua comida está bem passada! <br>';
-            mensagem.style.color = "#FFFF00";
+            mensagem.style.backgroundColor = "#FFFF00";
         } 
         if (temperatura == limites.ponto_temperatura) {
             mensagem += ' Sua comida está ao ponto! <br>';
-            mensagem.style.color = "#40FF00";
+            mensagem.style.backgroundColor = "#40FF00";
         } 
         if (temperatura < limites.ponto_temperatura && temperatura >= limites.mal_temperatura) {
             mensagem += ' Sua comida está mal passada! <br>';
-            mensagem.style.color = "#A9F5A9";
+            mensagem.style.backgroundColor = "#A9F5A9";
         } 
         if (temperatura < limites.mal_temperatura && temperatura > limites.min_temperatura) {
             mensagem += ' Sua comida ainda está um pouco crua! <br>';
-            mensagem.style.color = "#2ECCFA";
+            mensagem.style.backgroundColor = "#2ECCFA";
         } 
         if (temperatura <= limites.min_temperatura) {
             mensagem += ' Sua comida está crua! <br>';
-            mensagem.style.color = "#2E64FE";
+            mensagem.style.backgroundColor = "#2E64FE";
         } 
         // -------------------------------------------------
         if (umidade >= limites.max_umidade) {
