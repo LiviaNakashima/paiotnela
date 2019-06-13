@@ -1,17 +1,21 @@
+#b_usuario{
+  color: rgb(65, 65, 65) !important;
+}
+
 .colorL{
     background-image: linear-gradient(180deg,#ee2f2f 1%,#000a00 95%);
 }
-
+/* 
 .colorbkd{
     background-image: linear-gradient(180deg,#ee2f2f 1%,#000a00 95%);    
-}
+} */
 
 .colorfooter{
-    background-color: #000a00;
+    background-color:white;
 }
 
 .colortopbar{
-    background-image: linear-gradient(180deg, #ee2f2f 1%, #dd1d1d 100%);
+    background-image: rgb(248, 116, 116);
 }
 
 .progressbarcolor{
