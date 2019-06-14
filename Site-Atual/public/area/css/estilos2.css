@@ -44,7 +44,7 @@
 }
 
 .text_color_rec{
-    color: white!important;
+    color: rgb(173, 20, 20)!important;
 }
 
 
@@ -130,12 +130,23 @@ input:checked + .slider:before {
   color: white; 
 }
 
-.color_card{
-  background-color: #000;
-  padding: 1.25rem;
-  border-radius: 6px
+.text_color_coz{
+  color: rgb(173, 20, 20);
+  /* padding: 1.25rem;
+  border-radius: 6px */
 }
 
 .links_{
   color: rgb(173, 20, 20);
+}
+
+.color_dropdown{
+  background-color: rgb(173, 20, 20)!important;
+  border: rgb(173, 20, 20)!important;
+}
+
+.color_card_idx{
+  background-color: #000;
+  padding: 1.25rem;
+  border-radius: 6px;
 }
