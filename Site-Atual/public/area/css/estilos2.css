@@ -119,3 +119,18 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.text_card_color{
+  color: rgb(173, 20, 20)!important;
+}
+
+.color_button{
+  background-color: rgb(173, 20, 20);
+  border-color: rgb(173, 20, 20);
+  color: white; 
+}
+
+.color_card{
+  background-color: #000;
+  padding: 1.25rem;
+}

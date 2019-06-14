@@ -13,8 +13,11 @@
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -111,14 +114,17 @@
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                      aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -131,13 +137,15 @@
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-light badge-counter">3+</span>
               </a>
               <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                   Notificações
                 </h6>
@@ -181,11 +189,12 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-light small"> <b id="b_usuario"></b></span>
-                                   <!-- nome que aparece em no login -->
+                <!-- nome que aparece em no login -->
 
-                  <img class="img-profile rounded-circle" src="bot.jpg">
+                <img class="img-profile rounded-circle" src="bot.jpg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -228,157 +237,168 @@
               <div class="card shadow mb-4 border-left-danger ">
                 <!-- Título do card -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">O que vamos cozinhar hoje?</h6>
+                  <h6 class="m-0 font-weight-bold text_card_color">O que vamos cozinhar hoje?</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                      <label class="my-1 mr-2">Escolha o prato:</label>
-                      <select class="custom-select my-1 mr-sm-2" id="alimento">
-                        <option selected>Escolha...</option>
-                        <option value="50">Feijão carioca</option>
-                        <option value="100">Arroz integral</option>
-                        <option value="50">Grão de bico</option>
-                      </select>
-<a href="receitas.html">Ir para a página de receitas</a>
-<br><br>
+                  <label class="my-1 mr-2">Escolha o prato:</label>
+                  <select class="custom-select my-1 mr-sm-2" id="alimento">
+                    <option selected>Escolha...</option>
+                    <option value="50">Feijão carioca</option>
+                    <option value="100">Arroz integral</option>
+                    <option value="50">Grão de bico</option>
+                  </select>
+                  <a href="receitas.html">Ir para a página de receitas</a>
+                  <br><br>
 
 
-                        <p>  <label for="formControlRange">Para quantas pessoas? </label></p>
-                        <label id="valor_pessoas">0</label>
-                          <input type="range" min="0" max="10"class="form-control-range" id="pessoas" value="0" onchange="tempo_preparo()"> <br>
-                        </form>
-                        <!-- resultado do cálculo -->
-                              <div id="resultado">
-                                  <div class="card bg-info text-white shadow">
-                                    <div class="card-body">
-                                      Tempo de preparo: 
-                                 <div id="real"></div>
+                  <p> <label for="formControlRange">Para quantas pessoas? </label></p>
+                  <label id="valor_pessoas">0</label>
+                  <input type="range" min="0" max="10" class="form-control-range" id="pessoas" value="0"
+                    onchange="tempo_preparo()"> <br>
+                  </form>
+                  <!-- resultado do cálculo -->
+                  <div id="resultado">
+                    <div class="card bg-info text-white shadow">
+                      <div class="card-body color_card">
+                        Tempo de preparo:
+                        <div id="real"></div>
 
-                          
-                                    </div>                                    </div>
-                                  </div>
-                                  </div>                  </div>
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
 
 
             <!-- Area Chart -->
-                        <!-- Pie Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                          <div class="card shadow mb-4 border-left-danger ">
-                            <!-- Título do card -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                              <h6 class="m-0 font-weight-bold text-primary">Cadastre sua receita!</h6>
-                            </div>
-                            <!-- Card Body -->
+            <!-- Pie Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4 border-left-danger ">
+                <!-- Título do card -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text_card_color">Cadastre sua receita!</h6>
+                </div>
+                <!-- Card Body -->
 
-                      <div class="card-body">
-                          <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                            
-                              <div class="form-row flex">
-                                  <div class="form-group flexItem">
-                                  <label for="inputEmail4">Nome da Receita / Alimento</label>
-                                  <input type="text" class="form-control" id="c1" name="nome_receita"  style="width: 260px;" placeholder="Ex: Arroz">
-                                </div>
-                                <div class="form-group flexItem">
-                                <label for="inputPassword4">Quantidade (g)</label>
-                                <input type="number" class="form-control" id="c2" name="quantidade" style="width: 260px;"placeholder="Ex: 250">
-                              </div>
-                            </div>
-                            <div class="form-row flex">
-                                <div class="form-group flexItem">
-                            <label for="inputPassword4">Temperatura Minima (°C)</label>
-                                <input type="number" class="form-control" id="c3" name="temp_minima" style="width: 160px;" placeholder="Ex: 75">
-                              </div>
-                              <div class="form-group flexItem">
-                                <label for="inputPassword4">Temperatura Máxima (°C)</label>
-                                <input type="number" class="form-control" id="c4" name="temp_maxima" style="width: 160px;" placeholder="Ex: 125">
-                              </div>
-                              
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Modo de Preparo</label>
-                                <textarea class="form-control" id="c5" name="modo_preparo" rows="3" placeholder="Ex: Coloque meia xícara de arroz na panela, e uma de arroz..."></textarea>
-                              </div>
-                              
-                              <button id="btn_entrar" class="bt_css">Cadastrar</button> <br>
-                              <img src="aguarde.gif" id="img_aguarde" style="display: none;">
-                                <br>
-                              <div id="div_erro" style="background-color: sandybrown; text-align: center; color: maroon; display: none;">
-                               Erro no cadastro
-                              </div> 
-                              <div id="div_acerto" style="background-color: rgb(94, 255, 0); text-align: center; color: rgb(18, 126, 27); display: none;">
-                                Erro no cadastro
-                               </div> 
-                                                
-                              <!-- <button type="submit" class="btn btn-primary" onclick="cadastrar_receita(nome_receita.value, Number(quantidade.value), modo_preparo.value)" >Cadastrar</button> -->
-                            </form>
+                <div class="card-body">
+                  <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+
+                    <div class="form-row flex">
+                      <div class="form-group flexItem">
+                        <label for="inputEmail4">Nome da Receita / Alimento</label>
+                        <input type="text" class="form-control" id="c1" name="nome_receita" style="width: 260px;"
+                          placeholder="Ex: Arroz">
                       </div>
-                  
-                  </div>
-      </div>
-      <!-- End of Main Content -->
-    </div>
-      <!-- Footer -->
-      <footer class="sticky-footer colorfooter">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Paiotnela 2019</span>
+                      <div class="form-group flexItem">
+                        <label for="inputPassword4">Quantidade (g)</label>
+                        <input type="number" class="form-control" id="c2" name="quantidade" style="width: 260px;"
+                          placeholder="Ex: 250">
+                      </div>
+                    </div>
+                    <div class="form-row flex">
+                      <div class="form-group flexItem">
+                        <label for="inputPassword4">Temperatura Minima (°C)</label>
+                        <input type="number" class="form-control" id="c3" name="temp_minima" style="width: 160px;"
+                          placeholder="Ex: 75">
+                      </div>
+                      <div class="form-group flexItem">
+                        <label for="inputPassword4">Temperatura Máxima (°C)</label>
+                        <input type="number" class="form-control" id="c4" name="temp_maxima" style="width: 160px;"
+                          placeholder="Ex: 125">
+                      </div>
+
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Modo de Preparo</label>
+                      <textarea class="form-control" id="c5" name="modo_preparo" rows="3"
+                        placeholder="Ex: Coloque meia xícara de arroz na panela, e uma de arroz..."></textarea>
+                    </div>
+
+                    <button id="btn_entrar" class=" btn-lg btn color_button">Cadastrar</button> <br>
+                    <img src="aguarde.gif" id="img_aguarde" style="display: none;">
+                    <br>
+                    <div id="div_erro"
+                      style="background-color: sandybrown; text-align: center; color: maroon; display: none;">
+                      Erro no cadastro
+                    </div>
+                    <div id="div_acerto"
+                      style="background-color: rgb(94, 255, 0); text-align: center; color: rgb(18, 126, 27); display: none;">
+                      Erro no cadastro
+                    </div>
+
+                    <!-- <button type="submit" class="btn btn-primary" onclick="cadastrar_receita(nome_receita.value, Number(quantidade.value), modo_preparo.value)" >Cadastrar</button> -->
+                  </form>
+                </div>
+
+              </div>
+            </div>
+            <!-- End of Main Content -->
           </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+          <!-- Footer -->
+          <footer class="sticky-footer colorfooter">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Paiotnela 2019</span>
+              </div>
+            </div>
+          </footer>
+          <!-- End of Footer -->
 
-   
-  <!-- End of Page Wrapper -->
 
-  
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+          <!-- End of Page Wrapper -->
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Vai partir?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Clique em "Sair" se você estiver preparado para terminar sua sessão.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <button class="btn btn-secondary" type="button" data-dismiss="modal" onclick="logoff()">Sair</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <!-- Scroll to Top Button-->
+          <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+          <!-- Logout Modal-->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Vai partir?</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">Clique em "Sair" se você estiver preparado para terminar sua sessão.</div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal" onclick="logoff()">Sair</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="js/funcoes.js"></script>
 
-  <!-- CHAT BOT -->
+          <!-- Bootstrap core JavaScript-->
+          <script src="vendor/jquery/jquery.min.js"></script>
+          <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    
-<script type="text/javascript">
-  var vsid = "sa46344";
-  (function() { 
-  var vsjs = document.createElement('script'); vsjs.type = 'text/javascript'; vsjs.async = true; vsjs.setAttribute('defer', 'defer');
-   vsjs.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.virtualspirits.com/vsa/chat-'+vsid+'.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vsjs, s);
-  })();
- </script>
+          <!-- Core plugin JavaScript-->
+          <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+          <!-- Custom scripts for all pages-->
+          <script src="js/sb-admin-2.min.js"></script>
+          <script src="js/funcoes.js"></script>
+
+          <!-- CHAT BOT -->
+
+
+          <script type="text/javascript">
+            var vsid = "sa46344";
+            (function () {
+              var vsjs = document.createElement('script'); vsjs.type = 'text/javascript'; vsjs.async = true; vsjs.setAttribute('defer', 'defer');
+              vsjs.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.virtualspirits.com/vsa/chat-' + vsid + '.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vsjs, s);
+            })();
+          </script>
 
 </body>
 
@@ -390,88 +410,88 @@
 
   var usuario;
 
-verificarAutenticacao();
+  verificarAutenticacao();
 
-function verificarAutenticacao() {
+  function verificarAutenticacao() {
     usuario = sessionStorage.usuario_bandtec;
     if (usuario == undefined) {
-        window.location.href = '../login.html';
+      window.location.href = '../login.html';
     } else {
-        b_usuario.innerHTML = usuario;
-        b_usuario2.innerHTML = usuario;
+      b_usuario.innerHTML = usuario;
+      b_usuario2.innerHTML = usuario;
     }
-}
+  }
 
-function logoff() {
+  function logoff() {
     sessionStorage.removeItem('usuario_bandtec');
     verificarAutenticacao();
-}
+  }
 
-//cadastro 
-function cadastrar() {
-        aguardar();
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastro_receita", {
-            method: "POST",
-            body: formulario
-        }).then(function (response) {
-            
-            if (response.ok) {
+  //cadastro 
+  function cadastrar() {
+    aguardar();
+    var formulario = new URLSearchParams(new FormData(form_cadastro));
+    fetch("/usuarios/cadastro_receita", {
+      method: "POST",
+      body: formulario
+    }).then(function (response) {
 
-                // window.location.href='index_inicio.html';
-                div_erro.innerHTML = '';
-                div_acerto.innerHTML = "Cadastro efetuado com sucesso! Confira na tabela receitas.";
-                finalizar_aguardar();
-                c1.value = '';
-                c2.value = '';
-                c3.value = '';
-                c4.value = '';
-                c5.value = '';
+      if (response.ok) {
 
-            } else {
+        // window.location.href='index_inicio.html';
+        div_erro.innerHTML = '';
+        div_acerto.innerHTML = "Cadastro efetuado com sucesso! Confira na tabela receitas.";
+        finalizar_aguardar();
+        c1.value = '';
+        c2.value = '';
+        c3.value = '';
+        c4.value = '';
+        c5.value = '';
 
-                console.log('Erro de cadastro!');
-                response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
-                });
-                finalizar_aguardar();
-            }
+      } else {
+
+        console.log('Erro de cadastro!');
+        response.text().then(function (resposta) {
+          div_erro.innerHTML = resposta;
         });
+        finalizar_aguardar();
+      }
+    });
 
-        return false;
-    }
+    return false;
+  }
 
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
-        div_erro.style.display='none';
-        div_acerto.style.display='none';
-    }
+  function aguardar() {
+    btn_entrar.disabled = true;
+    img_aguarde.style.display = 'block';
+    div_erro.style.display = 'none';
+    div_acerto.style.display = 'none';
+  }
 
-    function finalizar_aguardar() {
-        btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
-        div_erro.style.display='block';
-        div_acerto.style.display='block';
-    }
+  function finalizar_aguardar() {
+    btn_entrar.disabled = false;
+    img_aguarde.style.display = 'none';
+    div_erro.style.display = 'block';
+    div_acerto.style.display = 'block';
+  }
 
-// SIMULACAO DE TEMPO DE PREPARO DE UMA RECEITA
+  // SIMULACAO DE TEMPO DE PREPARO DE UMA RECEITA
 
   function tempo_preparo() {
 
-                
-valor_pessoas.innerHTML = pessoas.value;
-var x = Number(pessoas.value) * 4;
-real.innerHTML = `${x.toFixed(0)} minutos`;
-}
+
+    valor_pessoas.innerHTML = pessoas.value;
+    var x = Number(pessoas.value) * 4;
+    real.innerHTML = `${x.toFixed(0)} minutos`;
+  }
 
 
 
-function cadastrar_receita(titulo, qtdd, modo) {
+  function cadastrar_receita(titulo, qtdd, modo) {
 
-  var receitas =[];
-  
-  if (titulo != '' && qtdd > 0 || modo != '' || usuario != '') {
+    var receitas = [];
+
+    if (titulo != '' && qtdd > 0 || modo != '' || usuario != '') {
       receita.push({
         // id_receita: auto complete?
         nome_receita: titulo,
@@ -484,9 +504,9 @@ function cadastrar_receita(titulo, qtdd, modo) {
     }
   }
 
-    
 
-                  
+
+
 
 
 
