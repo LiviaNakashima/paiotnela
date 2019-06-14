@@ -82,7 +82,7 @@ body {
 }
 
 .formulario {
-    width: 500px;
+    max-width: 40vw;
     margin: 40px auto;
     text-align: center;
     position: relative;
