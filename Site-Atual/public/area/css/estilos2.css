@@ -133,4 +133,9 @@ input:checked + .slider:before {
 .color_card{
   background-color: #000;
   padding: 1.25rem;
+  border-radius: 6px
+}
+
+.links_{
+  color: rgb(173, 20, 20);
 }
