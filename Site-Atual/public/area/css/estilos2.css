@@ -150,3 +150,39 @@ input:checked + .slider:before {
   padding: 1.25rem;
   border-radius: 6px;
 }
+/* #card_body{
+  position: absolute;
+} */
+
+#card_receita{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-style: solid;
+  width: 20%;
+}
+#card_receita:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  
+}
+
+#card_receita:active{  
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+ }
+
+ #card_receita:hover #card_texto{  
+  display: block;
+ }
+
+
+#card_img{
+ height: auto;
+
+}
+#card_texto{
+  height: auto;
+  padding: 10px;
+  display:none;
+}
+

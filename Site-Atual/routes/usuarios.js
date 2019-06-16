@@ -116,6 +116,7 @@ router.post('/cadastro_receita', function (req, res, next) {
    var minimo;
    var maximo;
    var preparo;
+   var foto;
      var cadastro_valido = false;
  
    banco.conectar().then(() => {
@@ -125,6 +126,7 @@ router.post('/cadastro_receita', function (req, res, next) {
      minimo = req.body.temp_minima;
      maximo = req.body.temp_maxima;
      preparo = req.body.modo_preparo;
+     foto = req.body.foto;
      if (nome == undefined ) {
      // coloque a frase de erro que quiser aqui. Ela vai aparecer no formulário de cadastro
        throw new Error(`Dados de cadastro não chegaram completos: ${nome} `);
@@ -149,7 +151,7 @@ router.post('/cadastro_receita', function (req, res, next) {
    }).finally(() => {
      if (cadastro_valido) {		  
          
-     banco.sql.query(`insert into Receita (nome_receita, quantidade, temp_minima, temp_maxima, modo_preparo) values ('${nome}','${quantidade}','${minimo}','${maximo}','${preparo}')`).then(function() {
+     banco.sql.query(`insert into Receita (nome_receita, quantidade, temp_minima, temp_maxima, modo_preparo, imagem) values ('${nome}','${quantidade}','${minimo}','${maximo}','${preparo}','${foto}')`).then(function() {
        console.log(`Cadastro criado com sucesso!`);
        res.sendStatus(201); 
        // status 201 significa que algo foi criado no back-end, 

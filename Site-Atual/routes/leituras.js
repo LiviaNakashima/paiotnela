@@ -8,9 +8,7 @@ router.get('/ultimas', function (req, res, next) {
   console.log(banco.conexao);
   banco.conectar().then(() => {
     var limite_linhas = 5;
-    return banco.sql.query(`select top ${limite_linhas} 
-                            id_evento as id_nome_loko, 
-                            data_hora,
+    return banco.sql.query(`select top ${limite_linhas}
                             temp_sensor,
                             umid_sensor,
                             FORMAT(data_hora,'HH:mm:ss') as momento 
@@ -44,7 +42,8 @@ router.get('/receitas', function (req, res, next) {
                             quantidade as qnt,
                             temp_minima as min,
                             temp_maxima as max,
-                            modo_preparo as modo                        
+                            modo_preparo as modo,
+                            imagem as foto                        
                             from Receita order by nome_receita`);
   }).then(consulta => {
 
@@ -130,6 +129,29 @@ router.get('/tempo-real', function (req, res, next) {
     banco.sql.close();
   });
 });
+
+router.get('/temporealmedia', (req, res, next) => {
+  console.log(banco.conexao);
+  banco.conectar().then(pool => {
+      return pool.request().query(`SELECT TOP 1 
+                            temp_sensor,
+                            umid_sensor,
+                            FORMAT(data_hora,'HH:mm:ss') as momento
+                            FROM Evento;`);
+  }).then(consulta => {
+      console.log(`Resultado da consulta : ${JSON.stringify(consulta.recordset)}`);
+      res.send(consulta.recordset);
+  }).catch(err => {
+      var erro = `Erro na leitura dos últimos registros: ${err}`;
+      console.error(erro);
+      res.status(500).send(erro);
+
+  }).finally(() => {
+      banco.sql.close();
+  });
+
+})
+
 
 
 
