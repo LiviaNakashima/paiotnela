@@ -258,6 +258,11 @@
                         Tempo de preparo:
                         <div id="real"></div>
 
+                        <br>
+
+                        Quantidade (em g):
+                        <div id="quantidade_g"></div>
+
 
                       </div>
                     </div>
@@ -482,6 +487,18 @@
     valor_pessoas.innerHTML = pessoas.value;
     var x = Number(pessoas.value) * 4;
     real.innerHTML = `${x.toFixed(0)} minutos`;
+
+    
+    var quantidade = Number(pessoas.value) * 250;
+    quantidade_g.innerHTML = `${quantidade.toFixed(0)} gramas`;
+
+    if (quantidade >= 1000){
+
+      quantidade/= 1000;
+      quantidade_g.innerHTML = `${quantidade.toFixed(1)} k`;
+
+    }
+
   }
 
 
@@ -502,11 +519,5 @@
       alert('Preencha todos os campos da receita!')
     }
   }
-
-
-
-
-
-
 
 </script>
