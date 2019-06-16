@@ -23,3 +23,5 @@ Mas quando falamos de tecnologia nesse ramo, houve uma estagnação e padroniza�
 Dado o contexto e a problematização, vamos mostrar a nossa solução
 
 #### Ponto entra
+
+
