@@ -25,3 +25,12 @@ Dado o contexto e a problematização, vamos mostrar a nossa solução
 #### Ponto entra
 
 
+##Lívia 
+
+15. Gestão de riscos é um conjunto de ações estratégicas que identificam, administram e avaliam riscos ligados a uma atividade, visando reduzir o máximo possível os impactos que esses riscos causariam no projeto. No nosso projeto, nós identificamos diversos riscos, como por exemplo o Arduino queimar, classificamos esse risco como de baixa probabilidade, porém de alto impacto, já que afetaria o andamento do projeto. Para evita-lo, nós tomamos o cuidado de checar as conexões dos fios todas as vezes antes de liga-lo, mas caso acontecesse de o Arduino queimar mesmo com esses cuidados, nós já saberíamos como agir, pois, com a gestão de riscos nós já havíamos pensado em maneiras de reduzir os impactos que esse evento causaria. 
+
+16. Requisitos são um conjunto de necessidades estabelecidos por um cliente ou usuário para definir a estrutura e o comportamento de um software que está sendo desenvolvido. No nosso projeto, possuir uma tela de “Sobre Nós” e de “Benefícios”, foram requisitos. 
+
+17. O Product Backlog é uma lista de funcionalidades desejadas de um produto, como por exemplo, as páginas de login, cadastro e a entidade que armazena os dados da panela. 
+
+18. O Sprint Backlog é uma lista de tarefas extraídas do Product Backlog, que o Scrum Team se compromete a fazer, como por exemplo a página de vendas da panela.  
