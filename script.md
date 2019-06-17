@@ -63,3 +63,6 @@ Dado o contexto e a problematização, vamos mostrar a nossa solução
 23. Percebemos a importância de orçar o plano ideal da nuvem, pois contratar o plano errado pode comprometer a experiência do usuário ou comprometer o financeiro da empresa.
 
 ## Regino
+
+30. 
+- Michelle: Fiquei surpresa com nosso progresso no projeto geração futura, o modo como fomos direcionados tanto pelo socioemocional quanto tecnicamente pelos professores nos permitiu o avanço de todos, independente do nosso background.
