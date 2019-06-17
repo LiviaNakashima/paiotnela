@@ -26,10 +26,10 @@ Dado o contexto e a problematização, vamos mostrar a nossa solução
 
 ## Michelle
 
-10. Para planejar e gerir o projeto, utilizamos metodologias SCRUM, AGILE e também rotacionamos funções com sorteios para que todos aprendessem um pouco de cada tarefa.
+10. Para planejar e gerir o projeto, utilizamos metodologias SCRUM, AGILE e também rotacionamos funções.
 
 11. Ao fim do projeto, tivemos os destaques:
-- Larissa foi eleita nossa scrum master, gerenciou o projeto e, como ela fez técnico em Comunicação visual, também foi a responsável pela parte visual do projeto
+- Larissa foi eleita nossa scrum master e, como ela fez técnico em Comunicação visual, também foi a responsável pela parte visual do projeto;
 - Leo ficou mais focado no backend, principalmentefez a parte do arduino já que ele fez eletronica no SENAI;
 - Lívia que fez técnico em informática, fez mais backend e front;
 
@@ -39,9 +39,9 @@ Dado o contexto e a problematização, vamos mostrar a nossa solução
 - Eu, Michelle, fiz o frontend e a documentação;
 - Regino fez principalmente o banco de dados.
 
-13. Como ferramenta de organização nós utilizamos a metodologia Kanban através do Trello, assim podiamos ver de maneira macro e visual o que era preciso fazer;
+13. Como ferramenta de organização nós utilizamos a metodologia Kanban através do Trello;
 
-14. Github - sistema de controle de versões foi uma ferramenta essencial para que todos pudessem participar da aplicação ao mesmo tempo corpartilhando arquivos;
+14. O Github usamos como sistema de controle de versões e compartilhamento de arquivos;
 
 
 ## Lívia 
