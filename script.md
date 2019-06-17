@@ -24,8 +24,27 @@ Dado o contexto e a problematização, vamos mostrar a nossa solução
 
 #### Ponto entra
 
+## Michelle
 
-##Lívia 
+10. Para planejar e gerir o projeto, utilizamos metodologias SCRUM, AGILE e também rotacionamos funções com sorteios para que todos aprendessem um pouco de cada tarefa.
+
+11. Ao fim do projeto, tivemos os destaques:
+- Larissa foi eleita nossa scrum master, gerenciou o projeto e, como ela fez técnico em Comunicação visual, também foi a responsável pela parte visual do projeto
+- Leo ficou mais focado no backend, principalmentefez a parte do arduino já que ele fez eletronica no SENAI;
+- Lívia que fez técnico em informática, fez mais backend e front;
+
+
+12. 
+- Lucas focou mais no frontend;
+- Eu, Michelle, fiz o frontend e a documentação;
+- Regino fez principalmente o banco de dados.
+
+13. Como ferramenta de organização nós utilizamos a metodologia Kanban através do Trello, assim podiamos ver de maneira macro e visual o que era preciso fazer;
+
+14. Github - sistema de controle de versões foi uma ferramenta essencial para que todos pudessem participar da aplicação ao mesmo tempo corpartilhando arquivos;
+
+
+## Lívia 
 
 15. Gestão de riscos é um conjunto de ações estratégicas que identificam, administram e avaliam riscos ligados a uma atividade, visando reduzir o máximo possível os impactos que esses riscos causariam no projeto. No nosso projeto, nós identificamos diversos riscos, como por exemplo o Arduino queimar, classificamos esse risco como de baixa probabilidade, porém de alto impacto, já que afetaria o andamento do projeto. Para evita-lo, nós tomamos o cuidado de checar as conexões dos fios todas as vezes antes de liga-lo, mas caso acontecesse de o Arduino queimar mesmo com esses cuidados, nós já saberíamos como agir, pois, com a gestão de riscos nós já havíamos pensado em maneiras de reduzir os impactos que esse evento causaria. 
 
@@ -34,3 +53,13 @@ Dado o contexto e a problematização, vamos mostrar a nossa solução
 17. O Product Backlog é uma lista de funcionalidades desejadas de um produto, como por exemplo, as páginas de login, cadastro e a entidade que armazena os dados da panela. 
 
 18. O Sprint Backlog é uma lista de tarefas extraídas do Product Backlog, que o Scrum Team se compromete a fazer, como por exemplo a página de vendas da panela.  
+
+## Regino
+
+## Michelle
+
+22. Utilizamos a solução nuvem do azure da microsoft na versão estudante, mas simulamos um orçamento para a aplicação do projeto no mundo real com centenas de usuários, receitas cadastradas, panelas compradas e eventos que as panelas geram;
+
+23. Percebemos a importância de orçar o plano ideal da nuvem, pois contratar o plano errado pode comprometer a experiência do usuário ou comprometer o financeiro da empresa.
+
+## Regino
