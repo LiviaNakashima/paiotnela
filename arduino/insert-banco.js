@@ -110,9 +110,9 @@ var efetuando_insert = false;
 iniciar_escuta();
 
 //dados aleatórios: 3 linhas abaixo:
- setInterval(function() {
-      registrar_leitura(Math.random()*100, Math.random()*200)
-}, 2000);
+//  setInterval(function() {
+//       registrar_leitura(Math.random()*100, Math.random()*200)
+// }, 2000);
 
 //abrir a pasta deste arquivo via git bash e executar 
 //npm i

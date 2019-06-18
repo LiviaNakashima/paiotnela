@@ -133,11 +133,11 @@ router.get('/tempo-real', function (req, res, next) {
 router.get('/temporealmedia', (req, res, next) => {
   console.log(banco.conexao);
   banco.conectar().then(pool => {
-      return pool.request().query(`SELECT TOP 1 
+      return pool.request().query(`select top 1 
                             temp_sensor,
                             umid_sensor,
                             FORMAT(data_hora,'HH:mm:ss') as momento
-                            FROM Evento;`);
+                            from Evento order by data_hora desc;`);
   }).then(consulta => {
       console.log(`Resultado da consulta : ${JSON.stringify(consulta.recordset)}`);
       res.send(consulta.recordset);

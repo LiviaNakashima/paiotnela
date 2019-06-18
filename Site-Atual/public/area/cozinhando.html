@@ -22,7 +22,7 @@
    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script> -->
    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-   <style>
+   <!-- <style>
       /* Classes CSS para exemplos de alertas */
       .queimado {
         background-color: rgb(247, 11, 11);
@@ -59,7 +59,9 @@
           color:black;
           width: 30%;
       }
-  </style>
+  </style> -->
+  <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
 </head>
 
 <body id="page-top" onload="atualizarGrafico()" >
@@ -260,7 +262,7 @@
           <div class="card shadow mb-4 border-bottom-success bottom_color">
             <!-- titulo da caixa -->
             <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text_color_coz">Seu arroz esta quaaase pronto...</h6>
+            <h6 class="m-0 font-weight-bold text_color_coz">Seu arroz esta quase pronto...</h6>
           </div>
           <!-- corpo da caixa -->
           <div class="card-body">
@@ -285,6 +287,10 @@
       <!-- corpo da caixa -->
       <div class="card-body" >
           <div id="div_grafico">Dados da panela...</div>
+          <div id="tamanho_grafico" style="width:100%; height:300px;">
+            <canvas id="myChart"></canvas>
+          </div>
+          
           <!-- <div id="grafico_temp" >
               <canvas id="canvas_grafico"></canvas>
            </div> -->
@@ -297,7 +303,7 @@
             
           </div>
         </div> -->
-        <div id="div_alerta1" class="queimado"></div>
+        <!-- <div id="div_alerta1" class="queimado"></div>
         <div id="div_alerta2" class="queimando"></div>
         <div id="div_alerta3" class="bem_passado"></div>
         <div id="div_alerta4" class="ao_ponto"></div>
@@ -335,9 +341,9 @@
                 </table>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="card shadow mb-4">
+          <!-- <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text_color_rec">Tabela de Umidade</h6>
               </div>
@@ -370,7 +376,7 @@
                   </table>
                 </div>
               </div>
-            </div>
+            </div> -->
     </div>
   </div>
   <!-- fim da caixa -->
@@ -523,12 +529,16 @@
 
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+<script src="js/demo/graficoDashboard.js"></script>
+
 </html>
 
 <script>
 
   var usuario;
-  var exibiu_grafico = false;
+  // var exibiu_grafico = false;
   verificarAutenticacao();
 
   function verificarAutenticacao() {
@@ -664,229 +674,229 @@
     // }
 
        // Não mexa nestas 3 linhas! 
-       google.load('visualization', '1', {
-        packages: ['corechart','line'],
-        callback: obterDadosGrafico
-    });
+    //    google.load('visualization', '1', {
+    //     packages: ['corechart','line'],
+    //     callback: obterDadosGrafico
+    // });
     // Não mexa nessas 3 linhas! 
 
     // só mexer se quiser alterar o tempo de atualização
     // ou se souber o que está fazendo!
-    function atualizarGrafico() {
-        obterDadosGrafico();
-        setTimeout(atualizarGrafico, 10000);
-    }
+    // function atualizarGrafico() {
+    //     obterDadosGrafico();
+    //     setTimeout(atualizarGrafico, 10000);
+    // }
 
-    // altere aqui as configurações do gráfico
-    // (tamanhos, cores, textos, etc)
-    function configurarGrafico() {
-        var altura = 400;
-        var largura = 800;
-        var configuracoes = {
-            tooltip: {
-                isHtml: true
-            },
-            trendlines: {
-                0: {
-                    labelInLegend: 'Temperatura'
-                },
-                1: {
-                    labelInLegend: 'Umidade'
-                },
-            },
-            title: 'Histórico recente de temperatura e umidade',
-            legend: { position: 'bottom' },
-            colors: ['red', '#0066ff'],            
-            isStacked: true,
-            width: largura,
-            height: altura,
-            vAxis: {
-                textStyle: {
-                    fontSize: 12
-                }
-            },
-            hAxis: {
-                slantedText: false,
-                slantedTextAngle: 45,
-                textStyle: {
-                    fontSize: 10
-                }
-            },
-            chartArea: {
-                left: 50,
-                top: 20,
-                width: (largura - 5),
-                height: (altura - 90)
-            }
-        };
+    // // altere aqui as configurações do gráfico
+    // // (tamanhos, cores, textos, etc)
+    // function configurarGrafico() {
+    //     var altura = 400;
+    //     var largura = 800;
+    //     var configuracoes = {
+    //         tooltip: {
+    //             isHtml: true
+    //         },
+    //         trendlines: {
+    //             0: {
+    //                 labelInLegend: 'Temperatura'
+    //             },
+    //             1: {
+    //                 labelInLegend: 'Umidade'
+    //             },
+    //         },
+    //         title: 'Histórico recente de temperatura e umidade',
+    //         legend: { position: 'bottom' },
+    //         colors: ['red', '#0066ff'],            
+    //         isStacked: true,
+    //         width: largura,
+    //         height: altura,
+    //         vAxis: {
+    //             textStyle: {
+    //                 fontSize: 12
+    //             }
+    //         },
+    //         hAxis: {
+    //             slantedText: false,
+    //             slantedTextAngle: 45,
+    //             textStyle: {
+    //                 fontSize: 10
+    //             }
+    //         },
+    //         chartArea: {
+    //             left: 50,
+    //             top: 20,
+    //             width: (largura - 5),
+    //             height: (altura - 90)
+    //         }
+    //     };
 
-        return configuracoes;
-    }
+    //     return configuracoes;
+    // }
 
-    // altere aqui como os dados serão exibidos
-    // e como são recuperados do BackEnd
-    function obterDadosGrafico() {
-        var dados = new google.visualization.DataTable();
-        dados.addColumn('string', 'Momento');
-        dados.addColumn('number', 'Temperatura');
-        dados.addColumn('number', 'Umidade');
+    // // altere aqui como os dados serão exibidos
+    // // e como são recuperados do BackEnd
+    // function obterDadosGrafico() {
+    //     var dados = new google.visualization.DataTable();
+    //     dados.addColumn('string', 'Momento');
+    //     dados.addColumn('number', 'Temperatura');
+    //     dados.addColumn('number', 'Umidade');
 
-        fetch('/leituras/ultimas', {cache:'no-store'}).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
+    //     fetch('/leituras/ultimas', {cache:'no-store'}).then(function (response) {
+    //         if (response.ok) {
+    //             response.json().then(function (resposta) {
                     
-                    console.log(`Dados recebidos: ${JSON.stringify(dados)}`);
+    //                 console.log(`Dados recebidos: ${JSON.stringify(dados)}`);
 
-                    resposta.reverse();
+    //                 resposta.reverse();
 
-                    for (i = 0; i < resposta.length; i++) {
-                        var registro = resposta[i];
-                        // aqui, após registro. use os nomes 
-                        // dos atributos que vem no JSON 
-                        // que gerou na consulta ao banco de dados
-                        dados.addRow([
-                            registro.data_hora, 
-                            registro.temp_sensor, 
-                            registro.umid_sensor
-                        ]);
-                    }
-                     plotarGrafico(dados);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-        .catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        }); 
+    //                 for (i = 0; i < resposta.length; i++) {
+    //                     var registro = resposta[i];
+    //                     // aqui, após registro. use os nomes 
+    //                     // dos atributos que vem no JSON 
+    //                     // que gerou na consulta ao banco de dados
+    //                     dados.addRow([
+    //                         registro.data_hora, 
+    //                         registro.temp_sensor, 
+    //                         registro.umid_sensor
+    //                     ]);
+    //                 }
+    //                  plotarGrafico(dados);
+    //             });
+    //         } else {
+    //             console.error('Nenhum dado encontrado ou erro na API');
+    //         }
+    //     })
+    //     .catch(function (error) {
+    //         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    //     }); 
 
-        fetch('/leituras/tempo-real', {cache:'no-store'}).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
+    //     fetch('/leituras/tempo-real', {cache:'no-store'}).then(function (response) {
+    //         if (response.ok) {
+    //             response.json().then(function (resposta) {
                     
                   
-                    alertar(resposta.temperatura, resposta.umidade);
+    //                 alertar(resposta.temperatura, resposta.umidade);
                     
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-        .catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        });
+    //             });
+    //         } else {
+    //             console.error('Nenhum dado encontrado ou erro na API');
+    //         }
+    //     })
+    //     .catch(function (error) {
+    //         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    //     });
 
 
-    }
+    // }
                                  
-    function alertar(temperatura, umidade) {
-      var t_maxima = Number(tb_maximo.value);
-      var t_bem = Number(tb_bem.value);
-      var t_ponto = Number(tb_ponto.value);
-      var t_mal = Number(tb_mal.value);
-      var t_minima= Number(tb_minimo.value);
-      var t_seco = Number(tb_seco.value);
-      var t_quaseseco = Number(tb_quaseseco.value);
-      var t_ponto2 = Number(tb_ponto2.value);
-      var t_quasemolhado = Number(tb_quasemolhado.value);
-      var t_molhado= Number(tb_molhado.value);
-        // ideal que venham de algum EndPoint
-        var limites = { 
-            max_temperatura: t_maxima,
-            bem_temperatura : t_bem,
-            ponto_temperatura : t_ponto,
-            mal_temperatura: t_mal,
-            min_temperatura: t_minima,
-            max_umidade: t_molhado,
-            bem_umidade : t_quasemolhado,
-            ponto_umidade : t_ponto2,
-            mal_umidade: t_quaseseco,
-            min_umidade: t_seco
+    // function alertar(temperatura, umidade) {
+    //   var t_maxima = Number(tb_maximo.value);
+    //   var t_bem = Number(tb_bem.value);
+    //   var t_ponto = Number(tb_ponto.value);
+    //   var t_mal = Number(tb_mal.value);
+    //   var t_minima= Number(tb_minimo.value);
+    //   var t_seco = Number(tb_seco.value);
+    //   var t_quaseseco = Number(tb_quaseseco.value);
+    //   var t_ponto2 = Number(tb_ponto2.value);
+    //   var t_quasemolhado = Number(tb_quasemolhado.value);
+    //   var t_molhado= Number(tb_molhado.value);
+    //     // ideal que venham de algum EndPoint
+    //     var limites = { 
+    //         max_temperatura: t_maxima,
+    //         bem_temperatura : t_bem,
+    //         ponto_temperatura : t_ponto,
+    //         mal_temperatura: t_mal,
+    //         min_temperatura: t_minima,
+    //         max_umidade: t_molhado,
+    //         bem_umidade : t_quasemolhado,
+    //         ponto_umidade : t_ponto2,
+    //         mal_umidade: t_quaseseco,
+    //         min_umidade: t_seco
                        
-        };
+    //     };
                
 
         
-        if(t_maxima == 0 &&  t_bem == 0 && t_ponto==0 && t_mal==0 && t_minima == 0 && t_molhado == 0 &&  t_quasemolhado == 0 && t_ponto2==0 && t_quaseseco==0 && t_seco == 0){
-          var mensagem = '';
-        }
-        else{
-          var mensagem = '';
-          var mensagem2 = '';
-          var mensagem3 = '';
-          var mensagem4 = '';
-          var mensagem5 = '';
-          var mensagem6 = '';
-          var mensagem7 = '';
-        if (temperatura >= limites.max_temperatura) {
-            mensagem += ' Sua comida queimou! <br>';
-            // mensagem.style.backgroundColor = "red";
+    //     if(t_maxima == 0 &&  t_bem == 0 && t_ponto==0 && t_mal==0 && t_minima == 0 && t_molhado == 0 &&  t_quasemolhado == 0 && t_ponto2==0 && t_quaseseco==0 && t_seco == 0){
+    //       var mensagem = '';
+    //     }
+    //     else{
+    //       var mensagem = '';
+    //       var mensagem2 = '';
+    //       var mensagem3 = '';
+    //       var mensagem4 = '';
+    //       var mensagem5 = '';
+    //       var mensagem6 = '';
+    //       var mensagem7 = '';
+    //     if (temperatura >= limites.max_temperatura) {
+    //         mensagem += ' Sua comida queimou! <br>';
+    //         // mensagem.style.backgroundColor = "red";
             
-        } 
-        if (temperatura >= limites.bem_temperatura && temperatura < limites.max_temperatura) {
-            mensagem2 += ' Sua comida está queimando! <br>';
-            //  mensagem.style.backgroundColor = "orange";
-        } 
-        if (temperatura > limites.ponto_temperatura && temperatura < limites.bem_temperatura) {
-            mensagem3 += ' Sua comida está bem passada! <br>';
-            // mensagem.style.backgroundColor = "#FFFF00";
-        } 
-        if (temperatura == limites.ponto_temperatura) {
-            mensagem4 += ' Sua comida está ao ponto! <br>';
-            // mensagem.style.backgroundColor = "#40FF00";
-        } 
-        if (temperatura < limites.ponto_temperatura && temperatura >= limites.mal_temperatura) {
-            mensagem5 += ' Sua comida está mal passada! <br>';
-            // mensagem.style.backgroundColor = "#A9F5A9";
-        } 
-        if (temperatura < limites.mal_temperatura && temperatura > limites.min_temperatura) {
-            mensagem6 += ' Sua comida ainda está um pouco crua! <br>';
-            // mensagem.style.backgroundColor = "#2ECCFA";
-        } 
-        if (temperatura <= limites.min_temperatura) {
-            mensagem7 += ' Sua comida está crua! <br>';
-            // mensagem.style.backgroundColor = "#2E64FE";
-        } 
-        // -------------------------------------------------
-        if (umidade >= limites.max_umidade) {
-            mensagem7 += ' Sua comida está bem umida! <br>';
-        } 
-        if (umidade >= limites.bem_umidade && umidade < limites.max_umidade) {
-            mensagem6 += ' Sua comida está ficando bem umida! <br>';
-        } 
-        if (umidade > limites.ponto_umidade && umidade < limites.bem_umidade) {
-            mensagem5 += ' A umidade está aumentando! <br>';
-        } 
-        if (umidade == limites.ponto_umidade) {
-            mensagem4 += ' Umidade perfeita! <br>';
-        } 
-        if (umidade < limites.ponto_umidade && umidade >= limites.mal_umidade) {
-            mensagem3 += ' Comida com pouca umidade! <br>';
-        } 
-        if (umidade < limites.mal_umidade && umidade > limites.min_umidade) {
-          mensagem2 += ' Sua comida ainda está seca! <br>';
-        } 
-        if (umidade <= limites.min_umidade) {
-            mensagem += ' Sua comida está seca! <br>';
-        } 
+    //     } 
+    //     if (temperatura >= limites.bem_temperatura && temperatura < limites.max_temperatura) {
+    //         mensagem2 += ' Sua comida está queimando! <br>';
+    //         //  mensagem.style.backgroundColor = "orange";
+    //     } 
+    //     if (temperatura > limites.ponto_temperatura && temperatura < limites.bem_temperatura) {
+    //         mensagem3 += ' Sua comida está bem passada! <br>';
+    //         // mensagem.style.backgroundColor = "#FFFF00";
+    //     } 
+    //     if (temperatura == limites.ponto_temperatura) {
+    //         mensagem4 += ' Sua comida está ao ponto! <br>';
+    //         // mensagem.style.backgroundColor = "#40FF00";
+    //     } 
+    //     if (temperatura < limites.ponto_temperatura && temperatura >= limites.mal_temperatura) {
+    //         mensagem5 += ' Sua comida está mal passada! <br>';
+    //         // mensagem.style.backgroundColor = "#A9F5A9";
+    //     } 
+    //     if (temperatura < limites.mal_temperatura && temperatura > limites.min_temperatura) {
+    //         mensagem6 += ' Sua comida ainda está um pouco crua! <br>';
+    //         // mensagem.style.backgroundColor = "#2ECCFA";
+    //     } 
+    //     if (temperatura <= limites.min_temperatura) {
+    //         mensagem7 += ' Sua comida está crua! <br>';
+    //         // mensagem.style.backgroundColor = "#2E64FE";
+    //     } 
+    //     // -------------------------------------------------
+    //     if (umidade >= limites.max_umidade) {
+    //         mensagem7 += ' Sua comida está bem umida! <br>';
+    //     } 
+    //     if (umidade >= limites.bem_umidade && umidade < limites.max_umidade) {
+    //         mensagem6 += ' Sua comida está ficando bem umida! <br>';
+    //     } 
+    //     if (umidade > limites.ponto_umidade && umidade < limites.bem_umidade) {
+    //         mensagem5 += ' A umidade está aumentando! <br>';
+    //     } 
+    //     if (umidade == limites.ponto_umidade) {
+    //         mensagem4 += ' Umidade perfeita! <br>';
+    //     } 
+    //     if (umidade < limites.ponto_umidade && umidade >= limites.mal_umidade) {
+    //         mensagem3 += ' Comida com pouca umidade! <br>';
+    //     } 
+    //     if (umidade < limites.mal_umidade && umidade > limites.min_umidade) {
+    //       mensagem2 += ' Sua comida ainda está seca! <br>';
+    //     } 
+    //     if (umidade <= limites.min_umidade) {
+    //         mensagem += ' Sua comida está seca! <br>';
+    //     } 
                 
-        div_alerta1.innerHTML = mensagem;
-        div_alerta2.innerHTML = mensagem2;
-        div_alerta3.innerHTML = mensagem3;
-        div_alerta4.innerHTML = mensagem4;
-        div_alerta5.innerHTML = mensagem5;
-        div_alerta6.innerHTML = mensagem6;
-        div_alerta7.innerHTML = mensagem7;
-      }
-    }
+    //     div_alerta1.innerHTML = mensagem;
+    //     div_alerta2.innerHTML = mensagem2;
+    //     div_alerta3.innerHTML = mensagem3;
+    //     div_alerta4.innerHTML = mensagem4;
+    //     div_alerta5.innerHTML = mensagem5;
+    //     div_alerta6.innerHTML = mensagem6;
+    //     div_alerta7.innerHTML = mensagem7;
+    //   }
+    // }
 
 
     // só altere aqui se souber o que está fazendo!
-    function plotarGrafico(dados) {
-        console.log('iniciando plotagem do gráfico...');
+    // function plotarGrafico(dados) {
+    //     console.log('iniciando plotagem do gráfico...');
 
-        var chart = new google.visualization.LineChart(div_grafico);
-        chart.draw(dados, configurarGrafico());
-    }
+    //     var chart = new google.visualization.LineChart(div_grafico);
+    //     chart.draw(dados, configurarGrafico());
+    // }
 </script>
 

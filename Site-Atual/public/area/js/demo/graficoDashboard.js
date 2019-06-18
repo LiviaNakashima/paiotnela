@@ -1,4 +1,4 @@
-var grafico = myChart.getContext('2d');
+ var grafico = myChart.getContext('2d');
 var dados = {
     labels: [],
     datasets: [{
@@ -12,7 +12,7 @@ var dados = {
         pointRadius: 3,
         pointBackgroundColor: "rgb(244, 66, 66)",
         pointBorderColor: "rgb(244, 66, 66)",
-        pointHoverRadius: 3,
+        pointHoverRadius: 4,
         pointHoverBackgroundColor: "rgb(244, 66, 66)",
         pointHoverBorderColor: "rgb(244, 66, 66)",
         pointHitRadius: 10,
@@ -28,7 +28,7 @@ var dados = {
         pointRadius: 3,
         pointBackgroundColor: "rgba(78, 115, 223, 1)",
         pointBorderColor: "rgba(78, 115, 223, 1)",
-        pointHoverRadius: 3,
+        pointHoverRadius: 4,
         pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
         pointHoverBorderColor: "rgba(78, 115, 223, 1)",
         pointHitRadius: 10,
@@ -128,7 +128,7 @@ function atualizarGrafico() {
                     t.update(); //Atualiza o gráfico
                     console.log(dados.labels.length);
                     console.log(dados.datasets[0].data.length);
-                    setTimeout(atualizarGrafico, 3000);
+                    setTimeout(atualizarGrafico, 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -138,7 +138,7 @@ function atualizarGrafico() {
                     type: "error",
                     button: "Ok!",
                 });
-                setTimeout(atualizarGrafico, 3000);
+                setTimeout(atualizarGrafico, 2000);
             }
         })
         .catch(function(error) {
@@ -149,6 +149,6 @@ function atualizarGrafico() {
                 type: "error",
                 button: "Ok!",
             });
-            setTimeout(atualizarGrafico, 3000);
+            setTimeout(atualizarGrafico, 2000);
         });
 }
