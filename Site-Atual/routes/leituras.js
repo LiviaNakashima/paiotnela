@@ -7,7 +7,7 @@ var banco = require('../app-banco');
 router.get('/ultimas', function (req, res, next) {
   console.log(banco.conexao);
   banco.conectar().then(() => {
-    var limite_linhas = 5;
+    var limite_linhas = 1;
     return banco.sql.query(`select top ${limite_linhas}
                             temp_sensor,
                             umid_sensor,

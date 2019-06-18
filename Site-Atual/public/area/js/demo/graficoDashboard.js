@@ -1,4 +1,4 @@
- var grafico = myChart.getContext('2d');
+var grafico = myChart.getContext('2d');
 var dados = {
     labels: [],
     datasets: [{
@@ -12,7 +12,7 @@ var dados = {
         pointRadius: 3,
         pointBackgroundColor: "rgb(244, 66, 66)",
         pointBorderColor: "rgb(244, 66, 66)",
-        pointHoverRadius: 4,
+        pointHoverRadius: 5,
         pointHoverBackgroundColor: "rgb(244, 66, 66)",
         pointHoverBorderColor: "rgb(244, 66, 66)",
         pointHitRadius: 10,
@@ -28,7 +28,7 @@ var dados = {
         pointRadius: 3,
         pointBackgroundColor: "rgba(78, 115, 223, 1)",
         pointBorderColor: "rgba(78, 115, 223, 1)",
-        pointHoverRadius: 4,
+        pointHoverRadius: 5,
         pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
         pointHoverBorderColor: "rgba(78, 115, 223, 1)",
         pointHitRadius: 10,
@@ -58,14 +58,14 @@ var t = new Chart(grafico, {
                     drawBorder: false
                 },
                 ticks: {
-                    maxTicksLimit: 10
+                    maxTicksLimit: 6
                 }
             }],
             yAxes: [{
-                id: 'A',
+                id: 'B',
                 position: 'left',
                 ticks: {
-                    maxTicksLimit: 9,
+                    maxTicksLimit: 6,
                     padding: 10,
                     callback: function(value, index, values) {
                         return value.toFixed(1) + "ºC";
@@ -79,18 +79,18 @@ var t = new Chart(grafico, {
                     zeroLineBorderDash: [2]
                 },
             }, {
-                id: 'B',
+                id: 'A',
                 position: 'right',
                 ticks: {
-                    maxTicksLimit: 9,
+                    maxTicksLimit: 6,
                     padding: 10,
                     callback: function(value, index, values) {
                         return value.toFixed(1) + "%";
                     }
                 },
                 gridLines: {
-                    color: "rgb(234, 236, 244)",
-                    zeroLineColor: "rgb(234, 236, 244)",
+                    color: "rgb(192, 192, 192)",
+                    zeroLineColor: "rgb(192, 192, 192)",
                     drawBorder: false,
                     borderDash: [2],
                     zeroLineBorderDash: [2]
@@ -109,14 +109,24 @@ function atualizarGrafico() {
     fetch('/leituras/temporealmedia', {
             cache: 'no-store'
         }).then(function(response) {
-            if (response.ok) {
+            if (response.ok) {    
                 response.json().then(function(resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
-                    if (dados.labels.length < 10) { //Se houver menos de 15 dados
+                    if (dados.labels.length < 6) { //Se houver menos de 15 dados
                         dados.labels.push(resposta[0].momento); //Coloca o horário no eixo X
                         dados.datasets[0].data.push(resposta[0].temp_sensor);
                         dados.datasets[1].data.push(resposta[0].umid_sensor);
+                        tabela_temp.innerHTML = `<td style="width: 20%;"><b>110</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.60).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.70).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.80).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>230</b></td>`;
+                          tabela_umid.innerHTML = `<td style="width: 20%;"><b>30</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.60).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.70).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.80).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>90</b></td>`;
                     } else {
                         dados.labels.shift(); //Remove o primeiro registro de horário
                         dados.labels.push(resposta[0].momento); //Insere a data atual
@@ -124,11 +134,21 @@ function atualizarGrafico() {
                         dados.datasets[0].data.push(resposta[0].temp_sensor);
                         dados.datasets[1].data.shift();
                         dados.datasets[1].data.push(resposta[0].umid_sensor);
+                        tabela_temp.innerHTML = `<td style="width: 20%;"><b>110</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.60).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.70).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.80).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>230</b></td>`;
+                          tabela_umid.innerHTML = `<td style="width: 20%;"><b>30</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.60).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.70).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.80).toFixed(2)}</b></td>
+                          <td style="width: 20%;"><b>90</b></td>`;
                     }
                     t.update(); //Atualiza o gráfico
                     console.log(dados.labels.length);
                     console.log(dados.datasets[0].data.length);
-                    setTimeout(atualizarGrafico, 2000);
+                    setTimeout(atualizarGrafico, 3000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -138,7 +158,7 @@ function atualizarGrafico() {
                     type: "error",
                     button: "Ok!",
                 });
-                setTimeout(atualizarGrafico, 2000);
+                setTimeout(atualizarGrafico, 3000);
             }
         })
         .catch(function(error) {
@@ -149,6 +169,7 @@ function atualizarGrafico() {
                 type: "error",
                 button: "Ok!",
             });
-            setTimeout(atualizarGrafico, 2000);
+            setTimeout(atualizarGrafico, 3000);
         });
+        
 }
