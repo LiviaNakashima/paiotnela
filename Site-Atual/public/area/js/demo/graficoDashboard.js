@@ -117,16 +117,16 @@ function atualizarGrafico() {
                         dados.labels.push(resposta[0].momento); //Coloca o horário no eixo X
                         dados.datasets[0].data.push(resposta[0].temp_sensor);
                         dados.datasets[1].data.push(resposta[0].umid_sensor);
-                        tabela_temp.innerHTML = `<td style="width: 20%;"><b>110</b></td>
+                        tabela_temp.innerHTML = `<td style="width: 20%;"><b>75</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.60).toFixed(2)}</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.70).toFixed(2)}</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.80).toFixed(2)}</b></td>
-                          <td style="width: 20%;"><b>230</b></td>`;
-                          tabela_umid.innerHTML = `<td style="width: 20%;"><b>30</b></td>
+                          <td style="width: 20%;"><b>250</b></td>`;
+                          tabela_umid.innerHTML = `<td style="width: 20%;"><b>10</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.60).toFixed(2)}</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.70).toFixed(2)}</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.80).toFixed(2)}</b></td>
-                          <td style="width: 20%;"><b>90</b></td>`;
+                          <td style="width: 20%;"><b>98</b></td>`;
                     } else {
                         dados.labels.shift(); //Remove o primeiro registro de horário
                         dados.labels.push(resposta[0].momento); //Insere a data atual
@@ -134,16 +134,16 @@ function atualizarGrafico() {
                         dados.datasets[0].data.push(resposta[0].temp_sensor);
                         dados.datasets[1].data.shift();
                         dados.datasets[1].data.push(resposta[0].umid_sensor);
-                        tabela_temp.innerHTML = `<td style="width: 20%;"><b>110</b></td>
+                        tabela_temp.innerHTML = `<td style="width: 20%;"><b>75</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.60).toFixed(2)}</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.70).toFixed(2)}</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].temp_sensor * 0.80).toFixed(2)}</b></td>
-                          <td style="width: 20%;"><b>230</b></td>`;
-                          tabela_umid.innerHTML = `<td style="width: 20%;"><b>30</b></td>
+                          <td style="width: 20%;"><b>250</b></td>`;
+                          tabela_umid.innerHTML = `<td style="width: 20%;"><b>10</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.60).toFixed(2)}</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.70).toFixed(2)}</b></td>
                           <td style="width: 20%;"><b>${(resposta[0].umid_sensor * 0.80).toFixed(2)}</b></td>
-                          <td style="width: 20%;"><b>90</b></td>`;
+                          <td style="width: 20%;"><b>98</b></td>`;
                     }
                     t.update(); //Atualiza o gráfico
                     console.log(dados.labels.length);
