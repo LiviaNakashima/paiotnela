@@ -62,7 +62,7 @@ var t = new Chart(grafico, {
                 }
             }],
             yAxes: [{
-                id: 'B',
+                id: 'A',
                 position: 'left',
                 ticks: {
                     maxTicksLimit: 6,
@@ -79,7 +79,7 @@ var t = new Chart(grafico, {
                     zeroLineBorderDash: [2]
                 },
             }, {
-                id: 'A',
+                id: 'B',
                 position: 'right',
                 ticks: {
                     maxTicksLimit: 6,
